@@ -18,6 +18,9 @@ def index3():
 @app.route('/index4')  
 def index4():
     return render_template('index4.html')
+@app.route('/naverLogin')  
+def naverLogin():
+    return render_template('naverLogin.html')
 
 if __name__ == '__main__':
     app.debug = True
