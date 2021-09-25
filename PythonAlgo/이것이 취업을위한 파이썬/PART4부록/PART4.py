@@ -37,10 +37,16 @@ print("람다함수이용",(lambda a,b:a+b)(3,7)) #(lambda 인자1,인자2:인�
 # input() 처리속도가 느리다고 한다.
 # 처리속도가 빨라야 하는경우   sys.stdin.readline() 함수를 이용한다.
 # sys라이브러리는 input() 처럼 한줄씩 입력 받기 위해 쓰인다.
-import sys
-data=sys.stdin.readline().rstrip()   #많이 쓰이는 외워야할 코드    
-print("readline()으로 입력받기  ",data);
+# import sys
+# data=sys.stdin.readline().rstrip()   #많이 쓰이는 외워야할 코드    
+# print("readline()으로 입력받기  ",data);
 
+
+
+
+#내장함수 p.450
+result = eval("(3 + 5) * 6")
+print(result)
 
 
 
