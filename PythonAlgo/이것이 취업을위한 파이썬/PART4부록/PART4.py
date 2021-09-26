@@ -48,6 +48,70 @@ print("람다함수이용",(lambda a,b:a+b)(3,7)) #(lambda 인자1,인자2:인�
 result = eval("(3 + 5) * 6")
 print(result)
 
+result= sorted([9,1,8,6,4],reverse=True)
+print(result)
+
+data = [9,1,8,5,4]
+data.sort()
+print(data)
+
+
+#itertools
+# itertools는 반복되는 데이터를 처리하는 기능을 포함하고 있다.
+# permutations, combinations 가 가장 융용한 클래스이다.
+
+print("순열과 조합 라이브러리")
+from itertools import permutations 
+data = ['A','B','C','ㅇ']  # 데이터 준비
+
+result= list(permutations(data,3))  # data에서 3개를 뽑아서 나열한 경우를 알려준다. 인자가 없다면 기본적으로 리스트에 갯수만큼 다뽑느다
+
+print(result)
+
+#조합 
+from itertools import combinations
+data =['A','B','C']
+result = list(combinations(data,2))
+print(result)
+
+#중복을 허용한 순열  itertools 에 product 
+from itertools import product
+data=['A','B','C'] #
+result = list(product(data,repeat=2))  # 중복을 허용해서 2개를 뽑는 모든 순열 구하기
+print(result)
+
+#중복을 허용한 조합 구하기
+from itertools import combinations_with_replacement
+data = ['A','B','C']
+result = list(combinations_with_replacement(data,2))
+print(result)
+
+#p. 454   heapq
+# 힙에 원소를 삽입할 때는 heapq.heappop() 메서드를 사용  
+# 
+import heapq
+def heapsort(iterable):
+    h = []
+    result = []
+    # 모든 원소를 차례대로 힙에 삽입
+    for value in iterable:
+        heapq.heappush(h,value)
+    #힙에 삽입된 모든 원소를 차례대로 꺼내어 담기
+    for i in range(len(h)):
+        result.append(heapq.heappop(h))
+    return result
+
+result = heapsort([1,3,5,7,9,2,4,6,8,0])
+print(result)
+
+
+
+
+
+
+
+
+
 
 
 
