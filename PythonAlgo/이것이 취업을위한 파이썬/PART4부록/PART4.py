@@ -87,8 +87,10 @@ result = list(combinations_with_replacement(data,2))
 print(result)
 
 #p. 454   heapq
-# 힙에 원소를 삽입할 때는 heapq.heappop() 메서드를 사용  
-# 
+# PriorityQueue라이브러리로 heap을 쓸수도 있지만 코딩테스트환경에서 더 좋은 환경을 위해 heapq라이브러리를 써서 함수로 구현하자
+# 힙에 원소를 삽입할 때는 heapq.heappush() 메서드를 사용  
+# 힙에서 꺼낼때 heapq.heappop() 메서드 사용
+# 최소힙(minheap) 작은 값부터 정렬
 import heapq
 def heapsort(iterable):
     h = []
@@ -103,8 +105,22 @@ def heapsort(iterable):
 
 result = heapsort([1,3,5,7,9,2,4,6,8,0])
 print(result)
+### 작은값부터 정렬 됨
 
-
+#최대 힙(큰 거부터 정렬)
+import heapq
+def heapsort(iterable):
+    h=[]
+    result=[]
+    #
+    for value in iterable:
+        heapq.heappush(h, -value)
+        #
+    for i in range(len(h)):
+        result.append(-heapq.heappop(h))
+    return result
+result = heapsort([1,3,5,7,9,2,4,6,8,0])
+print(result)
 
 
 
