@@ -1,10 +1,15 @@
-<mxfile host="app.diagrams.net" modified="2021-10-04T12:28:33.271Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.71 Safari/537.36" etag="3Ygxb0obcds4RgxWgbN9" version="15.4.1" type="github">
+<mxfile host="app.diagrams.net" modified="2021-10-04T13:41:57.789Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.71 Safari/537.36" etag="OKs_VF_w3ygFiMXdzQoG" version="15.4.1" type="github" pages="4">
   <diagram id="QW173fb829EoG9zrP1Zs" name="Page-1">
-    <mxGraphModel dx="920" dy="551" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="920" dy="484" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="m6SPPL8QDf-0PsfRVzZ8-1" value="Actor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+        <mxCell id="m6SPPL8QDf-0PsfRVzZ8-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;strokeColor=default;curved=1;" edge="1" parent="1" target="m6SPPL8QDf-0PsfRVzZ8-3">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="160" y="291" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m6SPPL8QDf-0PsfRVzZ8-1" value="사용자" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
           <mxGeometry x="130" y="280" width="30" height="60" as="geometry" />
         </mxCell>
         <mxCell id="m6SPPL8QDf-0PsfRVzZ8-3" value="" style="sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.mscae.enterprise.server_generic" vertex="1" parent="1">
@@ -19,6 +24,63 @@
         <mxCell id="m6SPPL8QDf-0PsfRVzZ8-8" value="구글 카카오 등 대기업" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="270" y="340" width="130" height="20" as="geometry" />
         </mxCell>
+        <mxCell id="m6SPPL8QDf-0PsfRVzZ8-11" value="ID&lt;br&gt;PW" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="201" y="194" width="29" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="RYLJoPgfmz2T_IpzQY5z-1" value="ID&lt;br&gt;PW" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="395" y="289.5" width="29" height="32" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="95NZ1PnyR1nhhYBNFpym" name="Page-2">
+    <mxGraphModel dx="920" dy="484" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="xrzFVhlwBgKTpCqQMyMO-0" />
+        <mxCell id="xrzFVhlwBgKTpCqQMyMO-1" parent="xrzFVhlwBgKTpCqQMyMO-0" />
+        <mxCell id="lmaGGapGDbvaBHyw8Arb-1" value="사용자" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="xrzFVhlwBgKTpCqQMyMO-1">
+          <mxGeometry x="130" y="280" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="bx-ZZ3xH4Yp0ZTNLZwnC-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="xrzFVhlwBgKTpCqQMyMO-1" source="lmaGGapGDbvaBHyw8Arb-2" target="lmaGGapGDbvaBHyw8Arb-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lmaGGapGDbvaBHyw8Arb-2" value="" style="sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.mscae.enterprise.server_generic" vertex="1" parent="xrzFVhlwBgKTpCqQMyMO-1">
+          <mxGeometry x="320" y="160" width="24" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="lmaGGapGDbvaBHyw8Arb-3" value="" style="sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.mscae.enterprise.server_farm" vertex="1" parent="xrzFVhlwBgKTpCqQMyMO-1">
+          <mxGeometry x="292.16" y="280" width="79.69" height="51" as="geometry" />
+        </mxCell>
+        <mxCell id="lmaGGapGDbvaBHyw8Arb-4" value="제3의 서비스" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="xrzFVhlwBgKTpCqQMyMO-1">
+          <mxGeometry x="287.01" y="220" width="90" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="lmaGGapGDbvaBHyw8Arb-5" value="구글 카카오 등 대기업" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="xrzFVhlwBgKTpCqQMyMO-1">
+          <mxGeometry x="270" y="340" width="130" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="bx-ZZ3xH4Yp0ZTNLZwnC-0" value="ID&lt;br&gt;PW" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="xrzFVhlwBgKTpCqQMyMO-1">
+          <mxGeometry x="400" y="289.5" width="29" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="bx-ZZ3xH4Yp0ZTNLZwnC-1" value="ID&lt;br&gt;PW" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="xrzFVhlwBgKTpCqQMyMO-1">
+          <mxGeometry x="400" y="169" width="29" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="bx-ZZ3xH4Yp0ZTNLZwnC-3" value="ID&lt;br&gt;PW" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="xrzFVhlwBgKTpCqQMyMO-1">
+          <mxGeometry x="342.85" y="240" width="29" height="32" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="fNunaM4CpPfYxGwf7vip" name="Page-3">
+    <mxGraphModel dx="782" dy="411" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="Np5_BSbnktsveq1vvEEq-0" />
+        <mxCell id="Np5_BSbnktsveq1vvEEq-1" parent="Np5_BSbnktsveq1vvEEq-0" />
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="nr0z4ayhCHXjE-arjBjs" name="Page-4">
+    <mxGraphModel dx="782" dy="468" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="aCbJkbpnLef4J0Sz43_s-0" />
+        <mxCell id="aCbJkbpnLef4J0Sz43_s-1" parent="aCbJkbpnLef4J0Sz43_s-0" />
       </root>
     </mxGraphModel>
   </diagram>
