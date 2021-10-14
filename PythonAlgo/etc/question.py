@@ -11,24 +11,30 @@ else:
 print(result)
 
 #구구단 시작하는단과 끝나는단을 입력 화면에 출력하시오
-print("구구단 문제")
-a,b= list(map(int,input().split()))  # 시작과 처음을 띄어쓰기로 나눠서 받습니다.
-for i in range(a,b+1):
-    for j in range(1,10):
-        print(i,"X",j,"==",i*j)
+# print("구구단 문제")
+# a,b= list(map(int,input().split()))  # 시작과 처음을 띄어쓰기로 나눠서 받습니다.
+# for i in range(a,b+1):
+#     for j in range(1,10):
+#         print(i,"X",j,"==",i*j)
 
 #  50부터 100까지의 정수 중에서 3의 배수만 더하는 프로그램 while 문으로 작성하시오
 print("3의배수만 더하기 문제")
 
 a=50  #50부터 시작하는 정수
-sum=0 # 더하는 값을 저장할 변수
+sumv=0 # 더하는 값을 저장할 변수
 
 while a<=100:
     if a%3==0:  # 3의 배수 조건을 표현
-        sum+=a 
-    print(sum)
+        sumv+=a 
+    print(sumv)
     a+=1  # a=a+1 과 같습니다 I'm  I am
-print(sum) #출력하라는 말 없지만 없으면 허젼하니까 더함
+print(sumv) #출력하라는 말 없지만 없으면 허젼하니까 더함
 
 
+# 임의 개수의 숫자를 인자로 받아 이들의 합계와 평균 튜플을 반환하는 함수
+
+def sumavg(*args):
+    return sum(args),sum(args)/len(args)
+
+print(sumavg(1,2,3))
 
