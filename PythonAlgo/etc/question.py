@@ -39,18 +39,31 @@ def sumavg(*args):
 print(sumavg(1,2,3))
 
 #문제 :  0을 입력할 때 까지 소수를 판별해주는 프로그램 작성 
-print("소수판별문제")
+# print("소수판별문제")
 
-prime=True
-while True:
-    num=int(input("소수 판별할 숫자:"))  #판별할 숫자 num 입력
-    if num==0: # 0 입력시 바로 나가리
-        break
-    for i in range(2,num):  # 1은 건너띄고 나머지중에 나누어지는수 판단
-        if num%i==0:  #만약 i로 나누어지는 수가 하나라도 있으면
-            prime=False  # 소수가 아니다
-    if prime==True:
-        print("소수입니다.")
-    else:
-        print("소수가 아닙니다.")
+# prime=True
+# while True:
+#     num=int(input("소수 판별할 숫자:"))  #판별할 숫자 num 입력
+#     if num==0: # 0 입력시 바로 나가리
+#         break
+#     for i in range(2,num):  # 1은 건너띄고 나머지중에 나누어지는수 판단
+#         if num%i==0:  #만약 i로 나누어지는 수가 하나라도 있으면
+#             prime=False  # 소수가 아니다
+#     if prime==True:
+#         print("소수입니다.")
+#     else:
+#         print("소수가 아닙니다.")
+
+# 문제 : 5명의 학생을 입력받아 최고점과 최저점을 출력하시오.  0 ~ 100사이 점수만 갖는다.
+
+max,min,score = 0,100,0  # 최고점 최저점 점수 
+
+for i in range(5):
+    score = int(input("점수 : "))  # 점수입력
+    if score>=max:  #현재 최고점보다 점수가 높으니까 현제점수는== 최고점
+        max=score
+    if score<=min:
+        min=score
+
+print("최고점= ",max,"최저점= ",min)
 
