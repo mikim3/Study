@@ -38,3 +38,19 @@ def sumavg(*args):
 
 print(sumavg(1,2,3))
 
+#문제 :  0을 입력할 때 까지 소수를 판별해주는 프로그램 작성 
+print("소수판별문제")
+
+prime=True
+while True:
+    num=int(input("소수 판별할 숫자:"))  #판별할 숫자 num 입력
+    if num==0: # 0 입력시 바로 나가리
+        break
+    for i in range(2,num):  # 1은 건너띄고 나머지중에 나누어지는수 판단
+        if num%i==0:  #만약 i로 나누어지는 수가 하나라도 있으면
+            prime=False  # 소수가 아니다
+    if prime==True:
+        print("소수입니다.")
+    else:
+        print("소수가 아닙니다.")
+
