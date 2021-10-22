@@ -1,4 +1,5 @@
-# 3002번문제 기억력테스트
+# 3002번문제 기억력테스트3
+
 
 from bisect import bisect_left,bisect_right  # 이진탐색 라이브러리
 
@@ -18,6 +19,10 @@ a=list(map(int,sys.stdin.readline().rstrip().split()))
 m=int(input())  # 질문 m개
 b=list(map(int,sys.stdin.readline().rstrip().split()))
 equ=0
+
+bisect_left(a,5)  # 
+
+
 
 for i in range(m):
     equ=0
