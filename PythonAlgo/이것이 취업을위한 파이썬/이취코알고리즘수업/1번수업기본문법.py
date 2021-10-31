@@ -88,12 +88,47 @@ print(a & b)
 print(a - b)
 
 
+#입출력
+
+#list(map(int,input().split()))
 
 
+#조건문
+score=80
+if score>=80:
+    pass  #그냥 넘김  #pass 안적으면 오류난다.  컴터 입장에서 들여쓰기된 무언가가 작성되길 원한다.
+else:
+    print("80이상아닐때")
+score = 85
+result = "Success" if score >= 80 else "Fail"
+
+print(result)
 
 
+#함수
+
+# 전역변수 사용
+array = [1,2,3,4,5]
+
+def func():
+    global array  # 함수밖에 변수 쓰기 
+    array = [3,4,5]
+    array.append(6)
+
+func()
+print(array)
 
 
+# 람다 표현식 
+print((lambda a,b: a+ b)(3,7))
+
+array = [('홍길동',50),('이순신',32),('아무개',74)]
+
+def my_key(x):
+    return x[1]
+
+print(sorted(array,key=my_key))
+print(sorted(array,key=lambda x:x[1])) # 람다함수로 두번째원소를 기준으로 정렬하게끔 key값을 정했다.
 
 
 
