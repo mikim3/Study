@@ -132,3 +132,20 @@ print(sorted(array,key=lambda x:x[1])) # 람다함수로 두번째원소를 기�
 
 
 
+#map함수는 각각의 원소에 어떤 함수를 적용할 수 있다.
+list1 = [1,2,3,4,5]
+list2 = [6,7,8,9,10]
+
+result = map(lambda a,b: a+b, list1,list2)    # 리스트안에 각각의 원소에 값을 더해라 
+
+print(list(result))  
+
+list(map(int,input().split()))  # input받은 값을 split으로 띄어쓰기마다 구분지어 리스트로 만든다 -> map함수로 int함수를 리스트 각각에 적용시킨다. -> map함수로 나온 값을 다시 list
+
+#유용한 표준라이브러리
+
+
+# iter
+
+
+
