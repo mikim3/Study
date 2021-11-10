@@ -58,12 +58,44 @@ print(sumavg(1,2,3))
 
 max,min,score = 0,100,0  # 최고점 최저점 점수 
 
-for i in range(5):
-    score = int(input("점수 : "))  # 점수입력
-    if score>=max:  #현재 최고점보다 점수가 높으니까 현제점수는== 최고점
-        max=score
-    if score<=min:
-        min=score
+# for i in range(5):
+#     score = int(input("점수 : "))  # 점수입력
+#     if score>=max:  #현재 최고점보다 점수가 높으니까 현제점수는== 최고점
+#         max=score
+#     if score<=min:
+#         min=score
 
 print("최고점= ",max,"최저점= ",min)
 
+
+#
+class Figure:
+    def __init__(self,diameter):
+        self.diameter = diameter  # __init__ 으로 만든 변수는 객체변수이다.  객체변수는 다른 객체들에 영향을 받지 앟고 독립적인 값을 유지한다.
+        
+class Circle(Figure):  # Circle 클래스는 Figure클래스를 상속한다. 즉 Figure의 기본적인 기능을 이용할 수 있다.  Circle은 자식 Figure는 부모   자식은 부모의 능력을 물려받는다.
+    def getKind(self):
+        return 'I\'m a circle.'
+    def getArea(self):
+        radius = self.diameter
+        return radius * radius * 3.14
+    def __add__(self, other):  # __add__ 는 파이썬에 내장된 특수한 함수이다.  클래스에 + 연산을 할때 함수가 발동된다.
+        if isinstance(other,Circle):
+            return Circle(self.diameter+other.diameter)
+        elif isinstance(other,int):
+            return Circle(self.diameter + other)
+class Square(Figure):
+    def getKind(self):
+        return 'I\'m a Square.'
+    def getArea(self):
+        return self.diameter * self.diameter
+    def __add__(self, other):
+        if isinstance(other,Square):
+            return Square(self.diameter+other.diameter)
+        elif isinstance(other,int):
+            return Square(self.diameter + other)
+
+figures = [Circle(5), Square(5)]
+for figure in figures: # 첫번째로 Circle(5)로 한바퀴 돌고 다음 Square(5) 
+    figure= figure + 5
+    print(figure.getKind()+' : '+str(figure.getArea()))
