@@ -5,7 +5,8 @@
     <script src="https://apis.google.com/js/platform.js" async defer></script>
   </head>
   <body>
-    <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+    <div class="g-signin2" data-onsuccess="구글로로그인" data-theme="dark"></div>
+    <button type="button" onclick="signOut();">Sign Out</button>
     <script>
       function onSignIn(googleUser) {
         // Useful data for your client-side scripts:
@@ -21,6 +22,11 @@
         var id_token = googleUser.getAuthResponse().id_token;
         console.log("ID Token: " + id_token);
       }
+
+      function signOut(){
+        gapi.auth2.getAuthInstance().disconnect();
+      }
+
     </script>
   </body>
 </html>
