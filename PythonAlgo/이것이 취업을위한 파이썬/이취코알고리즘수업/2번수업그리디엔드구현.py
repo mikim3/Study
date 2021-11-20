@@ -96,18 +96,88 @@ print(result)
 # 둘쨰 줄에 공포도 값을 N이하 자연수로 주어짐  공백으로 구분
 
 # 내 풀이 : 핵심은 가장 낮은 공포도 모험가 먼저 보내야 한다.
-print("모험가 길드 문제")
-n=input()
-data=list(map(int,input().split()))
-data.sort()
+# print("모험가 길드 문제")
+# n=input()
+# data=list(map(int,input().split()))
+# data.sort()
 
-result = 0  # 총 그룹의 수 
-count = 0 # 현재 그룹 포함된 모험가 수
+# result = 0  # 총 그룹의 수 
+# count = 0 # 현재 그룹 포함된 모험가 수
 
-for i in data: # data 값 하나 씩 비교 
-    count += 1 # 
-    if count >= i:  # 카운트보다 data현재 값이 낮으면 
-        result += 1  # 결과 즉 그룹을 하나 추가한다.
-        count=0      #
+# for i in data: # data 값 하나 씩 비교 
+#     count += 1 # 
+#     if count >= i:  # 카운트보다 data현재 값이 낮으면 
+#         result += 1  # 결과 즉 그룹을 하나 추가한다.
+#         count=0      #
 
-print(result)
+# print(result)
+
+
+#################
+## 여기부터 구현 부분
+
+# 구현은 머리속으로 생각은 쉽지만 실제 프로그램 구현은 어려운 문제
+# 
+#
+
+# 시뮬레이션 및 완전 탐색 문제에서는 2차원 공간에서의 방향 벡터가 자주 활용된다.
+
+# 대표적인 좌표이동 코드 
+# 동, 북 , 서 , 남
+dx = [0,-1,0,1]
+dy = [1,0,-1,0]
+
+# 현재 위치
+x,y = 2,2   # (2, 2) 위치
+
+for i in range(4):
+    #다음위치
+    nx = x + dx[i]
+    ny = y + dy[i]
+    print(nx,ny)
+
+
+# 여행가 이동 문제
+# 여행가를 원하는 위치로 옮기는 문제
+# 여행가는 N X N 크기 정사각형 가장 왼쪽이 위가 (1,1)이고 가장 오른쪽 아래좌표는 (N,N) 시작좌표는 항상 (1,1)
+# 공간 밖이면 무시
+
+# 문제 조건
+# 첫째줄에 공간의 크기를 나타내는 N이 주어진다
+# 둘쨰 줄에 여행가 A가 이동할 계획서 내용이 주어진다
+
+# 입력예시
+# 5
+# R R R U D D
+
+# 출력예시
+# 3 4 
+ 
+# 현 좌표 1-1,1-1
+x = 1
+y = 1
+n = int(input())  # 공간 크기 N
+orders = input().split() # 명령
+
+
+# U D R L  상 하 우 좌
+dx=[-1,1,0,0]
+dy=[0,0,1,-1]
+move_types = ['U','D','R','L']
+
+# 이동 명령 하나씩 확인
+for order in orders:
+    # 이동후 좌표 구하기
+    for i in range(len(move_types)):
+        if order ==move_types[i]:
+            nx = x + dx[i]
+            ny = y + dy[i]
+    #공간 벗어나면 무시
+    if nx < 1 or ny < 1 or nx > n or ny> n:
+        continue
+    #이동 수행
+    x,y = nx, ny
+
+print(x,y)    
+    
+    
