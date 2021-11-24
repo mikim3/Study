@@ -154,31 +154,31 @@ for i in range(4):
 # 3 4 
  
 # 현 좌표 1-1,1-1
-x = 1
-y = 1
-n = int(input())  # 공간 크기 N
-orders = input().split() # 명령
+# x = 1
+# y = 1
+# n = int(input())  # 공간 크기 N
+# orders = input().split() # 명령
 
 
-# U D R L  상 하 우 좌
-dx=[-1,1,0,0]
-dy=[0,0,1,-1]
-move_types = ['U','D','R','L']
+# # U D R L  상 하 우 좌
+# dx=[-1,1,0,0]
+# dy=[0,0,1,-1]
+# move_types = ['U','D','R','L']
 
-# 이동 명령 하나씩 확인
-for order in orders:
-    # 이동후 좌표 구하기
-    for i in range(len(move_types)):
-        if order ==move_types[i]:
-            nx = x + dx[i]
-            ny = y + dy[i]
-    #공간 벗어나면 무시
-    if nx < 1 or ny < 1 or nx > n or ny> n:
-        continue
-    #이동 수행
-    x,y = nx, ny
+# # 이동 명령 하나씩 확인
+# for order in orders:
+#     # 이동후 좌표 구하기
+#     for i in range(len(move_types)):
+#         if order ==move_types[i]:
+#             nx = x + dx[i]
+#             ny = y + dy[i]
+#     #공간 벗어나면 무시
+#     if nx < 1 or ny < 1 or nx > n or ny> n:
+#         continue
+#     #이동 수행
+#     x,y = nx, ny
 
-print(x,y)    
+# print(x,y)    
     
     
     
@@ -213,6 +213,75 @@ print(x,y)
 # if '3' in str(i):  # i 라는 문자열안에 3이 포함되어 있는지 확인
 #    print("3이 있어")
 # 'j' not in 'python'  # True 가 나옴
+
+# 왕실의 나이트 문제 
+# 
+
+# 못 풀었음 나중에 풀어보기
+
+# # 현재 나이트의 위치 입력받기
+# input_data = input()
+# row = int(input_data[1])
+# column = int(ord(input_data[0])) - int(ord('a')) + 1
+
+# # 나이트가 이동할 수 있는 8가지 방향 정의
+# steps = [(-2,-1),(-1,-2),(1,-2),(2,-1),(2,1),(1,2),(-1,2),(-2,1)]
+
+# #8가지 방향에 대하여 각 위치로 이동이 가능한지 확인
+# result = 0
+# for step in steps:
+#     # 이동하고자 하는 위치 확인
+#     next_row = row + step[0]
+#     next_column = column + step[1]
+#     #해당 위치로 이동이 가능하다면 카운트 증가
+#     if next_row >= 1 and next_row <= 8 and next_column >= 1 and next_column <= 8:
+#         result +=1
+
+
+# 문자열 재정렬 문제 
+# 
+
+# 알파벳 대문자와 숫자로만 구성된 문자열이 입력된다.
+# 이를 알파벳은 오름차순으로 출력하고 모든숫자를 더한 값을 맨뒤에 출력
+
+# ex)  K1KA5CB7 -> ABCKK13  
+
+input_data = input()  #문자열로 일단받음
+sort_data=[]
+
+num=0
+for i in range(len(input_data)):
+    if ord('A')<=ord(input_data[i])<=ord('Z'):
+        sort_data+=input_data[i]
+    else:
+        num+=int(input_data[i])
+sort_data.sort()
+for i in range(len(sort_data)):
+    print(sort_data[i],end='')
+print(num)
+
+
+data = input()
+result = []
+value = 0
+
+# 문자를 하나씩 확인하며
+for x in data:
+    # 알파벳인 경우 결과 리스트에 삽입
+    if x.isalpha():
+        result.append(x)
+    # 숫자는 따로 더하기
+    else:
+        value += int(x)
+        
+# 알파벳을 오름차순으로 정렬
+result.sort()
+
+# 숫자가 하나라도 존재하는 경우 가장 뒤에 삽입
+if value != 0:
+    result.append(str(value))
+    
+# 최종 결과 출력 (리스트를 문자열로 변환하여 출력)
 
 
 
