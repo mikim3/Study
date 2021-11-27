@@ -246,42 +246,127 @@ for i in range(4):
 
 # ex)  K1KA5CB7 -> ABCKK13  
 
-input_data = input()  #문자열로 일단받음
-sort_data=[]
+#####################나의 답안
+# input_data = input()  #문자열로 일단받음
+# sort_data=[]
 
-num=0
-for i in range(len(input_data)):
-    if ord('A')<=ord(input_data[i])<=ord('Z'):
-        sort_data+=input_data[i]
-    else:
-        num+=int(input_data[i])
-sort_data.sort()
-for i in range(len(sort_data)):
-    print(sort_data[i],end='')
-print(num)
+# num=0
+# for i in range(len(input_data)):
+#     if ord('A')<=ord(input_data[i])<=ord('Z'):
+#         sort_data+=input_data[i]
+#     else:
+#         num+=int(input_data[i])
+# sort_data.sort()
+# for i in range(len(sort_data)):
+#     print(sort_data[i],end='')
+# print(num)
+#####################나의 답안 끝
 
+##################모범답안
+# data = input()
+# result = []
+# value = 0
 
-data = input()
-result = []
-value = 0
-
-# 문자를 하나씩 확인하며
-for x in data:
-    # 알파벳인 경우 결과 리스트에 삽입
-    if x.isalpha():
-        result.append(x)
-    # 숫자는 따로 더하기
-    else:
-        value += int(x)
+# # 문자를 하나씩 확인하며
+# for x in data:
+#     # 알파벳인 경우 결과 리스트에 삽입
+#     if x.isalpha():  # isalpha() 문자열 구성이 알파벳인지 확인
+#         result.append(x)  # 리스트에 값을 하나씩 추가한다 -> append
+#         print(result)
+#     # 숫자는 따로 더하기
+#     else:
+#         value += int(x)
         
-# 알파벳을 오름차순으로 정렬
-result.sort()
+# # 알파벳을 오름차순으로 정렬
+# result.sort()
 
-# 숫자가 하나라도 존재하는 경우 가장 뒤에 삽입
-if value != 0:
-    result.append(str(value))
+# # 숫자가 하나라도 존재하는 경우 가장 뒤에 삽입
+# if value != 0:
+#     result.append(str(value))
     
-# 최종 결과 출력 (리스트를 문자열로 변환하여 출력)
+# # 최종 결과 출력 (리스트를 문자열로 변환하여 출력)
+# print(''.join(result))
+
+
+#다시 풀어보기 
+# 상하좌우문제
+# print("상하좌우다시풀기")
+# n=int(input())
+# order=list(input().split())
+
+# print(order)
+# x,y=1,1
+# #L, R, U, D
+# dx=[0,0,-1,1]
+# dy=[-1,1,0,0]
+
+# for i in range(len(order)):
+#     if order[i]=='L' and y>1:
+#         x=x+dx[0]
+#         y=y+dy[0]
+#     if order[i]=='R' and y<n:
+#         x=x+dx[1]
+#         y=y+dy[1]
+#         print(x,y)
+#     if order[i]=='U' and x>1:
+#         x=x+dx[2]
+#         y=y+dy[2]
+#     if order[i]=='D' and x<n:
+#         x=x+dx[3]
+#         y=y+dy[3]
+# print(x,y)
+
+#
+
+# 숫자3 이 들어간 시간 문제 
+
+# n=int(input())
+
+# result=0
+# for i in range(0,n+1):  # 시간
+#     for j in range(0,60):  # 분
+#         for z in range(0,60):  # 초   
+#             if i%10==3 or j%10==3 or j//10==3 or z%10==3 or z//10==3:
+#                 result+=1         
+
+# print(result)
+
+# 왕실의 나이트 문제 
+# result=0  # 이동가능한 위치
+# location=input()
+# x = int(location[1]) # a1 에서 1 
+# y = ord(location[0])-ord('a')+1 # a 를 넣으면 1
+
+# #나이트가 이동 8가지 정의
+# steps = [(-2,-1),(-1,-2),(1,-2),(2,-1),(2,1),(1,2),(-1,2),(-2,1)]
+
+# # 
+# result = 0
+# for step in steps:
+#     #이동할 다음 위치
+#     next_x=x+step[0]
+#     next_y=y+step[1]
+#     #
+#     if next_x>=1 and next_x<=8 and next_y>=1 and next_y<=8:
+#         result+=1
+
+# print(result)
+
+# 문자열 재정렬 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
