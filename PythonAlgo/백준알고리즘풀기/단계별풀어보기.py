@@ -1,5 +1,34 @@
 
 
+# 3단계 for 문 유형
+
+# 15552번 문제
+# 빠른 A+B
+# import sys
+# T = int(input())
+# for i in range(T):
+#     a,b = map(int,sys.stdin.readline().split())
+#     print(a+b)
+
+# 2439번 
+# 별 찍기 - 2
+
+# n = int(input())
+
+# for i in range(n):
+#     print(" "*(n-i-1)+"*"*(i+1))
+
+# 10871번 문제 
+# X보다 작은 수
+
+# n,x = map(int,input().split())
+# arr=list(map(int,input().split()))
+# g=[]
+# for i in range(n):
+#     if arr[i]<x:
+#         print(arr[i],end=' ')
+
+
 # 5단계 1차원 배열유형
 
 # 10818번 문제
@@ -84,21 +113,39 @@
 # 정수 X의 각 자리가 등차수열을 이루면 그 수를 한수라고 한다.
 # 두자리수는 다 한수다
 # 세자리부터 비교하면 된다
-n=int(input())  # 알아야할 한수의 범위를 알려줄 수
-num=0 
-for i in range(1,n+1):
-    nArray=list(map(int,str(i)))   # 그 수의 각자리를 비교하기 위해 각자리를 분리
-    if i < 100:
-        num+=1  # 한수 맞으니 카운트
-    elif nArray[0]-nArray[1]==nArray[1]-nArray[2]:
-        num+=1
-print(num)
+# n=int(input())  # 알아야할 한수의 범위를 알려줄 수
+# num=0 
+# for i in range(1,n+1):
+#     nArray=list(map(int,str(i)))   # 그 수의 각자리를 비교하기 위해 각자리를 분리
+#     if i < 100:
+#         num+=1  # 한수 맞으니 카운트
+#     elif nArray[0]-nArray[1]==nArray[1]-nArray[2]:
+#         num+=1
+# print(num)
+
+######## 8단계 기본수학1 
+
+# 1712번 문제
+# 손익분기점
+
 
 ######### 10단계 재귀방식 시작
 # 팩토리얼 구현하기
 # 입력
 
 #
+# a,b,c = list(map(int,input().split()))
+# d = c - b  # 한번 팔떄 수익
+# sum=0
+# count=0
+
+# if d<= 0:  # 진짜로 손해보는장사
+#     print(-1)
+# else:
+#     print(a//d+1)
+
+
+
 
 # 재귀함수로 풀어보자 
 #N!
