@@ -40,6 +40,42 @@
 
 # print(arr[0],arr[len(arr)-1])
 
+# 2562번 문제
+# 최댓값
+# arr=[]
+# ma=0
+# maxIndex=0
+# for i in range(9):
+#     arr.append(int(input()))
+
+# for i in range(9):
+#     if arr[i]>ma:
+#         maxIndex=i+1
+#         ma=arr[i]
+# print(ma)
+# print(maxIndex)
+        
+        
+# 2577번 문제
+# 숫자의 개수
+# 혼자품 str로 바꾼다는게 꽤 중요하다고 생각됨
+
+# a=int(input())
+# b=int(input())
+# c=int(input())
+# d= a*b*c
+# st=str(d)
+
+# arr=[0 for i in range(10)]
+# for i in range(10):  # 각 숫자 마다 반복
+#     for j in range(len(st)):  # 계산된 값 숫자마다 반복
+#         if int(st[j])==int(i):  # 
+#             arr[i]+=1
+# for i in range(10):
+#     print(arr[i])
+            
+            
+            
 # 3052번 문제
 # 나머지 
 # set() 을 생각못해서 못 풀었었음
@@ -50,6 +86,22 @@
 #     arr.add(n%42)
 # print(len(arr))
     
+# 1546 문제
+# 평균    
+
+# n= int(input())
+# arr=list(map(int,input().split()))
+# m=0
+# ma=max(arr)
+# sum=0
+# avg=0
+
+# for i in range(n): # 값 조작
+#     arr[i]=arr[i]/ma*100
+# for i in range(n):
+#     sum+=arr[i]
+# avg=sum/n
+# print(avg)
     
 # 8958번 문제
 # OX퀴즈
@@ -127,12 +179,6 @@
 
 # 1712번 문제
 # 손익분기점
-
-
-######### 10단계 재귀방식 시작
-# 팩토리얼 구현하기
-# 입력
-
 #
 # a,b,c = list(map(int,input().split()))
 # d = c - b  # 한번 팔떄 수익
@@ -143,6 +189,61 @@
 #     print(-1)
 # else:
 #     print(a//d+1)
+
+
+# 2292번 문제
+# 벌집
+# 답지봄
+# room_no = int(input())
+# if room_no == 1:  # 시작지 그대로일때 한번
+#     print(1)
+# else:
+#     i = 1  # room과 비교할 수 
+#     n = 0  # 한 바퀴마다 1씩오름
+#     while room_no > i:
+#         n += 1
+#         i += 6 * n
+#     print(n + 1)
+
+# 1193번 문제
+# 분수찾기
+# 답지봄
+n=int(input())
+sum=0
+orda=0
+ordb=0
+for i in range(1,n+1):
+    sum+=i
+    if sum>=n:
+        orda=i
+        ordb=n-(sum-i)
+        break
+a=0
+b=0
+if orda%2!=0:
+    a=orda+1
+    b=0
+    for j in range(ordb):
+        a-=1
+        b+=1
+elif orda%2==0:
+    a=0
+    b=orda+1
+    for j in range(ordb):
+        b-=1
+        a+=1
+print(a,"/",b,sep="")
+
+
+
+
+######### 10단계 재귀방식 시작
+# 팩토리얼 구현하기
+# 입력
+
+
+
+
 
 
 
