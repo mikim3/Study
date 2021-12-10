@@ -1,3 +1,72 @@
+# 1단계 입출력과 사칙연산
+
+# 10869 번 사칙연산
+# a,b=list(map(int,input().split()))
+
+# print(a+b)
+# print(a-b)
+# print(a*b)
+# print(a//b)
+# print(a%b)
+
+# 2588 곱셈
+
+# a=int(input())
+# b=int(input())
+# c=str(b)
+# for i in range(len(c)-1,-1,-1):
+#     print(a*int(c[i]))    
+# print(a*b)
+
+
+# 2단계 if문 단계
+
+# 2753번
+# 윤년이면 1  아니면 0
+# n= int(input())  
+# yun = 0  # 윤년값
+# # 4의배수이면서 100의 배수가 아니면 윤년
+# # 100의 배수중에서 400의 배수가 아니라면 윤년이 아니다.
+# # 400의 배수라면 윤년이다.
+# # 1900은 100의 배수이고 400의 배수는 아니여서 윤년아님
+# if n%400==0:  # 400의 배수라면 무조건 윤년
+#     yun = 1
+# elif n%100==0:
+#     yun = 0
+# elif n%4==0:
+#     yun=1
+# else:
+#     yun=0
+# print(yun)
+
+# 14681 번
+# 사분면 고르기
+# x=int(input())
+# y=int(input())
+# saboon=0
+# if x>0 and y>0:
+#     saboon=1
+# elif x<0 and y>0:
+#     saboon=2
+# elif x<0 and y<0:
+#     saboon=3    
+# else:
+#     saboon=4
+# print(saboon)
+
+# 2884 번
+# 알람시계
+# h,m=list(map(int,input().split()))
+# if m-45<0:  # 분이 빼면 음수가 될때
+#     m=60+m-45
+#     if h-1<0:
+#         h=23
+#     else:
+#         h-=1
+# else:  # 분이 음수 안될때
+#     m-=45
+# print(h,m)
+    
 
 
 # 3단계 for 문 유형
@@ -9,6 +78,19 @@
 # for i in range(T):
 #     a,b = map(int,sys.stdin.readline().split())
 #     print(a+b)
+
+# 2742번 문제
+# 기찍 N
+# n=int(input())
+
+# for i in range(n,0,-1):
+#     print(i)
+
+# 2438번 문제
+# 별 찍기 - 1
+# n = int(input())
+# for i in range(1,n+1):
+#     print("*"*i)
 
 # 2439번 
 # 별 찍기 - 2
@@ -27,15 +109,55 @@
 # for i in range(n):
 #     if arr[i]<x:
 #         print(arr[i],end=' ')
+###############for 유형 끝
+
+############ 4단계 while문
+
+# 10952번
+# A+B - 5
+# while True:
+#     a,b=list(map(int,input().split()))
+#     if a==0 and b==0:
+#         break
+#     print(a+b)
+
+# 10951번
+# A+B-4
+# 문제가 이해가 안가서 답지를 봄
+# 입력의 끝범위를 알려주지 않은 문제
+# 예외를 처리하는 식으로 해야하는 문제이다.
+# while True:
+#     try:
+#         a,b=list(map(int,input().split()))
+#         print(a+b)
+#         n+=1
+#     except:
+#         break
+
+# 1110번
+#더하기 사이클
+# 0<=N <=99
+# 만약 10보다 작으면 0을붙여 두자리수로 만든다  ex 4  ex 26
+# 각자리의 숫자를 더한다  ex 4  ex 2+6 =8
+# 주어진수 N의 가장 오른쪽 자리수와 앞에서 구한 합의 가장 오른쪽 자리 수를 이어 붙이면 새로운 수를 만들수 있다.  ex 4, 4 -> 44    ex 6, 8 -> 68 
+
+n=int(input())
+a=-1  # 가장 최근 새로운수 
+b=0
+count=1
+
+while n!=a:
+    if       
 
 
-# 5단계 1차원 배열유형
+###### 4단계 while 끝
+
+############ 5단계 1차원 배열유형
 
 # 10818번 문제
 # 최소값, 최대값 출력 
 # n=int(input())
 # arr=list(map(int,input().split()))
-
 # arr.sort()#오른차순
 
 # print(arr[0],arr[len(arr)-1])
@@ -208,31 +330,32 @@
 # 1193번 문제
 # 분수찾기
 # 답지봄
-n=int(input())
-sum=0
-orda=0
-ordb=0
-for i in range(1,n+1):
-    sum+=i
-    if sum>=n:
-        orda=i
-        ordb=n-(sum-i)
-        break
-a=0
-b=0
-if orda%2!=0:
-    a=orda+1
-    b=0
-    for j in range(ordb):
-        a-=1
-        b+=1
-elif orda%2==0:
-    a=0
-    b=orda+1
-    for j in range(ordb):
-        b-=1
-        a+=1
-print(a,"/",b,sep="")
+##########################################################################################################
+# n=int(input())
+# sum=0
+# orda=0
+# ordb=0
+# for i in range(1,n+1):
+#     sum+=i
+#     if sum>=n:
+#         orda=i
+#         ordb=n-(sum-i)
+#         break
+# a=0
+# b=0
+# if orda%2!=0:
+#     a=orda+1
+#     b=0
+#     for j in range(ordb):
+#         a-=1
+#         b+=1
+# elif orda%2==0:
+#     a=0
+#     b=orda+1
+#     for j in range(ordb):
+#         b-=1
+#         a+=1
+# print(a,"/",b,sep="")
 
 
 
