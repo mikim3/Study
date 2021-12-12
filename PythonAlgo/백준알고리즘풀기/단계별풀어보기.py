@@ -144,26 +144,21 @@
 n=int(input())
 a=-1  # 가장 최근 새로운수 
 b=0
-count=1
+count=0
 c=0 # 앞에서 구한합
 while n!=a:
-    if count==1:  # 처음에만 a에 n값대입
+    if count==0:  # 처음에만 a에 n값대입
         a=n
     if a<10: #만약 10보다 작으면
         a=a*11 
-        # print("a<10 일때 a*11했음",a)
         count+=1
-        # print("a<10이여서 count더한후",count)
         continue
     else:
         pass
     c=int(str(a)[-1])+int(str(a)[0])  # 각자리의 수를 더한다. 
-    # print("주어진수 ",a)
     a=int(str(a)[-1]+str(c)[-1]) #N의 가장 오른쪽 자리수
     count+=1
-    # print("바뀐 A",a)
-    # print("a<10아닐때 count",count)
-print(count-1)
+print(count)
 ###### 4단계 while 끝
 
 ############ 5단계 1차원 배열유형
