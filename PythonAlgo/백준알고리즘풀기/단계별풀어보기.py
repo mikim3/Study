@@ -141,24 +141,24 @@
 # 만약 10보다 작으면 0을붙여 두자리수로 만든다  ex 40  ex 26
 # 각자리의 숫자를 더한다  ex 4+0 = 4  ex 2+6 =8
 # 주어진수 N의 가장 오른쪽 자리수와 앞에서 구한 합의 가장 오른쪽 자리 수를 이어 붙이면 새로운 수를 만들수 있다.  ex 4, 4 -> 44    ex 6, 8 -> 68 
-n=int(input())
-a=-1  # 가장 최근 새로운수 
-b=0
-count=0
-c=0 # 앞에서 구한합
-while n!=a:
-    if count==0:  # 처음에만 a에 n값대입
-        a=n
-    if a<10: #만약 10보다 작으면
-        a=a*11 
-        count+=1
-        continue
-    else:
-        pass
-    c=int(str(a)[-1])+int(str(a)[0])  # 각자리의 수를 더한다. 
-    a=int(str(a)[-1]+str(c)[-1]) #N의 가장 오른쪽 자리수
-    count+=1
-print(count)
+# n=int(input())
+# a=-1  # 가장 최근 새로운수 
+# b=0
+# count=0
+# c=0 # 앞에서 구한합
+# while n!=a:
+#     if count==0:  # 처음에만 a에 n값대입
+#         a=n
+#     if a<10: #만약 10보다 작으면
+#         a=a*11 
+#         count+=1
+#         continue
+#     else:
+#         pass
+#     c=int(str(a)[-1])+int(str(a)[0])  # 각자리의 수를 더한다. 
+#     a=int(str(a)[-1]+str(c)[-1]) #N의 가장 오른쪽 자리수
+#     count+=1
+# print(count)
 ###### 4단계 while 끝
 
 ############ 5단계 1차원 배열유형
@@ -256,12 +256,6 @@ print(count)
     
 # for i in range(n):
 #     print(sumarr[i])
-    
-            
-    
-   
-
-
 
 # 4344번 
 # 평균은 넘겠지
@@ -289,8 +283,46 @@ print(count)
 # for i in range(n):
 #     print("{:.3f}%".format(avgarr[i],end='%\n'))  # format 함수는 몰랐네
     
-
+############ 1차원 배열 끝
 ############ 6단계 함수
+
+# 15596번 
+# 정수 N개의 합
+
+# def solve(a):   #  a는 리스트
+    
+#     n=len(a)  # 
+#     su=0
+#     for i in range(n):
+#         su+=a[i]
+    
+#     return  su # a 에 포함되어 있는 정수 n개의 합(정수)
+# print(solve([1,2,3,4,5]))
+
+# 4673
+# 셀프 넘버
+# 처음에 문제를 제대로 안봐서 애먹었음
+def solve(n):  # solve(75) = 75 + 7 + 5 = 87
+    m=0
+    nstr=str(n)  # 자리수를 인덱스로 나눈다
+    if len(nstr)==1:  # 한자리수
+       m=n+n 
+    elif len(nstr)==2:  # 두자리수
+       m=n+int(nstr[0])+int(nstr[1]) 
+    elif len(nstr)==3:  # 세자리수
+       m=n+int(nstr[0])+int(nstr[1])+int(nstr[2])
+    elif len(nstr)==4:  # 네자리수
+       m=n+int(nstr[0])+int(nstr[1])+int(nstr[2])+int(nstr[3])
+    return m
+# 문제에서 요구하는 것은 생성자 즉 solve로 값이 한번이라도 나오는 값은 뺴고 나머지를 출력해야함
+# 즉 차집합을 구하자
+# s1- s2 또는 s1.difference(s2)  이런식으로 표현가능
+s=set(i for i in range(10001))
+for i in range(1,10001):
+    s.discard(solve(i))  # 집합에 생성자가 한번이라도 포함되면 제거
+for i in range(1,10001):
+    if i in s:
+        print(i)
 
 ##### 1065번 한수
 # 정수 X의 각 자리가 등차수열을 이루면 그 수를 한수라고 한다.
