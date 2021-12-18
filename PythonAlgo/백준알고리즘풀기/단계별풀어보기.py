@@ -358,6 +358,41 @@
 #     sum+=int(str(a)[i])
 # print(sum)
 
+# 10809 번
+# 알파벳 찾기
+# 답지보았지만 다시 내 방법으로 품
+# ord() 의 반대는 chr() 이라는 것을 몰랐음
+
+# a가 97
+# a=input()
+# i='a'  # 97   ord('a')  # 97
+# # 
+# a.find('a')  #이러면 a 위치는 나옴
+# a.find('b')
+# for i in range(26):
+#     print(a.find(chr(i+97)),end=' ')
+
+# 2675 번
+# 문자열 반복
+# t = int(input())
+# for i in range(t):
+#     a,b=list(map(str,input().split()))  #
+#     for z in range(len(b)):  # 글자수 만큼 반복
+#         for j in range(int(a)):  # 입력받은 값 만큼 반복
+#             print(b[z],end='')
+#     print("")
+    
+# 1157번
+# 단어 공부
+
+
+# 중복되면 ? 출력
+a=input()
+
+a.count('i')
+
+for i in range(52):  # 대소문자 반복
+    
 
 
 
