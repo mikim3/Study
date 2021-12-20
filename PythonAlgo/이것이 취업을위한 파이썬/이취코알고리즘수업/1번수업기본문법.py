@@ -149,6 +149,11 @@ def my_key(x):
 print(sorted(array,key=my_key))
 print(sorted(array,key=lambda x:x[1])) # 람다함수로 두번째원소를 기준으로 정렬하게끔 key값을 정했다.
 
+# 자주 사용할 내장 함수 예시 ***
+# sorted() with key
+array = [('홍길동',35),('이순신',75),('아무개',50)]
+result = sorted(array,key=lambda x: x[1],reverse=True)  # 점수별 내림차순
+print(result)
 
 
 #map함수는 각각의 원소에 어떤 함수를 적용할 수 있다.
@@ -159,7 +164,7 @@ result = map(lambda a,b: a+b, list1,list2)    # 리스트안에 각각의 원소
 
 print(list(result))  
 
-list(map(int,input().split()))  # input받은 값을 split으로 띄어쓰기마다 구분지어 리스트로 만든다 -> map함수로 int함수를 리스트 각각에 적용시킨다. -> map함수로 나온 값을 다시 list
+# list(map(int,input().split()))  # input받은 값을 split으로 띄어쓰기마다 구분지어 리스트로 만든다 -> map함수로 int함수를 리스트 각각에 적용시킨다. -> map함수로 나온 값을 다시 list
 
 #유용한 표준라이브러리
 
