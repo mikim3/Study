@@ -410,7 +410,15 @@
 # else:
 #     print(licompri[0])
 
-
+# 1152 번 문제
+# 단어의 개수
+# .strip()   양쪽 공백제거
+# split(' ')  
+a=input()
+count=len(a.strip().split(' '))
+if a==' ':
+    count-=1
+print(count)
 
 ######## 8단계 기본수학1 
 
