@@ -414,11 +414,31 @@
 # 단어의 개수
 # .strip()   양쪽 공백제거
 # split(' ')  
-a=input()
-count=len(a.strip().split(' '))
-if a==' ':
-    count-=1
-print(count)
+# a=input()
+# count=len(a.strip().split(' '))
+# if a==' ':
+#     count-=1
+# print(count)
+
+# 2908 번 문제
+# 상수
+# a=a[::-1]  기억하기
+
+a,b = list(map(str,input().split()))
+a=a[::-1]
+b=b[::-1]
+if int(a)>int(b):
+    print(a)
+else:
+    print(b)
+
+# if int(ar)>int(br):
+#     print(ar)
+# else:
+#     print(br)
+
+
+
 
 ######## 8단계 기본수학1 
 
