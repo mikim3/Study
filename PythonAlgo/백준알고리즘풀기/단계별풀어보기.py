@@ -424,21 +424,61 @@
 # 상수
 # a=a[::-1]  기억하기
 
-a,b = list(map(str,input().split()))
-a=a[::-1]
-b=b[::-1]
-if int(a)>int(b):
-    print(a)
-else:
-    print(b)
-
-# if int(ar)>int(br):
-#     print(ar)
+# a,b = list(map(str,input().split()))
+# a=a[::-1]
+# b=b[::-1]
+# if int(a)>int(b):
+#     print(a)
 # else:
-#     print(br)
+#     print(b)
 
+# 5622 번 문제
+# 다이얼 
+# 너무 심하게 비효울적인 코드여서 지움 처음에는 딕셔너리로 풀었음
 
+# 숫자값 더한거 +더한 숫자 갯수 만큼 소비?
 
+### 제법 모범답안
+# dial = ['ABC', 'DEF', 'GHI', 'JKL', 'MNO', 'PQRS', 'TUV', 'WXYZ']  # 원하는 문자열을 원하는 인덱스에 넣고 list.index('원하는문자')으로 인덱스 값을 반환받을수 있다.
+# # dial.index('G')  # 'G'가 어디 있나 찾아서 인덱스값 반환 = 2
+# text = input().upper()
+# time = 0
+# for i in text:
+#     for j in dial:
+#         for k in j:
+#             if i == k:
+#                 print("k=",k)
+#                 print("j=",j)
+#                 time += dial.index(j) + 3
+# print(time)
+
+# 2941 번 문제
+# 크로아티아 알파벳
+# 너무 오래걸림
+
+# ljes=njak  lj e s= nj a k
+# a=["c=","c-","d-","lj","nj","s=","z="]  # 두글자 비교할꺼
+# b=["dz="]  # 3글자 비교할꺼
+
+# m=input()  # 입력
+# count=0
+# if len(m)==1:
+#     count=1
+# else:
+#     for i in range(len(m)-2):
+#         # print(i)
+#         if m[i]+m[i+1] in a:
+#             # print("m[i]+m[i+1]",m[i]+m[i+1])
+#             count-=1
+#         elif m[i]+m[i+1]+m[i+2] in b:
+#             # print("m[i]+m[i+1]+m[i+2]",m[i]+m[i+1]+m[i+2])
+#             count-=1  # z= 에서 한번 더걸려서 1만빼기  총 2가 빠짐
+#         count+=1
+#     if m[-2]+m[-1] in a:
+#         # print("m[-2]+m[-1]",m[-2]+m[-1])
+#         count-=1
+#     count+=2 # 끝에 두개 안샌거 더하기
+# print(count)
 
 ######## 8단계 기본수학1 
 
