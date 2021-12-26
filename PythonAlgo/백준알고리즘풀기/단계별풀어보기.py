@@ -585,38 +585,36 @@
 
 # 2869
 # 달팽이는 올라가고 싶다
+# 수학이 어려워요
 
-from sys import stdin
+# from sys import stdin
 
-a,b,v=list(map(int,stdin.readline().split()))
+# a,b,v=list(map(int,stdin.readline().split()))
 
-count=1
-while a*count-b*count+b<v:
-    count+=1
-print(count)
+# count=1
+# while a*count-b*count+b<v:
+#     count+=1
+# print(count)
 
 
 # 10250
 # ACM 호텔
 
+
 # 2775
 # 부녀회장이 될테야
+# 진짜 너무어렵다  스킵!
+# 
+# 
 
-
-
+# t= int(input())  #
 
 
 ######### 10단계 재귀방식 시작
-# 팩토리얼 구현하기
+
+# 10872 번 문제
+# 팩토리얼
 # 입력
-
-
-
-
-
-
-
-
 # 재귀함수로 풀어보자 
 #N!
 # n=int(input())
@@ -630,7 +628,8 @@ print(count)
 
 # print(factorial(n))
 
-#피보나치 수열
+# 10870 번 문제 
+# 피보나치 수 5
 # n이 1이면 0, 1 까지 출력 답이 1이됨 
 # 
 
@@ -647,6 +646,14 @@ print(count)
 #         return pivonachi(m-2)+pivonachi(m-1)
 
 # print(pivonachi(n))
+
+# 2447 번 문제
+# 별찍기 - 10
+
+
+
+
+
 #########재귀방식 끝
 
 
