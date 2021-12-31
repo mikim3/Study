@@ -647,8 +647,11 @@
 
 # print(pivonachi(n))
 
+
 # 2447 번 문제
 # 별찍기 - 10
+
+# n=int(input())
 
 
 
@@ -656,6 +659,63 @@
 
 #########재귀방식 끝
 
+############# 브루트 포스 방식 시작
+
+# 2798 번 문제
+# 블랙잭 문제
+# 문법적으로 pass랑 continue랑 잠깐 헷갈렸음
+
+# n,m=list(map(int,input().split()))   # 카드 갯수 n     카드 합의 한계값 m
+# arr=list(map(int,input().split()))   # 카드값 입력
+# max1=0
+
+# for i in range(n):
+#     for j in range(n):
+#         for z in range(n):
+#             if (i==j) or (i==z) or (j==z):
+#                 # print("continue go",i,j,z)
+#                 continue
+#             if arr[i]+arr[j]+arr[z]<=m and arr[i]+arr[j]+arr[z]>=max1:
+#                 max1=arr[i]+arr[j]+arr[z]
+#                 # print(max1)
+# print(max1)
+
+# 2231번 문제
+# 분해합 
+# n=int(input())
+# sum1=0  # 더해야할 수 
+# count=0
+
+# for i in range(n):  # 최대 n 까지 반복수행
+#     m=str(i)   # '216'
+#     for j in range(len(m)):  # 자리수 만큼 반복
+#         sum1+=int(m[j])
+#     if i+sum1==n:
+#         count+=1   
+#         print(i)
+#         break
+#     sum1=0
+# if count==0:
+#     print(0)
+
+# 7568 번 문제
+# 덩치 
+n= int(input())
+arr1=[]
+
+for i in range(n):
+    arr1.append(list(map(int,input().split())))
+print(arr1[1][0])  # [0][0]==55  [1][0]==58       
+print(arr1[0])  #
+
+for i in range(n):
+    for j in range(n):
+        if arr1[i][0]>arr1[j][0] and arr1[0][i] > arr1[0][j]:
+            
+
+
+
+#############  브루트 포스 방식 끝
 
 #########그리디방식 시작
 #
@@ -672,3 +732,4 @@
     
 # for i in range(n-1,-1,-1):
 # 
+
