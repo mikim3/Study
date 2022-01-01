@@ -686,7 +686,7 @@
 # sum1=0  # 더해야할 수 
 # count=0
 
-# for i in range(n):  # 최대 n 까지 반복수행
+# for i in range(n):  # 최대 n 까지 반복수행 
 #     m=str(i)   # '216'
 #     for j in range(len(m)):  # 자리수 만큼 반복
 #         sum1+=int(m[j])
@@ -700,18 +700,31 @@
 
 # 7568 번 문제
 # 덩치 
+
+# 자기보다 큰 사람 + 1  -> 덩치 등수 라는 교칙이있다
+
 n= int(input())
 arr1=[]
+arr2=[]
 
 for i in range(n):
     arr1.append(list(map(int,input().split())))
-print(arr1[1][0])  # [0][0]==55  [1][0]==58       
-print(arr1[0])  #
-
+for i in range(n):
+    arr2.append(1)  # 0으로 n개 만큼 초기화    
+            
 for i in range(n):
     for j in range(n):
-        if arr1[i][0]>arr1[j][0] and arr1[0][i] > arr1[0][j]:
-            
+        if i==j:
+            continue
+        if arr1[i][0]<arr1[j][0] and arr1[i][1] < arr1[j][1]:
+            arr2[i]=arr2[i]+1
+for i in range(n):
+    print(arr2[i],end=' ')
+
+
+# 1018 번 문제
+# 체스판 다시 칠하기 
+
 
 
 
