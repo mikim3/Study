@@ -701,31 +701,44 @@
 # 7568 번 문제
 # 덩치 
 
-# 자기보다 큰 사람 + 1  -> 덩치 등수 라는 교칙이있다
+# 자기보다 큰 사람 + 1  -> 덩치 등수 라는 규칙이있다
 
-n= int(input())
-arr1=[]
-arr2=[]
+# n= int(input())
+# arr1=[]
+# arr2=[]
 
-for i in range(n):
-    arr1.append(list(map(int,input().split())))
-for i in range(n):
-    arr2.append(1)  # 0으로 n개 만큼 초기화    
+# for i in range(n):
+#     arr1.append(list(map(int,input().split())))
+# for i in range(n):
+#     arr2.append(1)  # 0으로 n개 만큼 초기화    
             
-for i in range(n):
-    for j in range(n):
-        if i==j:
-            continue
-        if arr1[i][0]<arr1[j][0] and arr1[i][1] < arr1[j][1]:
-            arr2[i]=arr2[i]+1
-for i in range(n):
-    print(arr2[i],end=' ')
+# for i in range(n):
+#     for j in range(n):
+#         if i==j:
+#             continue
+#         if arr1[i][0]<arr1[j][0] and arr1[i][1] < arr1[j][1]:
+#             arr2[i]=arr2[i]+1
+# for i in range(n):
+#     print(arr2[i],end=' ')
 
 
 # 1018 번 문제
 # 체스판 다시 칠하기 
+# 모르겠다
 
 
+# 1436  영화감독 셤
+
+n=int(input())
+m=0  # 1씩 더해지면서 n번 666을 만날때까지 반복 될 수 
+count = 0
+while True:
+    if '666' in str(m):
+        count+=1
+        if count==n:
+            print(m)
+            break        
+    m=m+1   
 
 
 #############  브루트 포스 방식 끝
