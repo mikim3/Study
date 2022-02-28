@@ -1,14 +1,5 @@
 # 1단계 입출력과 사칙연산
 
-# 10869 번 사칙연산
-# a,b=list(map(int,input().split()))
-
-# print(a+b)
-# print(a-b)
-# print(a*b)
-# print(a//b)
-# print(a%b)
-
 # 2588 곱셈
 
 # a=int(input())
@@ -18,7 +9,7 @@
 #     print(a*int(c[i]))    
 # print(a*b)
 
-
+###########################################
 # 2단계 if문 단계
 
 # 2753번
@@ -68,7 +59,7 @@
 # print(h,m)
     
 
-
+############################################################
 # 3단계 for 문 유형
 
 # 15552번 문제
@@ -79,22 +70,8 @@
 #     a,b = map(int,sys.stdin.readline().split())
 #     print(a+b)
 
-# 2742번 문제
-# 기찍 N
-# n=int(input())
-
-# for i in range(n,0,-1):
-#     print(i)
-
-# 2438번 문제
-# 별 찍기 - 1
-# n = int(input())
-# for i in range(1,n+1):
-#     print("*"*i)
-
 # 2439번 
 # 별 찍기 - 2
-
 # n = int(input())
 
 # for i in range(n):
@@ -109,7 +86,7 @@
 # for i in range(n):
 #     if arr[i]<x:
 #         print(arr[i],end=' ')
-###############for 유형 끝
+###############################################################for 유형 끝
 
 ############ 4단계 while문
 
@@ -159,7 +136,7 @@
 #     a=int(str(a)[-1]+str(c)[-1]) #N의 가장 오른쪽 자리수
 #     count+=1
 # print(count)
-###### 4단계 while 끝
+#################################################################### 4단계 while 끝
 
 ############ 5단계 1차원 배열유형
 
@@ -185,7 +162,6 @@
 #         ma=arr[i]
 # print(ma)
 # print(maxIndex)
-        
         
 # 2577번 문제
 # 숫자의 개수
@@ -585,21 +561,51 @@
 
 # 2869
 # 달팽이는 올라가고 싶다
+# 답지봄
 # 수학이 어려워요
 
-# from sys import stdin
+# 나의 해설 
+# k 올라가는데 걸리는 일수    d   올라간 높이 일때
+# a*k-b*(k-1)>=v   라는 식이 나오고 이를 반복문안에 넣어 조건문으로 사용하면 너무 오래걸리니 이항하면
+# k >= (v - b)/(a - b) 로 옮길수 있다.   
+# 그리고 규칙을 찾아보면 오른쪽 같이 정수로 떨어지면(그 날에 a 만큼 오르니 정확히 도착) 그 값이 k 이고   안떨어지면(a만큼 오르면 정상을 넘어버림) 그 값을 올림한 값이 k이다.
 
-# a,b,v=list(map(int,stdin.readline().split()))
+# import math
 
-# count=1
-# while a*count-b*count+b<v:
-#     count+=1
-# print(count)
+# a,b,v=list(map(int,input().split()))
 
+# day = math.ceil((v-a)/(a-b)) + 1
+# print(day)
 
 # 10250
 # ACM 호텔
+# 예외처리 못해서 답지봅  // 도 까먹음
 
+# // 이게 몫 이라는 것을 까먹고 있었음 바보
+
+import math
+t = int(input())   # 테스트 데이터 갯수
+# w는 각층의 방의 갯수   h는 몇층 건물인지 
+for _ in range(t):
+    h, w, n = list(map(int,input().split()))
+    if n % h == 0:
+        num = (h * 100) + (n // h)
+    else:
+        num = (n % h * 100) + (n // h + 1)
+    print(num)
+    
+    
+
+t = int(input())
+
+for i in range(t):
+    h, w, n = map(int, input().split())
+    num = n//h + 1
+    floor = n % h
+    if n % h == 0:  # h의 배수이면,
+        num = n//h
+        floor = h
+    print(f'{floor*100+num}')
 
 # 2775
 # 부녀회장이 될테야
@@ -729,16 +735,16 @@
 
 # 1436  영화감독 셤
 
-n=int(input())
-m=0  # 1씩 더해지면서 n번 666을 만날때까지 반복 될 수 
-count = 0
-while True:
-    if '666' in str(m):
-        count+=1
-        if count==n:
-            print(m)
-            break        
-    m=m+1   
+# n=int(input())
+# m=0  # 1씩 더해지면서 n번 666을 만날때까지 반복 될 수 
+# count = 0
+# while True:
+#     if '666' in str(m):
+#         count+=1
+#         if count==n:
+#             print(m)
+#             break        
+#     m=m+1   
 
 
 #############  브루트 포스 방식 끝
