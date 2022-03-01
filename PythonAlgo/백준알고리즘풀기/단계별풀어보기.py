@@ -583,37 +583,58 @@
 
 # // 이게 몫 이라는 것을 까먹고 있었음 바보
 
-import math
-t = int(input())   # 테스트 데이터 갯수
-# w는 각층의 방의 갯수   h는 몇층 건물인지 
-for _ in range(t):
-    h, w, n = list(map(int,input().split()))
-    if n % h == 0:
-        num = (h * 100) + (n // h)
-    else:
-        num = (n % h * 100) + (n // h + 1)
-    print(num)
-    
-    
-
-t = int(input())
-
-for i in range(t):
-    h, w, n = map(int, input().split())
-    num = n//h + 1
-    floor = n % h
-    if n % h == 0:  # h의 배수이면,
-        num = n//h
-        floor = h
-    print(f'{floor*100+num}')
+# t = int(input())   # 테스트 데이터 갯수
+# # w는 각층의 방의 갯수   h는 몇층 건물인지 
+# for _ in range(t):
+#     h, w, n = list(map(int,input().split()))
+#     if n % h == 0:
+#         num = (h * 100) + (n // h)
+#     else:
+#         num = (n % h * 100) + (n // h + 1)
+#     print(num)
 
 # 2775
 # 부녀회장이 될테야
 # 진짜 너무어렵다  스킵!
-# 
-# 
+# 답지봄  다시봐도 안 떠오를듯
+# https://ooyoung.tistory.com/89  
 
-# t= int(input())  #
+# t = int(input())
+# for _ in range(t):  
+#     floor = int(input())  # 층
+#     num = int(input())  # 호
+#     f0 = [x for x in range(1,num + 1)]  # 리스트 컴프리헨션으로 0층의 사람들을 넣어준다.
+#     print(f0)
+#     for i in range(floor):  # 층 수 만큼 반복
+#         for j in range(1, num):  # 1 ~ n-1까지 (인덱스로 사용)
+#             f0[j] += f0[j-1]  # 층별 각 호실의 사람 수를 변경
+#         print(f0)
+#     print(f0[-1])  # 가장 마지막 수 출력
+
+# 2839번 설탕배달
+# 답지봄 아이디어를 듣는거 만으로 푼 문제 답지를 안보고 풀었어도 됐을텐데 아쉽다.
+
+# sugar = int(input())
+
+# bag = 0
+# while sugar >= 3:    
+#     if sugar % 5 != 0:  # 5키로 짜리로 딱 나누어 떨어지지 않으면
+#         sugar -= 3
+#         bag += 1 
+#     else:
+#         sugar -= 5
+#         bag += 1
+# if sugar != 0:
+#     print(-1)
+# else: 
+#     print(bag)
+
+# 10757번 큰 수 A + B
+# ㅋㅋㅋ 답지봄 파이썬은 그냥 바로 출력이 된다.
+
+A, B = map(int, input().split())
+print(A+B)
+
 
 
 ######### 10단계 재귀방식 시작
@@ -660,7 +681,41 @@ for i in range(t):
 # n=int(input())
 
 
+# 11729 번 문제
+# 하노이 탑 이동 순서
 
+# 별 찍는 재귀 함수
+def draw_star(n) :
+    global Map
+    
+    if n == 3 :
+        Map[0][:3] = Map[2][:3] = [1]*3
+        Map[1][:3] = [1, 0, 1]
+        return
+
+    a = n//3
+    draw_star(n//3)
+    for i in range(3) :
+        for j in range(3) :
+            if i == 1 and j == 1 :
+                continue
+            for k in range(a) :
+                Map[a*i+k][a*j:a*(j+1)] = Map[k][:a] # 핵심 아이디어
+
+N = int(input())      
+
+# 메인 데이터 선언
+Map = [[0 for i in range(N)] for i in range(N)]
+
+draw_star(N)
+
+for i in Map :
+    for j in i :
+        if j :
+            print('*', end = '')
+        else :
+            print(' ', end = '')
+    print()
 
 
 #########재귀방식 끝
