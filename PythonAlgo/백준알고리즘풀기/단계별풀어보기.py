@@ -632,8 +632,8 @@
 # 10757번 큰 수 A + B
 # ㅋㅋㅋ 답지봄 파이썬은 그냥 바로 출력이 된다.
 
-A, B = map(int, input().split())
-print(A+B)
+# A, B = map(int, input().split())
+# print(A+B)
 
 
 
@@ -683,37 +683,37 @@ print(A+B)
 
 
 # 별 찍는 재귀 함수
-def draw_star(n) :
-    global Map
+# def draw_star(n) :
+#     global Map
     
-    if n == 3 :
-        Map[0][:3] = Map[2][:3] = [1]*3
-        Map[1][:3] = [1, 0, 1]
-        return
+#     if n == 3 :
+#         Map[0][:3] = Map[2][:3] = [1]*3
+#         Map[1][:3] = [1, 0, 1]
+#         return
 
-    a = n//3
-    draw_star(n//3)
-    for i in range(3) :
-        for j in range(3) :
-            if i == 1 and j == 1 :
-                continue
-            for k in range(a) :
-                Map[a*i+k][a*j:a*(j+1)] = Map[k][:a] # 핵심 아이디어
+#     a = n//3
+#     draw_star(n//3)
+#     for i in range(3) :
+#         for j in range(3) :
+#             if i == 1 and j == 1 :
+#                 continue
+#             for k in range(a) :
+#                 Map[a*i+k][a*j:a*(j+1)] = Map[k][:a] # 핵심 아이디어
 
-N = int(input())      
+# N = int(input())      
 
-# 메인 데이터 선언
-Map = [[0 for i in range(N)] for i in range(N)]
+# # 메인 데이터 선언
+# Map = [[0 for i in range(N)] for i in range(N)]
 
-draw_star(N)
+# draw_star(N)
 
-for i in Map :
-    for j in i :
-        if j :
-            print('*', end = '')
-        else :
-            print(' ', end = '')
-    print()
+# for i in Map :
+#     for j in i :
+#         if j :
+#             print('*', end = '')
+#         else :
+#             print(' ', end = '')
+#     print()
 
 
 # 11729 번 문제
@@ -794,18 +794,18 @@ for i in Map :
 
 
 
-n,m = list(map(int,input().split()))
-board = list()
-for i in range(N):
-    board.append(input())  # 입력방법도 잘 기억하기
-repair = list()
+# n,m = list(map(int,input().split()))
+# board = list()
+# for i in range(N):
+#     board.append(input())  # 입력방법도 잘 기억하기
+# repair = list()
 
-# 8 * 8 크기의 체스판과 일치하는지 체크하기 위해서는  8*8크기를 옮겨야한다.
-# 9 * 9 에서는 2 * 2 만큼 옮겨야하고
-# 10 * 10 에서는 3 * 3 만큼 옮겨야한다.
-# 귀납적으로 n * m 크기의 체스판을 확인하기위해 (n - 7) * (m - 7) 만큼 옮기며 확인해야한다.  
+# # 8 * 8 크기의 체스판과 일치하는지 체크하기 위해서는  8*8크기를 옮겨야한다.
+# # 9 * 9 에서는 2 * 2 만큼 옮겨야하고
+# # 10 * 10 에서는 3 * 3 만큼 옮겨야한다.
+# # 귀납적으로 n * m 크기의 체스판을 확인하기위해 (n - 7) * (m - 7) 만큼 옮기며 확인해야한다.  
 
-for i in range(n-7):
+# for i in range(n-7):
 
 
 
@@ -831,9 +831,22 @@ for i in range(n-7):
 #     m=m+1   
 
 
-#############  브루트 포스 방식 끝
+############# 11단계 브루트 포스 방식 끝
 
-#########그리디방식 시작
+### 12단계 정렬 시작
+
+n = int(input())
+m = list()
+
+for i in range(n):
+    z = int(input())
+    m.append(z)
+m.sort()
+for i in range(len(m)):
+    print(m[i])
+
+
+######### 16단계 그리디방식 시작
 #
 
 # 동전 최소 개수 구하기 문제
