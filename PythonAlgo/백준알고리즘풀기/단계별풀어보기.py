@@ -813,10 +813,6 @@
 
 
 
-
-
-
-
 # 1436  영화감독 셤
 
 # n=int(input())
@@ -835,15 +831,61 @@
 
 ### 12단계 정렬 시작
 
-n = int(input())
+# 2750번 수 정렬하기
+
+# n = int(input())
+# m = list()
+
+# for i in range(n):
+#     z = int(input())
+#     m.append(z)
+# m.sort()
+# for i in range(len(m)):
+#     print(m[i])
+
+
+# 2751번 수 정렬하기 2
+# 착각하기 쉬움!!!!!
+
+# sort(reverse=True)  vs   reverse()
+
+# reverse()는 리스트를 역순정렬하는 것이고
+# sort(reverse=True)는 리스트를 내림차순으로 정렬한다.
+
+# input() 은 반복될때 유의미하게 느리다.
+# 그래서 sys.stdin.readline()을 이용하자
+import sys
+
+n = int(sys.stdin.readline())
 m = list()
 
 for i in range(n):
-    z = int(input())
-    m.append(z)
+    num = int(sys.stdin.readline())
+    m.append(num)    
 m.sort()
-for i in range(len(m)):
-    print(m[i])
+# m = sorted(m, reverse=True)
+
+for i in m:
+    print(i)
+
+
+
+# 10989번 수 정렬하기 3
+
+# 2108번 통계학 
+
+
+# 1427번 소트인사이드
+
+# 11650번 좌표정렬하기
+
+# 11651번 좌표 정렬하기2
+
+# 1181번 단어 정렬
+
+# 10814번 나이순 정렬
+
+# 18870번 좌표 압축
 
 
 ######### 16단계 그리디방식 시작
