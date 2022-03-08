@@ -854,25 +854,37 @@
 
 # input() 은 반복될때 유의미하게 느리다.
 # 그래서 sys.stdin.readline()을 이용하자
-import sys
+# import sys
 
-n = int(sys.stdin.readline())
-m = list()
+# n = int(sys.stdin.readline())
+# m = list()
 
-for i in range(n):
-    num = int(sys.stdin.readline())
-    m.append(num)    
-m.sort()
-# m = sorted(m, reverse=True)
+# for i in range(n):
+#     num = int(sys.stdin.readline())
+#     m.append(num)    
+# m.sort()
+# # m = sorted(m, reverse=True)
 
-for i in m:
-    print(i)
+# for i in m:
+#     print(i)
 
 
 
 # 10989번 수 정렬하기 3
+import sys
 
-# 2108번 통계학 
+n = int(sys.stdin.readline())
+num_list = [0] * 10001
+
+for _ in range(n):
+    # 기존에는 list.append(sys.stdin.readline()) 이런식으로 작성하였다 그러면 for 문을 돌때마다 메모리를 재할당한다고 한다.  그럼 메모리낭비가 발생하여 미리 정해진 크기의
+    # 리스트 안에 값을 넣으면 해결할 수 있다.
+    num_list[int(sys.stdin.readline())] += 1   
+    
+for i in range(10001):
+    if num_list[i] != 0:
+        for j in range(num_list[i]):
+            print(i)
 
 
 # 1427번 소트인사이드
