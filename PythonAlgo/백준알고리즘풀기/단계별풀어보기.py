@@ -871,21 +871,61 @@
 
 
 # 10989번 수 정렬하기 3
+# import sys
+
+# n = int(sys.stdin.readline())
+# num_list = [0] * 10001
+
+# for _ in range(n):
+#     # 기존에는 list.append(sys.stdin.readline()) 이런식으로 작성하였다 그러면 for 문을 돌때마다 메모리를 재할당한다고 한다.  그럼 메모리낭비가 발생하여 미리 정해진 크기의
+#     # 리스트 안에 값을 넣으면 해결할 수 있다.
+#     num_list[int(sys.stdin.readline())] += 1   
+    
+# for i in range(10001):
+#     if num_list[i] != 0:  #배열기본값 0 
+#         for j in range(num_list[i]):
+#             print(i)
+
+# 2108번 통계학
+
+# 산술평균 : N개의 수들의 합을 N으로 나눈 값
+# 중앙값 : N개의 수들을 증가하는 순서로 나열했을 경우 그 중앙에 위치하는 값
+# 최빈값 : N개의 수들 중 가장 많이 나타나는 값
+# 범위 : N개의 수들 중 최댓값과 최솟값의 차이
+
+from collections import Counter
 import sys
 
-n = int(sys.stdin.readline())
-num_list = [0] * 10001
+n = int(input())
+arr = list()
+for i in range(n):
+    arr.append(int(sys.stdin.readline().rstrip()))
+sum = 0
+avg = 0
+for i in range(n):
+    sum += arr[i]    
+avg = sum / n
+print(int(round(avg,0)))  # 0 디펄트임
 
-for _ in range(n):
-    # 기존에는 list.append(sys.stdin.readline()) 이런식으로 작성하였다 그러면 for 문을 돌때마다 메모리를 재할당한다고 한다.  그럼 메모리낭비가 발생하여 미리 정해진 크기의
-    # 리스트 안에 값을 넣으면 해결할 수 있다.
-    num_list[int(sys.stdin.readline())] += 1   
-    
-for i in range(10001):
-    if num_list[i] != 0:
-        for j in range(num_list[i]):
-            print(i)
+# 중앙값
+arr = sorted(arr)
+mid_value=arr[int(n/2 - 0.5)]  #   arr_sorted[n // 2]  가 더 좋을듯
+print(mid_value)   
 
+# 최빈값
+cnt = Counter(arr).most_common(2)
+if n > 1:
+    if cnt[0][1] == cnt[1][1]:
+        print(cnt[1][0])
+    else:
+        print(cnt[0][0])
+else:
+    print(cnt[0][0])
+
+
+# 범위
+range_value = max(arr) - min(arr)
+print(range_value)
 
 # 1427번 소트인사이드
 
