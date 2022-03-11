@@ -928,7 +928,48 @@
 
 # 1427번 소트인사이드
 
+# n = list(input())
+# n.sort(reverse=True)
+# for i in n:
+#     print(i,end='')
+
 # 11650번 좌표정렬하기
+# 너무 파이썬이 알아서 풀어줬다.
+# x y 좌표를 따로 명령하는 람다함수정도는 알아야 이 문제를 풀었다고 인정 받을만 하다고 생각이 드는데 x y 좌표 따로 정렬마져 알아서 되버렸다
+
+
+import sys
+n = int(input())
+arr = list()
+for i in range(n):
+    arr.append(list(map(int,sys.stdin.readline().split())))
+arr.sort()
+for i in range(n):
+    print(arr[i][0],arr[i][1])
+
+##흔치 않은 유형의 답안
+# import sys
+# input = sys.stdin.readline
+
+# n = int(input())
+
+# array = []
+# for i in range(n):
+#     a, b = map(int,input().split())
+#     array.append([a,b])
+
+# array.sort()
+
+# for i in range(n):
+#     print(array[i][0],array[i][1])
+
+
+
+
+
+
+
+
 
 # 11651번 좌표 정렬하기2
 
