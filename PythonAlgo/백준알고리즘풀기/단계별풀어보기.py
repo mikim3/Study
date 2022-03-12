@@ -938,14 +938,14 @@
 # x y 좌표를 따로 명령하는 람다함수정도는 알아야 이 문제를 풀었다고 인정 받을만 하다고 생각이 드는데 x y 좌표 따로 정렬마져 알아서 되버렸다
 
 
-import sys
-n = int(input())
-arr = list()
-for i in range(n):
-    arr.append(list(map(int,sys.stdin.readline().split())))
-arr.sort()
-for i in range(n):
-    print(arr[i][0],arr[i][1])
+# import sys
+# n = int(input())
+# arr = list()
+# for i in range(n):
+#     arr.append(list(map(int,sys.stdin.readline().split())))
+# arr.sort()
+# for i in range(n):
+#     print(arr[i][0],arr[i][1])
 
 ##흔치 않은 유형의 답안
 # import sys
@@ -965,13 +965,25 @@ for i in range(n):
 
 
 
-
-
-
-
-
-
 # 11651번 좌표 정렬하기2
+# 전날에 푼 좌표 정렬하기1번이 너무 기억에 남았음
+# lambda 잘기억하기
+
+import sys
+input = sys.stdin.readline
+
+n = int(input())
+arr = list()
+
+for i in range(n):
+    arr.append(list(map(int,input().split())))
+
+arr.sort(key= lambda xy : (xy[1], xy[0]) )
+
+for i in range(len(arr)):
+    print(arr[i][0],arr[i][1])
+
+
 
 # 1181번 단어 정렬
 
