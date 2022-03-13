@@ -969,23 +969,40 @@
 # 전날에 푼 좌표 정렬하기1번이 너무 기억에 남았음
 # lambda 잘기억하기
 
+# import sys
+# input = sys.stdin.readline
+
+# n = int(input())
+# arr = list()
+
+# for i in range(n):
+#     arr.append(list(map(int,input().split())))
+
+# arr.sort(key= lambda xy : (xy[1], xy[0]) )
+
+# for i in range(len(arr)):
+#     print(arr[i][0],arr[i][1])
+
+# 1181번 단어 정렬
+# 리스트에서 중복을 제거하는 방법 잘 기억하기
+# arr_set = set(arr)
+# arr = list(arr_set)
+
 import sys
 input = sys.stdin.readline
 
 n = int(input())
 arr = list()
-
 for i in range(n):
-    arr.append(list(map(int,input().split())))
-
-arr.sort(key= lambda xy : (xy[1], xy[0]) )
+    arr.append(input().rstrip())
+    
+arr_set = set(arr)
+arr = list(arr_set)
+arr.sort(key = lambda xy : (len(xy),xy))
 
 for i in range(len(arr)):
-    print(arr[i][0],arr[i][1])
+    print(arr[i])
 
-
-
-# 1181번 단어 정렬
 
 # 10814번 나이순 정렬
 
