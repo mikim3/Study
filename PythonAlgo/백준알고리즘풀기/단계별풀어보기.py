@@ -988,23 +988,37 @@
 # arr_set = set(arr)
 # arr = list(arr_set)
 
-import sys
-input = sys.stdin.readline
+# import sys
+# input = sys.stdin.readline
 
-n = int(input())
-arr = list()
-for i in range(n):
-    arr.append(input().rstrip())
+# n = int(input())
+# arr = list()
+# for i in range(n):
+#     arr.append(input().rstrip())
     
-arr_set = set(arr)
-arr = list(arr_set)
-arr.sort(key = lambda xy : (len(xy),xy))
+# arr_set = set(arr)
+# arr = list(arr_set)
+# arr.sort(key = lambda xy : (len(xy),xy))
 
-for i in range(len(arr)):
-    print(arr[i])
+# for i in range(len(arr)):
+#     print(arr[i])
 
 
 # 10814번 나이순 정렬
+# 답지 봄 정답 봄   
+# 아직도  lambda에 대한 이해가 부족하다
+
+import sys
+input = sys.stdin.readline
+n = int(input())
+age_name = list()
+for i in range(n):
+    age_name.append(input().split())
+age_name.sort(key = lambda x : int(x[0]))
+for i in range(len(age_name)):
+    print(age_name[i][0],age_name[i][1])
+    
+
 
 # 18870번 좌표 압축
 
