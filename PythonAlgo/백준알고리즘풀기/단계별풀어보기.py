@@ -1008,20 +1008,41 @@
 # 답지 봄 정답 봄   
 # 아직도  lambda에 대한 이해가 부족하다
 
-import sys
-input = sys.stdin.readline
-n = int(input())
-age_name = list()
-for i in range(n):
-    age_name.append(input().split())
-age_name.sort(key = lambda x : int(x[0]))
-for i in range(len(age_name)):
-    print(age_name[i][0],age_name[i][1])
-    
-
+# import sys
+# input = sys.stdin.readline
+# n = int(input())
+# age_name = list()
+# for i in range(n):
+#     age_name.append(input().split())
+# age_name.sort(key = lambda x : int(x[0]))
+# for i in range(len(age_name)):
+#     print(age_name[i][0],age_name[i][1])
 
 # 18870번 좌표 압축
+# 시간초과로 답지봄
 
+#####시간초과 틀린코드
+# n = int(input())
+# arr1 = list(map(int,input().split()))
+# arr2 = list(sorted(set(arr1)))  # 중복 값 제거한 후 정렬
+# 아래 2중 for 문은 arr1의 길이의 제곱배로 도는 O(n^2)의 시간복잡도를 가진다. 굉장히 비효율적이다.
+# for i in range(len(arr1)):
+#     for j in range(len(arr2)):
+#         if arr2[j] == arr1[i]:  # 값이 일치하면
+#             arr1[i] = j  # 인덱스 값이 해당 값으로 바뀜
+# for i in range(len(arr1)):
+#     print(arr1[i],end=' ')
+
+n = int(input())
+arr1 = list(map(int,input().split()))
+arr2 = list(sorted(set(arr1)))  # 중복 값 제거한 후 정렬
+
+# 딕셔너리 문법 : x = {'a': 10, 'b': 20, 'c': 30, 'd': 40}
+# 딕셔너리를 만드는데 arr2[i] 가 키 값이고  value는 arr2의 인덱스 값이다.
+dic = {arr2[i] : i for i in range(len(arr2))}  
+
+for i in range(len(arr1)):
+    print(dic[arr1[i]],end=' ')    
 
 ######### 16단계 그리디방식 시작
 #
