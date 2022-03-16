@@ -1033,6 +1033,7 @@
 # for i in range(len(arr1)):
 #     print(arr1[i],end=' ')
 
+#### 맞는코드
 n = int(input())
 arr1 = list(map(int,input().split()))
 arr2 = list(sorted(set(arr1)))  # 중복 값 제거한 후 정렬
