@@ -4,12 +4,14 @@ var express = require('express');
 var app = express();
 
 var user = require('./routes/user');
+//user.js 에서   exports한거를 가져와서 씀
 
 app.get('/', function(req, res) {
     res.send('Hello World');
 });
 
 app.use('/user', user);
+
 
 app.listen(3000, function() {
     console.log('Example App listening on port 3000');
