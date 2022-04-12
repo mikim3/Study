@@ -9,7 +9,8 @@ os.on('finish', function() {
 
 // 여기에 작성
 
-
+os.write('1234\n');
+os.write('5678\n');
 
 os.end('9\n');    // 종료
 

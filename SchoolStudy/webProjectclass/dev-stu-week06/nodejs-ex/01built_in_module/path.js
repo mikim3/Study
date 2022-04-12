@@ -1,4 +1,5 @@
 // ./01built_in_module/path.js
+// 내장보듈도 무조건 require() 을 해야한다.
 var pathUtil = require('path');
 
 //

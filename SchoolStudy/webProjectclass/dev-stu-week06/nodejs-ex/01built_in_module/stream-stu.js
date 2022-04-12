@@ -8,4 +8,8 @@ os.on('finish', function() {
 });
 
 // 여기에 작성
-
+ 
+// 컨트롤 c할때까지 계속 입력받음
+var is = process.stdin;
+//
+is.pipe(os);
