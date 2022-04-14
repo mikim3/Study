@@ -1,15 +1,17 @@
 // ./fs/file_read/fs01_read.js
 const fs = require('fs')
 
-// fs 모듈  
-// fs: 파일에 데이터를 쓰고 읽어 올 수 있는 기능 제공
-
-
 
 // 여기에 작성
-
-
-
+fs.readFile('./test-stu.html',function(err, data) {
+    if (!err){ //에러가 아닐때만 실행
+        console.log('test.html 파일 읽기 성공');
+        console.log(data) // 버퍼 내용이 나옴
+        console.log(data.toString())
+        return;
+    }
+    console.log(err)
+})
 
 
 fs.readFile('./test.txt', function(err, data){

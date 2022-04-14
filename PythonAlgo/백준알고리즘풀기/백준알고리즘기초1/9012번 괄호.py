@@ -1,4 +1,7 @@
 # 9012번 괄호
+# 답봄 
+# 스택으로도 풀어보기
+
 import sys
 input = sys.stdin.readline
 
