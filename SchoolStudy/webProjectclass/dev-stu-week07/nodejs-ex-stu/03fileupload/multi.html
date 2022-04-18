@@ -5,9 +5,9 @@
     <title></title>
 </head>
 <body>
-    <form action="/multiupload" enctype="multipart/form-data" method="post">
+    <form action="/multiupload" enctype="multipart/form-data" method="post"> <!--enctype 즉 encoding타입을 nultipart/form-data로 해야 multer사용가능-->
         title : <input type="text" name="title" /> <br>
-        file : <input type="file" name="file" /> <br>
+        file : <input type="file" name="file" /> <br> <!--name속성으로 접근할것이니까 name을 똑같이한다.-->
         file : <input type="file" name="file" /> <br>
         file : <input type="file" name="file" /> <br>
         <button type="submit">upload</button>
