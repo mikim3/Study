@@ -23,7 +23,7 @@ console.log(yoo2());
 
 // 화살표 함수 : return 키워드 생략
 // () => ('return값');  이런식으로 해도 리턴값이 넘겨짐
-const foo2 = () => ( 'foo2' );
+const foo2 = () => ( 'foo2');
 const boo2 = () => { return 'boo2' };
 console.log(foo2());
 console.log(boo2());

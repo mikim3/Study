@@ -1,6 +1,6 @@
 // ./datatype-ex/datatype04.js
 // entry 자바스크립트 객체를 JSON stringify() 함수 파라미터로 입력
-// stingify() 결과로 JSON 문자열 생성
+// stringify() 결과로 JSON 문자열 생성
 
 var entry = {
     profile: {
