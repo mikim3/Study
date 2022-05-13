@@ -1,11 +1,11 @@
 {
-  "name": "02ejs-ex",
+  "name": "02ejs-ex-stu",
   "version": "1.0.0",
   "description": "",
-  "main": "main.js",
+  "main": "${file}",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon main.js"
+    "test": "echo \"Error: no test specified\" && exit 1", 
+    "start": "nodemon main"
   },
   "author": "",
   "license": "ISC",
