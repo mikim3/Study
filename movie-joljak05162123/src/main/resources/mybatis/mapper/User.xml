@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.website.movie.biz.dao.UserDao">
+
+	<sql id="TABLE">user</sql>
+
+    <!--id로 검색하여 유저 한명 데이터 검색-->
+	<select id="selectOne" resultType="com.website.movie.biz.dto.UserDto">
+        SELECT T1.*
+        FROM <include refid="TABLE"/> T1
+        WHERE 1 = 1
+        <choose>
+            <when test="sqlSelectType eq 'CHECK_EMAIL'">
+                AND EMAIL = #{email} AND CERTIFIED = #{certified}
+            </when>
+            <otherwise>
+               AND ID = #{id}
+            </otherwise>
+        </choose>
+    </select>
+
+
+    <!--회원가입-->
+    <insert id="insert">
+        INSERT INTO user(EMAIL,NAME,NIK_NAME,PASSWORD,USER_TYPE,REG_DT) VALUES(#{email}, #{name}, #{nickname}, #{password}, "user", NOW())
+    </insert>
+
+    <update id="update">
+        UPDATE INTO user(ID, EMAIL, NAME, NIK_NAME, UPD_DT) VALUES(#{id}, #{email}, #{name}, #{nickname}, NOW())
+    </update>
+
+    <!--회원삭제-->
+    <update id="delete">
+        UPDATE FROM user
+        SET DEL_DT = NOW()
+        , DEL_ID = #{id}
+        , DEL_YN = 1
+        WHERE id = #{id}
+    </update>
+
+    <select id="email_certified_check" parameterType="com.website.movie.biz.dto.UserDto" resultType="com.website.movie.biz.dto.UserDto">
+        SELECT EMAIL FROM user where EMAIL = #{email} and CERTIFIED = #{certified}
+    </select>
+
+    <select id="getById" parameterType="String" resultType="com.website.movie.biz.dto.UserDto">
+        SELECT * FROM user WHERE id = #{id}
+    </select>
+
+    <select id="email_certified_check" parameterType="com.website.movie.biz.dto.UserDto" resultType="com.website.movie.biz.dto.UserDto">
+        SELECT EMAIL FROM user where EMAIL = #{email} and CERTIFIED = #{certified}
+    </select>
+
+    <update id="email_certified_update" parameterType="com.website.movie.biz.dto.UserDto">
+        UPDATE user SET CERTIFIED = 'Y' WHERE EMAIL = #{email}
+    </update>
+
+
+</mapper>
