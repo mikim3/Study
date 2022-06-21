@@ -9,6 +9,10 @@
 #     print(a*int(c[i]))    
 # print(a*b)
 
+# 25083 새싹
+
+# print('         ,r\'\"7\nr`-_   ,\'  ,/\n \. \". L_r\'\n   `~\/\n      |\n      |')
+
 ###########################################
 # 2단계 if문 단계
 
@@ -58,6 +62,21 @@
 #     m-=45
 # print(h,m)
     
+# 2525 오븐시계
+
+
+a,b = list(map(int, input().split()))
+c = int(input())
+
+b += c
+
+while b >= 60:
+    if b >= 60:
+        a += 1
+        if a >= 24:
+            a = 0
+        b -= 60
+print(a,b)
 
 ############################################################
 # 3단계 for 문 유형
@@ -1034,16 +1053,16 @@
 #     print(arr1[i],end=' ')
 
 #### 맞는코드
-n = int(input())
-arr1 = list(map(int,input().split()))
-arr2 = list(sorted(set(arr1)))  # 중복 값 제거한 후 정렬
+# n = int(input())
+# arr1 = list(map(int,input().split()))
+# arr2 = list(sorted(set(arr1)))  # 중복 값 제거한 후 정렬
 
-# 딕셔너리 문법 : x = {'a': 10, 'b': 20, 'c': 30, 'd': 40}
-# 딕셔너리를 만드는데 arr2[i] 가 키 값이고  value는 arr2의 인덱스 값이다.
-dic = {arr2[i] : i for i in range(len(arr2))}  
+# # 딕셔너리 문법 : x = {'a': 10, 'b': 20, 'c': 30, 'd': 40}
+# # 딕셔너리를 만드는데 arr2[i] 가 키 값이고  value는 arr2의 인덱스 값이다.
+# dic = {arr2[i] : i for i in range(len(arr2))}  
 
-for i in range(len(arr1)):
-    print(dic[arr1[i]],end=' ')    
+# for i in range(len(arr1)):
+#     print(dic[arr1[i]],end=' ')    
 
 ######### 16단계 그리디방식 시작
 #
