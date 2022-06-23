@@ -7,7 +7,7 @@ def solution(new_id):
     # 2단계 소문자, 숫자, -,_,. 제외하면 다제거
     answer = re.sub('[^a-z\d\-\_\.]', '', answer)
     # 3단계 마침표 2번 이상을 하나로
-    answer = re.sub('\.{3,}', '.', answer)
+    answer = re.sub('\.{2,}', '.', answer)
     # 4단계 양 끝 마침표 제거
     answer = re.sub('^\.|\.$', '', answer)
     # 5단계 빈 문자열 이면 a 대입
