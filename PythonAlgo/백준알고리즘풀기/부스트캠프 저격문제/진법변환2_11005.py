@@ -1,15 +1,24 @@
 #답봄
 
-from sys import stdin
-tmp = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+# from sys import stdin
+# tmp = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
-n, b = list(map(int,input().split()))
-answer = ''
+# n, b = list(map(int,input().split()))
+# answer = ''
 
-while n != 0:
-    answer += str(tmp[n % b])
-    n = n // b
+# while n != 0:
+#     answer += str(tmp[n % b])
+#     n = n // b
 
-print(answer[::-1])
+# print(answer[::-1])
+
+
+# from sys
+
+# n,b = list(map(int,sys.stdin.readline().split())
+
+
+
+
 
 
