@@ -64,19 +64,18 @@
     
 # 2525 오븐시계
 
+# a,b = list(map(int, input().split()))
+# c = int(input())
 
-a,b = list(map(int, input().split()))
-c = int(input())
+# b += c
 
-b += c
-
-while b >= 60:
-    if b >= 60:
-        a += 1
-        if a >= 24:
-            a = 0
-        b -= 60
-print(a,b)
+# while b >= 60:
+#     if b >= 60:
+#         a += 1
+#         if a >= 24:
+#             a = 0
+#         b -= 60
+# print(a,b)
 
 ############################################################
 # 3단계 for 문 유형
@@ -656,93 +655,7 @@ print(a,b)
 
 
 
-######### 10단계 재귀방식 시작
 
-# 10872 번 문제
-# 팩토리얼
-# 입력
-# 재귀함수로 풀어보자 
-#N!
-# n=int(input())
-
-# def factorial(m):
-#     if m==0:
-#         return 1
-        
-    
-#     return m*factorial(m-1) 
-
-# print(factorial(n))
-
-# 10870 번 문제 
-# 피보나치 수 5
-# n이 1이면 0, 1 까지 출력 답이 1이됨 
-# 
-
-# n=int(input())
-
-# def pivonachi(m):
-#     if m==2:
-#         return 1
-#     elif m==0:
-#         return 0
-#     elif m==1:
-#         return 1
-#     else:
-#         return pivonachi(m-2)+pivonachi(m-1)
-
-# print(pivonachi(n))
-
-
-# 2447 번 문제
-# 별찍기 - 10
-
-# n=int(input())
-
-
-
-# 별 찍는 재귀 함수
-# def draw_star(n) :
-#     global Map
-    
-#     if n == 3 :
-#         Map[0][:3] = Map[2][:3] = [1]*3
-#         Map[1][:3] = [1, 0, 1]
-#         return
-
-#     a = n//3
-#     draw_star(n//3)
-#     for i in range(3) :
-#         for j in range(3) :
-#             if i == 1 and j == 1 :
-#                 continue
-#             for k in range(a) :
-#                 Map[a*i+k][a*j:a*(j+1)] = Map[k][:a] # 핵심 아이디어
-
-# N = int(input())      
-
-# # 메인 데이터 선언
-# Map = [[0 for i in range(N)] for i in range(N)]
-
-# draw_star(N)
-
-# for i in Map :
-#     for j in i :
-#         if j :
-#             print('*', end = '')
-#         else :
-#             print(' ', end = '')
-#     print()
-
-
-# 11729 번 문제
-# 하노이 탑 이동 순서
-
-
-
-
-
-#########재귀방식 끝
 
 ############# 브루트 포스 방식 시작
 
