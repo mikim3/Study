@@ -2,7 +2,7 @@
 n = int(input())
 li = list(map(int,input().split()))
 
-av = round(sum(li)/n)
+av = int(sum(li)/n + 0.5)
 min = 2147000000
 
 for idx, x in enumerate(li):
@@ -16,4 +16,4 @@ for idx, x in enumerate(li):
             score = x
             res = idx + 1
 print(av, res)
-             
+
