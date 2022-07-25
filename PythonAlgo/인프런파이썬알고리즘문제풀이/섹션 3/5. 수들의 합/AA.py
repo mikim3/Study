@@ -1,5 +1,7 @@
 # 22 38  23 16 분까지 풀어도 시간초과나옴
 
+
+# 나중에 다시 풀어보기
 # 답지
 
 n , m = map(int,input().split())
@@ -10,10 +12,10 @@ tot = li[0]
 cnt = 0
 while True:
     if tot < m:
-        if rt<n:
+        if rt < n:
             tot += li[rt]
             rt += 1
-        else:
+        else:  # 만약 rt가 인덱스 끝까지 갔는데 m보다 작다면 그 후에 모든 연산은 어처피 더 작은 값만 나온다 그러므로 더  이상의 연산은 필요없다.
             break
     elif tot == m:
         cnt += 1
