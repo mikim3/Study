@@ -15,18 +15,18 @@ for i in range(m):
         for _ in range(k):
             a[h-1].insert(0, a[h-1].pop())
 sum = 0
-s = -1
-e = n+1  # 5
+s = 0
+e = n-1  # 5
 for i in range(n):
-    if i <= n//2:
-        s += 1
-        e -= 1
-    else:
-        s -= 1
-        e += 1
-    for j in range(s,e):
+    for j in range(s,e+1):
         sum += a[i][j]
-                         
+    if i<n//2:
+        s+=1
+        e-=1
+    else:
+        s-=1
+        e+=1
+
 print(sum)
 
 
