@@ -9,6 +9,8 @@ for i in range(n):
     li.append(list(map(int,input().split())))
 ## a = [list(map(int, input().split())) for _ in range(n)]  # 이런 표현도 가능
 
+a = [list(map(int,input().split())) for _ in range(n)]
+
 tot = [0] * (2*n+2)  # tot = -1  로 시작해서 tot_now  더 큰 값만 대입해도 됌
 
 for i in range(len(li)):
