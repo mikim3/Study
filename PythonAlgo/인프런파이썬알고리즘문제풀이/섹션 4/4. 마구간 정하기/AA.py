@@ -1,8 +1,5 @@
 # 시작시간 :  3:50     종료시간 : 4시 30
 
-from tkinter import E
-
-
 def Count(len):
     cnt = 1
     ep = li[0]
@@ -11,19 +8,15 @@ def Count(len):
             cnt += 1
             ep = li[i]
     return cnt
-    
-      
+
 n , c = map(int, input().split())
 li = []
 
 for i in range(n):
     li.append(int(input()))
-
 li.sort()
-
 lt = 1
 rt = li[n-1]
-mid = 0
 
 while lt <= rt:
     mid = (lt + rt) // 2
@@ -33,7 +26,3 @@ while lt <= rt:
     else:
         rt = mid - 1
 print(res)
-
-
-    
-

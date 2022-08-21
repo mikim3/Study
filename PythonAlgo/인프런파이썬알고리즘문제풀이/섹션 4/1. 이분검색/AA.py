@@ -14,6 +14,7 @@ while lt <= rt:
         rt = mid - 1
     else:
         lt = mid + 1
+
 # 이분탐색 생각안한 무지성 코드
 
 # n , m = map(int,input().split())
@@ -25,5 +26,6 @@ while lt <= rt:
 # for i in range(n):
 #     if li[i] == m:
 #         print(i+1)
+
 
 
