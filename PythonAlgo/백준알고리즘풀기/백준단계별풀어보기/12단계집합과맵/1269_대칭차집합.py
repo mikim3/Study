@@ -7,7 +7,7 @@ li_B = list(map(int,input().split()))
 # 그러기 위해 겹치는거는 dict로 체크하면 좋을듯
 dic = {}
 
-for i in range(n):
+for i in range(n):  
     dic[li_A[i]] = 0
 overlap = 0
 for i in range(m):
