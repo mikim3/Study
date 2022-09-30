@@ -12,11 +12,3 @@ for i in range(len(arr)):
 for i in range(j,len(arr)):
     arr[i] = 0
 print(arr)
-    
-
-
-
-
-
-
-
