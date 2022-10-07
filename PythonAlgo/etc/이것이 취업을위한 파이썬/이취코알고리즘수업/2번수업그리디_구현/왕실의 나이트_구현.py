@@ -3,6 +3,23 @@
 
 # 못 풀었음 나중에 풀어보기
 
+input_data = input()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # # 현재 나이트의 위치 입력받기
 # input_data = input()
 # row = int(input_data[1])
