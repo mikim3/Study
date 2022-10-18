@@ -23,7 +23,7 @@ def bfs(x,y):
             # 벽인 경우 무시
             if graph[nx][ny] == 0:
                 continue
-            # 갈수 있는경우 그 전보다 값 + 1, 큐에 쌓기 그럼 지금까지 걸어온 거리나옴
+            # 해당 노드를 처음 방문하는 경우에만 최단 거리 기록
             if graph[nx][ny] == 1:
                 # print("graph[nx,ny] == 1")
                 graph[nx][ny] = graph[x][y] + 1
