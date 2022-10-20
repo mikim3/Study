@@ -9,8 +9,6 @@
 from collections import deque
 import queue
 
-
-
 def bfs(graph,start,visited):
     # 큐 초기화
     queue = deque([start])
