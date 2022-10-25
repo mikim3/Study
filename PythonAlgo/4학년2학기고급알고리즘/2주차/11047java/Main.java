@@ -1,25 +1,41 @@
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.io.IOException;
-import java.util.StringTokenizer;
- 
-public class Main {
-	public static void main(String[] args) throws IOException {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		StringTokenizer st = new StringTokenizer(br.readLine(), " ");
-		int n = Integer.parseInt(st.nextToken());
-		int k = Integer.parseInt(st.nextToken());
-		int[] coin = new int[n];
-		for(int i = 0; i < n; i++) {
-			coin[i] = Integer.parseInt(br.readLine());
+import java.util.Scanner;
+
+public class Main { 
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		int N = in.nextInt();
+		int K = in.nextInt();
+		int[] coin = new int[N];
+		
+		for(int i = 0; i < N; i++) {
+			coin[i] = in.nextInt();
 		}
 		int count = 0;
-		for(int i = n - 1; i >= 0; i--) {
-			if(coin[i] <= k) {
-				count += (k / coin[i]);
-				k = k % coin[i];
+		for(int i = N - 1; i >= 0; i--) {
+			// 현재 동전의 가치가 K보다 작거나 같아야지 구성가능하다.
+			if(coin[i] <= K) {
+				// 현재 가치의 동전으로 구성할 수 있는 개수를 더해준다.
+				count += (K / coin[i]);
+				K = K % coin[i];
 			}
 		}
 		System.out.println(count);
 	}
 }
+
+// 교수님 제공 소스
+
+import java.io.*;
+public class Main {
+	public static void main(String[] args) {
+		int n = 1260;
+		int cnt = 0;
+		int[] coinTypes = {500, 100, 50, 10};
+		for (int i = 0; i < 4; i++) {
+			cnt += n / coinTypes[i];
+			n %= coinTypes[i];
+		}
+		System.out.println(cnt);
+	}
+}
+
