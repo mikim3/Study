@@ -1,21 +1,15 @@
 # 시작시간 11:35
 
+# v는 현재위치
 def dfs(graph,v,visited):
-    # 현재 노드를 방문처리
+    # 일단 방문해있는거니까 True 표시    
     visited[v] = True
-    print(v, end =' ')
-    # 현재 노드와 연결된 다른 노드를 재귀적으로 방문
+    print(v, end=' ')
+    # i 는 현재위치에서 탐색중인 주변 노드
     for i in graph[v]:
-        # 만약 방문하지 않았다면
-        if not visited[i]:
+        if visited[i] != True:
             dfs(graph,i,visited)
     
-    
-    
-    
-
-
-
 graph = [
     [],
     [2,3,8],
@@ -30,5 +24,7 @@ graph = [
 visited = [False] * len(graph)
 
 print(visited)
+
+visited = [False] * len(graph)
 dfs(graph,1,visited)
 
