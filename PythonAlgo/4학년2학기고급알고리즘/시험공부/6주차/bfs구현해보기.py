@@ -22,9 +22,6 @@ def bfs(graph,start,visitied):
                 visitied[near] = True
                 queue.append(near)
 
-            
-
-
 graph = [
     [],
     [2, 3, 8],

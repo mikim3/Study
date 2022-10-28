@@ -34,10 +34,8 @@ visited = [False] * (n+1)
 
 for _ in range(m):
     a,b = map(int,input().split())
-    
     graph[a].append(b)
     graph[b].append(a)
-    print(graph)
 
 # 1번 노드부터 작은값부터 탐색하게끔 정렬
 for i in range(1,n+1):

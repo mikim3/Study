@@ -3,7 +3,6 @@
 from collections import deque
 
 def bfs(graph,start,visited):
-    
     # 방문표시
     visited[start] = True
     queue = deque([start])

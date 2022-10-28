@@ -9,7 +9,7 @@ def dfs(graph,v,visited):
     for i in graph[v]:
         if visited[i] != True:
             dfs(graph,i,visited)
-    
+
 graph = [
     [],
     [2,3,8],

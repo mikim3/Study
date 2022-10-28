@@ -1,7 +1,6 @@
 # 교수님버전
 
 arr = list(map(int, input().split()))
-
 j = 0
 
 for i in range(len(arr)):

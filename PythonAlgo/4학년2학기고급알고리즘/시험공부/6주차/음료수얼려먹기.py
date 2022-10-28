@@ -8,14 +8,13 @@ def dfs(x,y):
         dfs(x,y - 1)
         dfs(x + 1,y)
         dfs(x,y + 1)
-        print("x,y = ",x,y)
         return True
-    return "1"
+    return False
+
 n,m = map(int,input().split())
 
 graph = []
 for i in range(n):
-    # 이거좀 헷갈림
     graph.append(list(map(int, input())))
 
 print(graph)
@@ -23,6 +22,5 @@ count = 0
 for i in range(n):
     for j in range(m):
         if dfs(i,j) == True:
-            print("i,j = ",i,j)
             count += 1
 print(count)
