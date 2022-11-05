@@ -3,6 +3,8 @@ package 가장오른쪽0;
 import java.util.Scanner;
 
 // 교수님 코드
+// 근데 교수님이 이런거 필요없고 중간꺼랑 원래수랑
+// 비트OR하면 끝
 public class Main {
     
     public static void main(String[] args) {

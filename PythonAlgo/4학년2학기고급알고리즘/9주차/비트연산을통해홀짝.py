@@ -6,15 +6,12 @@ def isEven(n):
         return 1
     else:
         return 0
-
 # 
 def isEvenUseAnd(n):    
     if (n & 1):
         return 0
     else:
         return 1
-
-
 n = int(input())
 
 # 짝수면 1

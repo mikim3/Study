@@ -1,5 +1,4 @@
 # 모든 비트 자리수에 a[i] ^= 32 하면 홀짝 바뀜
-
 def toggleCase(st):
     st_li = list(st)
     temp = 0
