@@ -1,5 +1,3 @@
-
-#
 # 짝수면 1
 def isEven(n):
     if (n ^ 1) == (n + 1):
@@ -13,7 +11,6 @@ def isEvenUseAnd(n):
     else:
         return 1
 n = int(input())
-
 # 짝수면 1
 if(isEven(n) == 1):
     print("Even")
