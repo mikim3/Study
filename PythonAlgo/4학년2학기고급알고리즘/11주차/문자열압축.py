@@ -1,4 +1,3 @@
-
 # 현재 읽은 것과 다음것이 값이 같으면 
 def solution(s):
     answer = len(s)
@@ -7,7 +6,7 @@ def solution(s):
         # 완성될 문자열을 의미
         res = ""
         cnt = 1
-        # 현재 잘려있는 칸을 의미할 temp
+        # 현재 잘려있는 칸을 의미할 temp 
         temp = s[0:unit]
         # unit을 한칸으로 자르기
         for index in range(unit, len(s) + unit, unit):
