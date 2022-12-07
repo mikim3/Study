@@ -1,6 +1,6 @@
 package 소수의판별기본;
 
-public class Main { 
+class Main { 
     public static void main(String[] args) {
         System.out.println(isPrimeNumber(4));
         System.out.println(isPrimeNumber(7));
