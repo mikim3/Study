@@ -18,32 +18,22 @@ for i in range(m):
     a, b = map(int, input().split())
     print(prefix_sum[b] - prefix_sum[a-1])
 
-
-
-
-
-
-
-
-
-
-
 ## 시간초과!!
 
-# arr = list(map(int,input().split()))
+arr = list(map(int,input().split()))
 
-# print(arr)
+print(arr)
 
-# arr_sum = []
-# arr_sum.append(0)
-# sum = 0
-# for i in range(0,len(arr)):
-#     sum += arr[i]
-#     arr_sum.append(sum)    
-# print(arr_sum)
+arr_sum = []
+arr_sum.append(0)
+sum = 0
+for i in range(0,len(arr)):
+    sum += arr[i]
+    arr_sum.append(sum)    
+print(arr_sum)
 
-# left = 0
-# right = 0
+left = 0
+right = 0
 
 
 
