@@ -5,7 +5,7 @@ def solution(s):
     # unit 은 자를 한칸의 크기
     # 한칸의 크기가 원본의 반을 넘길수는 없음 (len(s)//2 + 1)
     for unit in range(1, len(s)//2 + 1):
-        # 완성될 문자열을 의미
+        # 유닛으로 완성될 문자열을 의미
         res = ""
         cnt = 1
         # 현재 잘려있는 칸을 의미할 temp 
@@ -22,6 +22,7 @@ def solution(s):
                     res+=str(cnt) + temp
                 temp = s[index: index + unit]
                 cnt = 1
+                print(temp)
         # 그 전 값들과 비교하여 가장 짧아야지 answer
         print(answer)
         answer = min(answer, len(res))

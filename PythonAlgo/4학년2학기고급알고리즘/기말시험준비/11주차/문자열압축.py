@@ -7,7 +7,6 @@ def solution(s):
         
         res = ""
         cnt = 1
-        
         temp = s[0:unit]
         
         for index in range(unit, len(s) + unit, unit):

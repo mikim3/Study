@@ -19,6 +19,8 @@ n, k = map(int,input().split())
 answer = 0
 k_num = to_k_number(n, k)
 
+print(k_num)
+
 for n in k_num.split('0'):
     if n == "": continue
     if is_prime_num(int(n)):
