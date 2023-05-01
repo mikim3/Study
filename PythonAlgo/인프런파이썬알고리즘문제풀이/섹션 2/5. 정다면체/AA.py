@@ -1,3 +1,21 @@
+# 1652  시작  1710 마무리
+
+# 리스트 0으로 초기화 하는법 서칭함
+# li = [0 for i in range(n + m + 1)]
+n, m = map(int, input().split())
+
+li = [0 for i in range(n + m + 1)]
+
+for i in range(1,n + 1):
+    for j in range(1,m + 1):
+        li[i + j] += 1 
+max_value = max(li)
+
+for i in range(len(li)):
+    if (li[i] == max_value):
+        print(i, end=' ')
+
+
 # collections.defaultdict(int)는 서칭해서 기억해냄 
 # 35분걸림
 
@@ -17,20 +35,20 @@
 
 # 리스트로 해보기
 
-n,m = map(int,input().split())
-li = [0]* (n+m+3)
+# n,m = map(int,input().split())
+# li = [0]* (n+m+3)
 
-for i in range(1,n+1):
-    for j in range(1,m+1):
-        li[i+j] += 1 
-max = 0
+# for i in range(1,n+1):
+#     for j in range(1,m+1):
+#         li[i+j] += 1 
+# max = 0
 
-for i in range(len(li)):
-    if li[i] > max:
-        max = li[i] 
-for i in range(len(li)):
-    if li[i] == max:
-        print(i,end=' ')
+# for i in range(len(li)):
+#     if li[i] > max:
+#         max = li[i] 
+# for i in range(len(li)):
+#     if li[i] == max:
+#         print(i,end=' ')
 
 
 
