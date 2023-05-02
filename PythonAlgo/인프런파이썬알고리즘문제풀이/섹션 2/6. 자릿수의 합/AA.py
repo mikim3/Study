@@ -1,21 +1,23 @@
 n = int(input())
 
 li = list(map(int, input().split()))
-
 def digit_sum(num):
     sum_digit = 0
     str_num = str(num)
     for i in str_num:
         sum_digit += int(i)
-    print(sum_digit)
     return sum_digit
-
-
 li_sum_digit = []
 for i in range(n):
     li_sum_digit.append(digit_sum(li[i]))
 
-print()
+max_val = 0
+max_index = 0
+for i in range(n):
+    if (max_val < li_sum_digit[i]):
+        max_index = i
+        max_val = li_sum_digit[i]
+print(li[max_index])
 
 # # 20분 걸림
 

@@ -1,17 +1,33 @@
-# 그냥 구현 20분 걸림
+# 시작 끝
+# 에라토스테네스 체 까먹음
 
 n = int(input())
 
-ch = [0]*(n+1)
-cnt = 0
+for i in range(n):
 
-for i in range(2,n+1):
-    if ch[i] == 0:
-        cnt += 1
-        for j in range(i, n+1, i):
-            ch[j] = 1
 
-print(cnt)
+
+
+
+
+
+
+
+
+# # 그냥 구현 20분 걸림
+
+# n = int(input())
+
+# ch = [0]*(n+1)
+# cnt = 0
+
+# for i in range(2,n+1):
+#     if ch[i] == 0:
+#         cnt += 1
+#         for j in range(i, n+1, i):
+#             ch[j] = 1
+
+# print(cnt)
 
 
 
