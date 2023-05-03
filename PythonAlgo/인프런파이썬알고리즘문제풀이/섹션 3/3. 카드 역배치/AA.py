@@ -1,21 +1,34 @@
+# 0503  19:35시작 19:50 마무리
+li = []
+
+for i in range(21):
+    li.append(i)
+
+for i in range(10):
+    a,b = map(int,input().split())
+    li_tmp_reverse = li[b:a-1:-1]
+    for i in range(a,b+1):
+        li[i] = li_tmp_reverse[i - a]
+
+for i in range(1,21):
+    print(li[i],end=' ')
+
+
 # 11 47
 # 문제를 잘못읽음
 # 12 15 다시시작
 # 7분걸림
 
 # 모범답안
-a = list(range(21))
-for _ in range(10):
-    s, e = map(int, input().split())
-    for i in range((e-s+1)//2):
-        a[s+i], a[e-i] = a[e-i], a[s+i]
-a.pop(0)
-for x in a:
-    print(x, end=' ')
+# a = list(range(21))
+# for _ in range(10):
+#     s, e = map(int, input().split())
+#     for i in range((e-s+1)//2):
+#         a[s+i], a[e-i] = a[e-i], a[s+i]
+# a.pop(0)
+# for x in a:
+#     print(x, end=' ')
     
-
-
-
 
 
 # 내가푼 답안
