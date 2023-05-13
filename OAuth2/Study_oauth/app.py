@@ -21,6 +21,9 @@ def index4():
 @app.route('/index5')  
 def index5():
     return render_template('index5.html')
+@app.route('/index6')  
+def index6():
+    return render_template('index6.html')
 
 if __name__ == '__main__':
     app.debug = True
