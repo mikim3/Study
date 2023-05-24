@@ -1,0 +1,15 @@
+# 0522 품
+# 겁나 오래걸림 조건이 많은 문제는 조건을 정리해두고 시작해야 되겠다.
+
+# 조건정리
+# 2022년 1월
+# 카테고리, TOTAL_SALES 출력 
+# 등등
+
+SELECT CATEGORY, SUM(bs.SALES) AS TOTAL_SALES
+FROM BOOK b
+    JOIN BOOK_SALES bs
+    ON b.BOOK_ID = bs.BOOK_ID
+WHERE '2022-01-01' <= bs.SALES_DATE AND '2022-02-01' > bs.SALES_DATE
+GROUP BY b.CATEGORY
+ORDER BY b.CATEGORY ASC;
