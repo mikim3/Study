@@ -4,7 +4,7 @@ services:
   db:
     image: mysql:5.7
     volumes:
-      - ./db_data:/var/lib/mysql
+      - /Users/mikim3/goinfre/docker/inception/mariadb
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: 123456
@@ -17,7 +17,7 @@ services:
       - db
     image: wordpress:latest
     volumes:
-      - ./app_data:/var/www/html
+      - /Users/mikim3/goinfre/docker/inception/srcs/wordpress
     ports:
       - "8080:80"
     restart: always
