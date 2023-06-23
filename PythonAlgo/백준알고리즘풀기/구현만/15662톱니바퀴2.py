@@ -53,12 +53,18 @@ def rotate_t(t_select, dir, li):
   print("rotate_t 결과", li)
 
 for i in range(k):
+  # 선택된 톱니, 돌아갈 방향
   t_select, dir = map(int, input().split())
   t_select = t_select - 1
-  # 단순히 돌리라고 명령한 톱니
-  # 시계방향
 
-  if (li[t_select][2] == li[t_select + 1][6]):
+  # 톱니가 왼쪽끝 오른쪽 끝인거에 따라사 나뉨
+  
+  # 톱니가 왼쪽 끝
+  if (t_select == 0):
+    if (li[t_select][2] == li[t_select + 1][6]):
+      
+  # 톱니가 오른쪽 끝
+  if (t_select == t-1):  
 
   rotate_t(t_select, dir, li)
   print("rotate 직후",li)
