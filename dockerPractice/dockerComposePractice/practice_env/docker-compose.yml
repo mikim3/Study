@@ -4,7 +4,7 @@ services:
   db:
     image: mysql:5.7
     volumes:
-      - /Users/mikim3/goinfre/docker/inception/srcs/mariadb
+      - ./volumes/mysql
     restart: always
     env_file:
       - .env
@@ -13,7 +13,7 @@ services:
       - db
     image: wordpress:latest
     volumes:
-      - /Users/mikim3/goinfre/docker/inception/srcs/wordpress
+      - ./volumes/wordpress
     ports:
       - "8080:80"
     restart: always
