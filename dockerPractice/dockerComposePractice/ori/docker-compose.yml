@@ -26,3 +26,10 @@ services:
       WORDPRESS_DB_NAME: wordpress
       WORDPRESS_DB_USER: wordpress_user
       WORDPRESS_DB_PASSWORD: 123456
+  nginx:
+    image: nginx:latest
+    volumes:
+      - ./volumes/nginx:/etc/nginx/conf.d
+    ports:
+      - "80:80"
+    restart: always
