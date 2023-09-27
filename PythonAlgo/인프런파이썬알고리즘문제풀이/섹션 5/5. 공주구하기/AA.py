@@ -3,7 +3,14 @@
 
 from collections import deque
 
+# N, K
+#
 
+
+n, k = map(int, input().split())
+
+
+while :
 
 
 
