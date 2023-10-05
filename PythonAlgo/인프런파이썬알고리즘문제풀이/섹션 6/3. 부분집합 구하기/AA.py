@@ -1,33 +1,24 @@
 ##########################
-# 시작시간  231001 22:27   마무리시간
+# 시작시간  231005    마무리시간
+# 답봄
+# 전위순회를 생각해야 되는 DFS문제
 
-def dfs(graph, v, visited):
-  #  현재 노드를 방문 처리
-  visited[v] = True
-  print(v, end = ' ')
+# node는 현재 방문중인 노드
+def dfs(node):
+  if node == n + 1:
+    for i in range(1, n+1):
+      if check[i] == 1:
+        print(i, end=' ')
+    print()
+  else:
+    # 아래 두줄이 묶여서 일단 1로 체크하고 다음 노드를 결정하는 기능이 구현됨 
+    check[node] = 1
+    dfs(node + 1) # 
+    # 그후 0을 체크 
+    check[node] = 0
+    dfs(node + 1)
 
-  # 현재 노드와 연결된 다른 노드를 재귀적으로 방문
-  for i in graph[v]:
-    if not visited[i]:
-      dfs(graph, i, visited)
+n = int(input())
+check = [0] * (n + 1)
+dfs(1) 
 
-# 각 노드가 연결된 정보를 리스트 자료형으로 표현 (2차원 리스트)
-graph = [
-    [],  # 0번 노드는 사용하지 않기 위해 빈 리스트
-    [2, 3, 8],
-    [1, 7],
-    [1, 4, 5],
-    [3, 5],
-    [3, 4],
-    [7],
-    [2, 6, 8],
-    [1, 7]
-]
-
-# 각 노드가 방문된 정보를 리스트 자료형으로 표현 (1 차원 리스트)
-visited = [False] * 9
-
-# 정의된 DFS 함수 호출
-dfs(graph, 1, visited)
-
-#########################
