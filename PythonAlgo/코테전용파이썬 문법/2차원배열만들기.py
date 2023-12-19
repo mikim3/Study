@@ -2,11 +2,11 @@
 ##############################
 # 리스트 컴프리핸션
 # rows, cols = 3,4 # 3행 4열
-# matrix = [[0 for _ in range(cols)] for _ in range(rows)]
+# matrix1 = [[0 for _ in range(cols)] for _ in range(rows)]
 
-# print(matrix)
+# print(matrix1)
 
-#########################
+#############################################
 # 아래와 같은 입력값이 오면
 
 # 5
@@ -17,8 +17,15 @@
 # 19 13 30 13 19
 
 n = int(input())
-li = []
+matrix2 = []
 for i in range(n):
-  li.append(list(map(int, input().split())))
+  matrix2.append(list(map(int, input().split())))
+print(matrix2)
 
-print(li)
+matrix3 = [list(map(int, input().split())) for _ in range(n)]
+print(matrix3)
+
+#########################
+# 0으로 채운 2차원 배열
+matrix_pill_zero = [[0] * n for _ in range(n)]
+print(matrix_pill_zero)
