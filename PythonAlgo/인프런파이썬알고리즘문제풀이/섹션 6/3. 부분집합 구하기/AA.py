@@ -1,23 +1,62 @@
 #############################
-# 시작시간 231219 20:30 마무리시간
-# 영상 바로봄
 
 def DFS(node):
-  # 만약에 원하는 레벨보다 높으면 그 집합을 출력
-  if node == n+1:
-    for i in range(1,n+1):
+  if node > n:
+    for i in range(1, n + 1):
       if check[i] == 1:
         print(i, end=' ')
     print()
   else:
-    # 1,0 으로 해당 값을 집합에 넣을지 말지 결정
     check[node] = 1
-    DFS(node+1)
+    DFS(node + 1)
     check[node] = 0
-    DFS(node+1)
+    DFS(node + 1)
+  
 n = int(input())
 check = [0] * (n+1)
 DFS(1)
+
+##############################
+# 시작시간 231221 0000 마무리시간 0010
+# DFS로 선택한다 만다를 결정할 수 있음
+# 결국 답을 봤음  check = [0] * (n+1) 부분 봄
+
+# def DFS(node):
+#   if node > n:
+#     for i in range(1,n+1):
+#       if check[i] == 1:
+#         print(i, end=' ')
+#     print()
+#   else:
+#     check[node] = 1
+#     DFS(node + 1)
+#     check[node] = 0
+#     DFS(node + 1) 
+# n = int(input())
+# check = [0] * (n+1)
+# DFS(1)
+
+
+#############################
+# 시작시간 231219 20:30 마무리시간
+# 영상 바로봄
+
+# def DFS(node):
+#   # 만약에 원하는 레벨보다 높으면 그 집합을 출력
+#   if node == n+1:
+#     for i in range(1,n+1):
+#       if check[i] == 1:
+#         print(i, end=' ')
+#     print()
+#   else:
+#     # 1,0 으로 해당 값을 집합에 넣을지 말지 결정
+#     check[node] = 1
+#     DFS(node+1)
+#     check[node] = 0
+#     DFS(node+1)
+# n = int(input())
+# check = [0] * (n+1)
+# DFS(1)
 
 #############################
 # 시작시간 231006 16:01 # 마무리시간 16:12
