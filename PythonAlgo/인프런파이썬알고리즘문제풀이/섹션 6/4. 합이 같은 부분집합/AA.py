@@ -1,25 +1,63 @@
-###########################
-# 예제 코드
+##################################
+# 시작시간 231222 2157 마무리시간 2219
+
 import sys
 
-def DFS(level, sum):
-  # 더 이상 진행할 필요가 없는경우
-  if sum > total / 2:
-    return
-  # 다 수행함
-  if level == n:
-    if sum == (total - sum):
+def DFS(index):
+  if index >= n:
+    sum1= 0
+    sum2= 0
+    for i in range(n):
+      if check[i]==1:
+        sum1 += li[i]
+      else:
+        sum2 += li[i]
+    if sum1 == sum2:
       print("YES")
+      flag = 1
       sys.exit(0)
   else:
-    DFS(level+1, sum + li_input[level]) # a[level]이라는 값을 사용하는 경우 == 는 현재 레벨을 사용하는경우
-    DFS(level+1, sum) # 사용 안하는 경우
-
+    check[index] = 1
+    DFS(index + 1)
+    check[index] = 0
+    DFS(index + 1)
+    
 n = int(input())
-li_input = list(map(int, input().split()))
-total = sum(li_input)
-DFS(0,0)
-print("NO")
+li= list(map(int,input().split()))
+check = [0] * (n+1)
+flag = 0
+DFS(0)
+
+if flag == 1:
+  print("YES")
+else:
+  print("NO")
+
+
+
+
+###########################
+# # 예제 코드
+# import sys
+
+# def DFS(level, sum):
+#   # 더 이상 진행할 필요가 없는경우
+#   if sum > total / 2:
+#     return
+#   # 다 수행함
+#   if level == n:
+#     if sum == (total - sum):
+#       print("YES")
+#       sys.exit(0)
+#   else:
+#     DFS(level+1, sum + li_input[level]) # a[level]이라는 값을 사용하는 경우 == 는 현재 레벨을 사용하는경우
+#     DFS(level+1, sum) # 사용 안하는 경우
+
+# n = int(input())
+# li_input = list(map(int, input().split()))
+# total = sum(li_input)
+# DFS(0,0)
+# print("NO")
 
 
 # ##########################
