@@ -1,4 +1,3 @@
-import sys
 import itertools as it
 #sys.stdin=open("input.txt", "r")
 n, k=map(int, input().split())
