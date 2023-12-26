@@ -1,5 +1,128 @@
+import sys
 ##########################
-# 시작시간     마무리시간
+# 시작시간 231226 20:01   마무리시간 20:06
+# 전에 푼거 복붙해서 다시 풀기
+# 하던중에 순열구하기 성능 더 좋은코드를 발견해서 그거 기준으로 만들기
+
+def make_soon_case(level):
+  if level == n:
+    if soon_case[0] != 0:
+      if f == calculator(soon_case):
+        for i in range(n):
+          print(soon_case[i], end=' ')
+        print()
+        sys.exit(0)
+  else:
+    for i in range(n):
+      if check[i] == 0:
+        check[i] = 1
+        soon_case[level] = i+1
+        make_soon_case(level + 1)
+        check[i] = 0
+
+def calculator(soon_case_param):
+  tmp = soon_case_param[:]
+  final_value = 0
+  for i in range(n - 1):
+    for j in range(n - i - 1):
+      tmp[j] = soon_case_param[j] + soon_case_param[j+1]
+    soon_case_param = tmp
+  final_value = soon_case_param[0]
+  return final_value
+# 순열 만들기
+n, f= map(int, input().split())
+# 몇번째 순열인지 카운트
+soon_case = [0] * (n)
+check= [0] * (n)
+level = 0
+
+make_soon_case(0)
+
+# ##########################
+# # 시작시간 231226 15:35   마무리시간 17:35
+# # 3번, 5번 케이스에서만 시간 초과
+
+# # 1부터 N까지의 수를 중복되지 않게 순서를 바꾸면서 나열하고
+# # 그 나열된 값을 조건에 맞게 계산한다.
+
+# # 순서를 바꾸면서 계산을 한다.
+
+# # 순서를 바꿀때는 반드시 뒤에 위치한 값부터 바꿔야 된다.
+# # 1 2 3 4,  1 2 4 3 둘다 답이면 1 2 3 4 를 선택
+
+# # 계산은 그냥 무언가 다른 방법
+# # 순서는 DFS맞음
+
+# # li를 받아서 계산하는 함수 작성
+# # 순서가 나오게끔 하는 함수 하나 만들기
+
+# def make_soon_case(level):
+#   global count
+#   soon_case_sorted = sorted(soon_case)
+#   if level == level_fin:
+#     for i in range(0, n - 1):
+#       if soon_case_sorted[i] == soon_case_sorted[i + 1]:
+#         return
+#     for i in range(n):
+#       soon_cases[count][i] = soon_case[i]
+#     if soon_cases[count][0] != 0:
+#       if f == calculator(soon_cases[count]):
+#         print('find right case')
+#         print(soon_cases[count])
+#         sys.exit(0)
+#     count+=1
+#   else:
+#     for i in range(1, n + 1):
+#       soon_case[level] = i
+#       make_soon_case(level + 1)
+
+# def calculator(soon_case_param):
+#   tmp = soon_case_param[:]
+#   tmp2 = soon_case_param[:]
+#   final_value = 0
+#   for i in range(n-1):
+#     for j in range(n-i-1):
+#       tmp[j] = soon_case_param[j] + soon_case_param[j+1]
+#     soon_case_param = tmp
+#   final_value = soon_case_param[0]
+#   soon_case_param = tmp2
+#   # print('cal final_value ==', final_value)
+#   return final_value
+
+
+# # 순열 만들기
+# n, f= map(int, input().split())
+# #
+# level_fin = n
+# #
+# max_count_case = n**n
+# # 순열 케이스를 모두 저장
+# soon_cases = [[0] * n for _ in range(30000)]
+# # soon_cases = [[0] * n for _ in range(max_count_case)]
+# # 몇번째 순열인지 카운트
+# count = 0
+# #
+# soon_case = [0] * (n)
+# level = 0
+
+# make_soon_case(0)
+# # print('make soon_cases', soon_cases)
+
+# # 나온 순열 계산하기
+# su = [0] * (n+1)
+
+# # print('len make_soon_case == ', len(soon_cases))
+
+# # for i in range(len(soon_cases)):
+# #   # 안 채워진 칸 발견
+# #   if soon_cases[i][0] == 0:
+# #     break
+# #   if f == calculator(soon_cases[i]):
+# #     print('find right case')
+# #     print(soon_cases[i])
+# #     break
+
+# #########################
 
 
 
@@ -8,4 +131,8 @@
 
 
 
-#########################
+
+
+
+
+
