@@ -1,5 +1,37 @@
+####################
+# 모범답안 근데 10,10 이면 이것도 마찬가지로 시간초과임
+# 그래도 이게 최선으로 빠름
+
+def DFS(level):
+  global count
+  if level == m:
+    for j in range(level):
+      print(result[j], end=' ')
+    print()
+    count+=1
+  else:
+    for i in range(1, n + 1):
+      if ch[i] == 0:
+        # 체크하고 값 result에 넣고 다음 레벨로 넘어감
+        ch[i] = 1
+        result[level] = i
+        DFS(level + 1)
+        ch[i] = 0 # 리스트에서 level이 위로 올라간 상황이 표현됨
+
+
+n, m = map(int, input().split())
+# 현재 만드는 중인 리스트
+result = [0] * n
+# 지금 만드는 중인 리스트가 i 번째 인덱스를 사용했는지 check
+# 그러기 때문에 ch[i] == 1 이면 i를 쓴다는 뜻
+ch = [0] * (n + 1)
+count = 0
+DFS(0)
+print(count)
+
 ################################
 # 시작시간 22:46 마무리시간 23:02
+# 알고보니 시간 복잡도 문제 있었음
 # 재도전
 
 def DFS(level):
@@ -27,7 +59,7 @@ print(count)
 # # 시작시간 231224 15:55    마무리시간 1627
 # # 전에 풀었던 중복순열 구하기를 봐서 풀수 있었음 다시풀기
 
-# # 
+# #
 # def DFS(level):
 #   global count
 #   if level == m:
