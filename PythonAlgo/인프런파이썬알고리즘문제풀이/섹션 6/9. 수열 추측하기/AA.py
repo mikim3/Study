@@ -1,42 +1,65 @@
 import sys
 ##########################
-# 시작시간 231226 20:01   마무리시간 20:06
-# 전에 푼거 복붙해서 다시 풀기
-# 하던중에 순열구하기 성능 더 좋은코드를 발견해서 그거 기준으로 만들기
+# 모법답안 라이브러리 사용하기
+# 코테에서 막을수도 있긴함
+# ~~조건만 만족하는 순열을 뽑으라고 하면 라이브러리로 안됨
+# 나는 걍 만들어 쓰는게 좋을듯
 
-def make_soon_case(level):
-  if level == n:
-    if soon_case[0] != 0:
-      if f == calculator(soon_case):
-        for i in range(n):
-          print(soon_case[i], end=' ')
-        print()
-        sys.exit(0)
-  else:
-    for i in range(n):
-      if check[i] == 0:
-        check[i] = 1
-        soon_case[level] = i+1
-        make_soon_case(level + 1)
-        check[i] = 0
+import itertools as it
 
-def calculator(soon_case_param):
-  tmp = soon_case_param[:]
-  final_value = 0
-  for i in range(n - 1):
-    for j in range(n - i - 1):
-      tmp[j] = soon_case_param[j] + soon_case_param[j+1]
-    soon_case_param = tmp
-  final_value = soon_case_param[0]
-  return final_value
-# 순열 만들기
-n, f= map(int, input().split())
-# 몇번째 순열인지 카운트
-soon_case = [0] * (n)
-check= [0] * (n)
-level = 0
+n, f = map(int, input().split())
+b = [1] * n
+for i in range(1,n):
+  b[i] = b[i - 1] * (n - i)/i
+a = list(range(1, n + 1))
+for tmp in it.permutations(a):
+  sum = 0
+  for L,x in enumerate(tmp):
+    sum += (x * b[L])
+  if sum==f:
+    for x in tmp:
+      print(x, end=' ')
+    break
 
-make_soon_case(0)
+
+# ##########################
+# # 시작시간 231226 20:01   마무리시간 20:06
+# # 전에 푼거 복붙해서 다시 풀기
+# # 하던중에 순열구하기 성능 더 좋은코드를 발견해서 그거 기준으로 만들기
+
+# def make_soon_case(level):
+#   if level == n:
+#     if soon_case[0] != 0:
+#       if f == calculator(soon_case):
+#         for i in range(n):
+#           print(soon_case[i], end=' ')
+#         print()
+#         sys.exit(0)
+#   else:
+#     for i in range(n):
+#       if check[i] == 0:
+#         check[i] = 1
+#         soon_case[level] = i+1
+#         make_soon_case(level + 1)
+#         check[i] = 0
+
+# def calculator(soon_case_param):
+#   tmp = soon_case_param[:]
+#   final_value = 0
+#   for i in range(n - 1):
+#     for j in range(n - i - 1):
+#       tmp[j] = soon_case_param[j] + soon_case_param[j+1]
+#     soon_case_param = tmp
+#   final_value = soon_case_param[0]
+#   return final_value
+# # 순열 만들기
+# n, f= map(int, input().split())
+# # 몇번째 순열인지 카운트
+# soon_case = [0] * (n)
+# check= [0] * (n)
+# level = 0
+
+# make_soon_case(0)
 
 # ##########################
 # # 시작시간 231226 15:35   마무리시간 17:35
