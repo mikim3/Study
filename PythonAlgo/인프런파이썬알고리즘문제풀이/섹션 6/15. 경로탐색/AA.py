@@ -1,34 +1,66 @@
-######################
-# 시작시간 231229 22:50 마무리시간 23:20
-
-def DFS(now, result:list):
+##########################
+# 모범답안
+def DFS(now):
   global count
   if now==n:
-    # for i in range(len(result)):
-    #   print(result[i], end=' ')
-    # print()
+    for i in result:
+      print(i, end=' ')
+    print()
     count+=1
   else:
     for i in range(1, n + 1):
-      if i not in result:
-        if graph[now][i] == 1:
-          result.append(i)
-          DFS(i, result)
-          result.pop()
+      if graph[now][i] == 1 and check[i] == 0:
+        check[i] = 1
+        result.append(i)
+        DFS(i)
+        check[i] = 0
+        result.pop()
     
 n, m = map(int,input().split())
 graph = [[0] * (n + 1) for _ in range(n + 1)]
 count = 0
+result = []
+result.append(1)
+check= [0] * (n+1)
+check[1] = 1
 for i in range(m):
   a,b = map(int,input().split())
   graph[a][b] = 1
-# for i in range(1, n+1):
-#   for j in range(1, n+1):
-#     print(graph[i][j], end=' ')
-#   print()
 
-DFS(1,[1])
+DFS(1)
 print(count)
+
+# ######################
+# # 시작시간 231229 22:50 마무리시간 23:20
+
+# def DFS(now, result:list):
+#   global count
+#   if now==n:
+#     # for i in range(len(result)):
+#     #   print(result[i], end=' ')
+#     # print()
+#     count+=1
+#   else:
+#     for i in range(1, n + 1):
+#       if i not in result:
+#         if graph[now][i] == 1:
+#           result.append(i)
+#           DFS(i, result)
+#           result.pop()
+    
+# n, m = map(int,input().split())
+# graph = [[0] * (n + 1) for _ in range(n + 1)]
+# count = 0
+# for i in range(m):
+#   a,b = map(int,input().split())
+#   graph[a][b] = 1
+# # for i in range(1, n+1):
+# #   for j in range(1, n+1):
+# #     print(graph[i][j], end=' ')
+# #   print()
+
+# DFS(1,[1])
+# print(count)
 
 # ##########################
 # # 시작시간 231228 21:25    마무리시간 22:24 못품  나중에 더 해보기
