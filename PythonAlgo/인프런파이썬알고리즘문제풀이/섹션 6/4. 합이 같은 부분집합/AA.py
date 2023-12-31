@@ -22,7 +22,7 @@ def DFS(index):
     DFS(index + 1)
     check[index] = 0
     DFS(index + 1)
-    
+
 n = int(input())
 li= list(map(int,input().split()))
 check = [0] * (n+1)
@@ -33,8 +33,6 @@ if flag == 1:
   print("YES")
 else:
   print("NO")
-
-
 
 
 ###########################
