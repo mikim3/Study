@@ -4,6 +4,7 @@
 import sys
 
 def DFS(index):
+  global flag
   if index >= n:
     sum1= 0
     sum2= 0
