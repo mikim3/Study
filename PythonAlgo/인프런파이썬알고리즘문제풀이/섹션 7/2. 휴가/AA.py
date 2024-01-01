@@ -3,16 +3,6 @@
 
 # n일 까지만 일 할수 있다.
 # 최대 값이 나올수 있는 부분집합
-'''
-7
-4 20
-2 10
-3 15
-3 20
-2 30
-2 20
-1 10
-'''
 def DFS(level, remain_work):
   # global total
   global max_su
@@ -39,7 +29,6 @@ def DFS(level, remain_work):
       remain_work -= 1
     DFS(level + 1, remain_work)
 
-
 n = int(input())
 li = []
 for i in range(n):
@@ -48,8 +37,4 @@ check = [0] * (n)
 max_su = 0
 DFS(0, 0)
 print(max_su)
-
-
-
-
 #########################
