@@ -1,5 +1,5 @@
 ##########################
-# 시작시간  16:45  마무리시간
+# 시작시간 16:45 마무리시간 17:40
 
 # n일 까지만 일 할수 있다.
 # 최대 값이 나올수 있는 부분집합
@@ -17,6 +17,8 @@ def DFS(level, remain_work):
   # global total
   global max_su
   if level == n:
+    if remain_work > 0:
+      return
     now_time = 0
     tmp_su = 0
     for i in range(n):
