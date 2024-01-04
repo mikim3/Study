@@ -10,15 +10,15 @@ def bfs(graph, start_vector):
   # while문을 돌면서 queue를 하나씩 돌꺼임
   while queue:
     # first in first out
-    cur_v = queue.popleft()
+    current_v = queue.popleft()
     # cur_v에 근접한 모든 노드에 접근
-    for v in graph[cur_v]:
+    for next_v in graph[current_v]:
       # 만약 방문 안 했으면 처리
-      if v not in visited:
+      if next_v not in visited:
         # 실제 방문하고
-        visited.append(v)
+        visited.append(next_v)
         # 이후를 위해 큐에 쌓아 놓기
-        queue.append(v)
+        queue.append(next_v)
       print(visited)
   return visited
 
