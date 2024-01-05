@@ -6,7 +6,8 @@ from collections import deque
 def bfs(graph, start_vector):
   visited = [start_vector]
   # 사전세팅으로 시작노드를 queue에 넣음
-  queue = deque(start_vector)
+  queue = deque()
+  queue.append(start_vector)
   # while문을 돌면서 queue를 하나씩 돌꺼임
   while queue:
     # first in first out
