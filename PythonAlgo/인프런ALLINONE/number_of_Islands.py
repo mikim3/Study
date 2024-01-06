@@ -10,7 +10,8 @@ def number_of_islands(grid):
   grid_row = len(grid)
   grid_col = len(grid[0])
   visited = [[False] * grid_col for _ in range(grid_row)]
-
+  count = 0
+  visited[0][0] = True
   def bfs(x,y):
     queue = deque()
     queue.append((x, y))
@@ -24,6 +25,8 @@ def number_of_islands(grid):
       for i in range(4):
         next_x = cur_x + dx[i]
         next_y = cur_y + dy[i]
+        if next_x < 0 or next_x >= grid_row or next_y < 0 or next_y >= grid_col:
+          continue
         # True로 바꿔줘야 할 값
         if visited[next_x][next_y] == False and grid[next_x][next_y] == '1':
           visited[next_x][next_y] = True
@@ -31,33 +34,17 @@ def number_of_islands(grid):
 
   for i in range(grid_row):
     for j in range(grid_col):
-      if grid[i][j] == '1' or visited[i][j] == False:
+      if grid[i][j] == '1' and visited[i][j] == False:
         bfs(i, j)
-
-
-
-
-# def BFS(graph, start_vector):
-#   visited = [start_vector]
-
-#   queue = deque(start_vector)
-#   while queue:
-#     current_v = queue.popleft()
-
-#     for next_v in graph[current_v]:
-
-#       if next_v not in visited:
-
-#         visited.append(next_v)
-#         queue.append(next_v)
-#       print(visited)
-#   return visited
+        count += 1
+  print(count)
 
 grid = [
   ["1","1","1","1","0"],
   ["1","1","0","1","0"],
   ["1","1","0","0","0"],
-  ["0","0","0","0","0"]
+  ["0","0","0","0","0"],
+  ["1","1","1","0","1"],
 ]
 
-# BFS(graph, 'A')
+number_of_islands(grid)
