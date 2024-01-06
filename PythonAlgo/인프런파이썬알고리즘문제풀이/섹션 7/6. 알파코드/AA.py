@@ -1,39 +1,58 @@
-############################
-# 240103 20분소요
-# 다시 혼자 작성
+###########################
+# 시작시간 240106 17:20  마무리시간
+# 또 못품
+
 def DFS(level, position):
-  global count
-  if level == code_len:
-    # print('result ==', result)
+  if level == li_len:
     for i in range(position):
-      print(chr(result[i] + ord('A') - 1), end=' ')
+      print(chr(result[i]+64), end=' ')
     print()
-    count+=1
   else:
-    for i in range(1, 27):
-      if code[level] == i:
+    for i in range(1,27):
+      if li[level] == i:
         result[position] = i
-        DFS(level + 1, position + 1)
-      elif i >= 10 and code[level] == i//10 and code[level+1] == i%10:
+        DFS(level+1,position+1)
+      elif i >= 10 and li[level] == i // 10 and li[level + 1] == i % 10:
         result[position] = i
-        DFS(level+2, position + 1)
+        DFS(level + 2, position + 1)
 
-code = list(map(int, input()))
-print(code)
-code_len = len(code)
-code.insert(code_len, -1)
-result = [0] * code_len
-count = 0
+li = list(map(int,input()))
+li_len = len(li)
+print(li)
+result = [0] * (li_len)
+
 DFS(0,0)
-print(count)
 
-#
+# ############################
+# # 240103 20분소요
+# # 다시 혼자 작성
+# def DFS(level, position):
+#   global count
+#   if level == code_len:
+#     # print('result ==', result)
+#     for i in range(position):
+#       print(chr(result[i] + ord('A') - 1), end=' ')
+#     print()
+#     count+=1
+#   else:
+#     for i in range(1, 27):
+#       if code[level] == i:
+#         result[position] = i
+#         DFS(level + 1, position + 1)
+#       elif i >= 10 and code[level] == i//10 and code[level+1] == i%10:
+#         result[position] = i
+#         DFS(level+2, position + 1)
 
+# code = list(map(int, input()))
+# print(code)
+# code_len = len(code)
+# code.insert(code_len, -1)
+# result = [0] * code_len
+# count = 0
+# DFS(0,0)
+# print(count)
 
-
-
-
-
+# #
 # ##########################
 # # 시작시간 18:35    마무리시간
 
