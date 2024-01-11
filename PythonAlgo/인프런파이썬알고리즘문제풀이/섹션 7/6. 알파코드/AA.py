@@ -1,27 +1,51 @@
-###########################
-# 시작시간 240106 17:20  마무리시간
-# 또 못품
+###############################
+# 시작 시간 240111 22:00  마무리 시간
 
-def DFS(level, position):
+def dfs(level, position):
   if level == li_len:
     for i in range(position):
-      print(chr(result[i]+64), end=' ')
-    print()
+      print(result[i],end=' ')
   else:
     for i in range(1,27):
       if li[level] == i:
         result[position] = i
-        DFS(level+1,position+1)
-      elif i >= 10 and li[level] == i // 10 and li[level + 1] == i % 10:
+        dfs(level + 1, position + 1)
+      elif li[level] == i // 10 and li[level + 1] % i == 0:
+        print('elif')
         result[position] = i
-        DFS(level + 2, position + 1)
+        dfs(level + 2, position + 1)
 
-li = list(map(int,input()))
+li = list(map(int, input()))
 li_len = len(li)
+result = [0] * li_len
 print(li)
-result = [0] * (li_len)
+dfs(0,0)
 
-DFS(0,0)
+
+# ###########################
+# # 시작시간 240106 17:20  마무리시간
+# # 또 못품
+
+# def DFS(level, position):
+#   if level == li_len:
+#     for i in range(position):
+#       print(chr(result[i]+64), end=' ')
+#     print()
+#   else:
+#     for i in range(1,27):
+#       if li[level] == i:
+#         result[position] = i
+#         DFS(level+1,position+1)
+#       elif i >= 10 and li[level] == i // 10 and li[level + 1] == i % 10:
+#         result[position] = i
+#         DFS(level + 2, position + 1)
+
+# li = list(map(int,input()))
+# li_len = len(li)
+# print(li)
+# result = [0] * (li_len)
+
+# DFS(0,0)
 
 # ############################
 # # 240103 20분소요
