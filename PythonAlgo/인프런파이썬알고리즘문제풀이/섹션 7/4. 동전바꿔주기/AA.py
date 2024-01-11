@@ -1,5 +1,30 @@
 import sys
 input = sys.stdin.readline
+
+#########################
+# 시작시간 240111 21:25 마무리시간 21:55
+# 10분만에 거의 다풀고 for i in range(li[level][1]+1):  +1 빼먹어서 20분 더 걸림
+
+def dfs(level, now_money):
+  global count
+  if now_money > T:
+    return
+  if level == k:
+    if now_money == T:
+      count += 1
+  else:
+    for i in range(li[level][1]+1):
+      dfs(level + 1, now_money + li[level][0] * i)
+T = int(input())
+k = int(input())
+li = []
+for i in range(k):
+  li.append(list(map(int,input().split())))
+print(li)
+count = 0
+dfs(0, 0)
+print(count)
+
 # #############################
 # # 모범답안
 
