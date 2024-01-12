@@ -1,31 +1,55 @@
 ##################################
-# 시작시간 231217 19:50 마무리시간 20:10
-# 231217 강의 1시간후 혼자 다시 품
-# 최소 몇 번 만에 도착할 수 있는가?? 문제 BFS
+# 시작시간 240112 0125 마무리시간 0137
 
+#
 from collections import deque
 
-MAX = 10000
-distance = [0] * MAX
-check = [0] * MAX
-# 현수위치(출발점), 송아지위치(도착점)
-s,e = map(int,input().split())
-check[s] = 1
-distance[s] = 0
-dQ = deque()
-dQ.append(s)
+def bfs(checked):
+  checked[s] = 0
+  queue = deque()
+  queue.append(s)
+  while queue:
+    now = queue.popleft()
+    if now == e:
+      break
+    for next in (now + 1, now - 1, now + 5):
+      if checked[next] == 0:
+        queue.append(next)
+        checked[next] = checked[now] + 1
 
-while dQ:
-  now = dQ.popleft()
-  if now == e:
-    break
-  for next in (now - 1, now + 1, now + 5):
-    if 0 < next <= MAX:
-      if check[next] == 0:
-        dQ.append(next)
-        check[next] = 1
-        distance[next] = distance[now] + 1
-print(distance[e])
+checked = [0] * 20000
+s, e = map(int,input().split())
+bfs(checked)
+print(checked[e])
+
+# ##################################
+# # 시작시간 231217 19:50 마무리시간 20:10
+# # 231217 강의 1시간후 혼자 다시 품
+# # 최소 몇 번 만에 도착할 수 있는가?? 문제 BFS
+
+# from collections import deque
+
+# MAX = 10000
+# distance = [0] * MAX
+# check = [0] * MAX
+# # 현수위치(출발점), 송아지위치(도착점)
+# s,e = map(int,input().split())
+# check[s] = 1
+# distance[s] = 0
+# dQ = deque()
+# dQ.append(s)
+
+# while dQ:
+#   now = dQ.popleft()
+#   if now == e:
+#     break
+#   for next in (now - 1, now + 1, now + 5):
+#     if 0 < next <= MAX:
+#       if check[next] == 0:
+#         dQ.append(next)
+#         check[next] = 1
+#         distance[next] = distance[now] + 1
+# print(distance[e])
 
 
 ###################
