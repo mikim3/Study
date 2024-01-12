@@ -1,17 +1,18 @@
 ###############################
-# 시작 시간 240111 22:00  마무리 시간
+# 시작 시간 240111 22:00  마무리 시간 22:32
+# 문제가 너무 기억남
 
 def dfs(level, position):
   if level == li_len:
     for i in range(position):
-      print(result[i],end=' ')
+      print(chr(result[i]+ord('A')-1),end=' ')
+    print()
   else:
     for i in range(1,27):
       if li[level] == i:
         result[position] = i
         dfs(level + 1, position + 1)
-      elif li[level] == i // 10 and li[level + 1] % i == 0:
-        print('elif')
+      elif li[level] == i // 10 and li[level + 1] == (i % 10):
         result[position] = i
         dfs(level + 2, position + 1)
 
