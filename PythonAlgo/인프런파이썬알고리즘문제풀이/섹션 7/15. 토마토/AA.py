@@ -51,6 +51,4 @@ for i in range(n):
   max_distance = max(distance[i])
 print(max_distance)
 
-
-
 #########################
