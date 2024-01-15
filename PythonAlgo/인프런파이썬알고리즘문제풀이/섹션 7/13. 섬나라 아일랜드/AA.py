@@ -29,24 +29,13 @@ def bfs(x, y):
         matrix[next_x][next_y] = 2
         queue.append([next_x, next_y])
 
-
 n = int(input())
 matrix = []
 for i in range(n):
   matrix.append(list(map(int,input().split())))
-print(matrix)
 count = 0
 
 island()
 print(count)
-
-# 7
-# 1 1 0 0 0 1 0
-# 0 1 1 0 1 1 0
-# 0 1 0 0 0 0 0
-# 0 0 0 1 0 1 1
-# 1 1 0 1 1 0 0
-# 1 0 0 0 1 0 0
-# 1 0 1 0 1 0 0
 
 #########################
