@@ -1,18 +1,21 @@
-# 시작시간 16:50
+# 시작시간 240119 16:50 마무리 시간 17:50
+
+
+##
+# 문문제에 DP로 풀어야 되는 근거가 숨겨져 있음
+
+# 테스트 케이스는 답이 2* 10**9 이하가 되도록 생성됩니다.
+
+
 
 # m,n 까지 가는 경우의수
 # f(m,n) ==  f(m - 1, n) + f(m, n - 1)
-
 memo = {(1,1):1, (2,1) : 1, (1, 2) : 1}
 class Solution:
   def uniquePaths(self, m: int, n: int) -> int:
     if m < 1 or n < 1:
       return 0
     if m == 1 and n == 1:
-      return 1
-    if m == 1 and n == 0:
-      return 1
-    if m == 0 and n == 1:
       return 1
     if (m,n) not in memo:
       memo[m,n] = self.uniquePaths(m-1, n) + self.uniquePaths(m, n-1)
