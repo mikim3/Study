@@ -3,6 +3,15 @@ from typing import List
 class Solution:
   def networkDelayTime(self, times: List[List[int]], n: int, k: int) -> int:
 
+
+
+times = [[2, 1, 1], [2, 3, 1], [3, 4, 1]]
+n = 4
+k = 2
+
+s = Solution()
+print(s.networkDelayTime(times, n, k))
+
 ### https://leetcode.com/problems/network-delay-time/description/?orderBy=most_votes
 ############ 그림있음
 # 네트워크 지연 시간
