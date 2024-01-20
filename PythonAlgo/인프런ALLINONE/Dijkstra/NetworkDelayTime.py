@@ -1,6 +1,7 @@
 from typing import List
 
 # 그 전 템플릿 보았음
+# 그래프 구현으로 주어진 인자를 가공했다면 좀더 쉽게 풀수 있었음
 
 # 시작시간 17:15~17:45 + 18:45 ~ 19:33 마무리시간 1시간 18분 소용
 
@@ -11,31 +12,64 @@ from typing import List
 
 # distances에 하나라도 101이상인게 남아 있으면 -1 반환
 
+from collections import defaultdict
 import heapq
 
-BIGNUM = 100000000000
+class Solution(object):
+  def networkDelayTime(self, times, n, k):
+    graph = defaultdict(list)
+    for time in times:
+      graph[time[0]].append((time[2], time[1]))
+    print(graph)
 
-class Solution:
-  def networkDelayTime(self, times: List[List[int]], n: int, k: int) -> int:
-    distances = {vertex: BIGNUM for vertex in range(1, n+1)}
+    # graph = defaultdict(list)
+    # for u, v, w in times:
+    #   graph[u].append((w, v))
+    # print(graph)
+    costs = {}
     pq = []
-    # [소요된시간, 원하는 위치]  원하는 위치까지 소요된 시간
-    heapq.heappush(pq,[0,k])
+    heapq.heappush(pq, (0, k))
+
     while pq:
-      cur_distance, cur_vector = heapq.heappop(pq)
-      if distances[cur_vector] < cur_distance:
-        continue
-      distances[cur_vector] = cur_distance
-      for i in range(len(times)):
-        if times[i][0] == cur_vector:
-          next_vector, next_distance = times[i][1], times[i][2]
-          distance = cur_distance + next_distance
-          if distance < distances[next_vector]:
-            distances[next_vector] = distance
-            heapq.heappush(pq, (distance, next_vector))
-    if max(distances.values()) == BIGNUM:
-      return -1
-    return max(distances.values())
+      cur_cost, cur_v = heapq.heappop(pq)
+      if cur_v not in costs:
+        costs[cur_v] = cur_cost
+        for cost, next_v in graph[cur_v]:
+          next_cost = cur_cost + cost
+          heapq.heappush(pq, (next_cost, next_v))
+    print(costs)
+    for i in range(1, n + 1):
+      if i not in costs:
+        return -1
+    return max(costs.values())
+
+############################################
+# import heapq
+
+# BIGNUM = 100000000000
+
+# class Solution:
+#   def networkDelayTime(self, times: List[List[int]], n: int, k: int) -> int:
+#     distances = {vertex: BIGNUM for vertex in range(1, n+1)}
+#     pq = []
+#     # [소요된시간, 원하는 위치]  원하는 위치까지 소요된 시간
+#     heapq.heappush(pq,[0,k])
+#     while pq:
+#       cur_distance, cur_vector = heapq.heappop(pq)
+#       if distances[cur_vector] < cur_distance:
+#         continue
+#       distances[cur_vector] = cur_distance
+#       for i in range(len(times)):
+#         if times[i][0] == cur_vector:
+#           next_vector, next_distance = times[i][1], times[i][2]
+#           distance = cur_distance + next_distance
+#           if distance < distances[next_vector]:
+#             distances[next_vector] = distance
+#             heapq.heappush(pq, (distance, next_vector))
+#     if max(distances.values()) == BIGNUM:
+#       return -1
+#     return max(distances.values())
+#########################################
 s = Solution()
 print(s.networkDelayTime([[2, 1, 1], [2, 3, 1], [3, 4, 1]], 4, 2)) # 2
 print(s.networkDelayTime([[2, 1, 2], [2, 3, 5], [2, 4, 1], [4, 3, 3]], 4, 2)) # 4
