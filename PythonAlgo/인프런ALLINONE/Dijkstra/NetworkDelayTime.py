@@ -1,5 +1,38 @@
 from typing import List
+from collections import defaultdict
+import heapq
 
+######################################
+# 시작시간 240122 17:20 마무리시간 18:05
+
+# (시작노드, 도착노드, 소요시간)
+# n = 노드갯수 k는 시작노드
+
+class Solution:
+  def networkDelayTime(self, times: List[List[int]], n: int, k: int) -> int:
+    graph = defaultdict(list)
+    for time in times:
+      graph[time[0]].append((time[2], time[1]))
+    print(graph)
+    costs = {}
+    pq = []
+    heapq.heappush(pq, (0,k))
+    while pq:
+      now_cost, now_node = heapq.heappop(pq)
+      if now_node not in costs:
+        costs[now_node] = now_cost
+        for next_cost, next_node in graph[now_node]:
+          cost = now_cost + next_cost
+          heapq.heappush(pq, (cost, next_node))
+    print('costs ==',costs)
+    max = 0
+    for i in costs:
+      if costs[i] > max:
+        max = costs[i]
+    if max == 0:
+      return -1
+    return max
+#####################################################
 # 그 전 템플릿 보았음
 # 그래프 구현으로 주어진 인자를 가공했다면 좀더 쉽게 풀수 있었음
 
@@ -12,36 +45,29 @@ from typing import List
 
 # distances에 하나라도 101이상인게 남아 있으면 -1 반환
 
-from collections import defaultdict
-import heapq
+# class Solution(object):
+#   def networkDelayTime(self, times, n, k):
+#     graph = defaultdict(list)
+#     for time in times:
+#       graph[time[0]].append((time[2], time[1]))
+#     print(graph)
 
-class Solution(object):
-  def networkDelayTime(self, times, n, k):
-    graph = defaultdict(list)
-    for time in times:
-      graph[time[0]].append((time[2], time[1]))
-    print(graph)
+#     costs = {}
+#     pq = []
+#     heapq.heappush(pq, (0, k))
 
-    # graph = defaultdict(list)
-    # for u, v, w in times:
-    #   graph[u].append((w, v))
-    # print(graph)
-    costs = {}
-    pq = []
-    heapq.heappush(pq, (0, k))
-
-    while pq:
-      cur_cost, cur_v = heapq.heappop(pq)
-      if cur_v not in costs:
-        costs[cur_v] = cur_cost
-        for cost, next_v in graph[cur_v]:
-          next_cost = cur_cost + cost
-          heapq.heappush(pq, (next_cost, next_v))
-    print(costs)
-    for i in range(1, n + 1):
-      if i not in costs:
-        return -1
-    return max(costs.values())
+#     while pq:
+#       cur_cost, cur_v = heapq.heappop(pq)
+#       if cur_v not in costs:
+#         costs[cur_v] = cur_cost
+#         for cost, next_v in graph[cur_v]:
+#           next_cost = cur_cost + cost
+#           heapq.heappush(pq, (next_cost, next_v))
+#     print(costs)
+#     for i in range(1, n + 1):
+#       if i not in costs:
+#         return -1
+#     return max(costs.values())
 
 ############################################
 # import heapq
