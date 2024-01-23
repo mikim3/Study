@@ -5,7 +5,7 @@ from typing import Deque
 sys.stdin = open("/goinfre/mikim3/Study/PythonAlgo/인프런파이썬알고리즘문제풀이/섹션 7/15. 토마토/input.txt", "r")
 
 ########################
-# 시작시간 240123 16:00 마무리시간
+# 시작시간 240123 16:00 마무리시간 16:30
 
 # 최소 일수
 # 1익음  0 익지 않은  -1빈공간 벽
