@@ -4,22 +4,21 @@ input = sys.stdin.readline
 # 시작시간 240130 15:40 마무리시간
 # 못품
 
-# dp[종료일] = max(이전까지의 수익+현재 수익, dp[종료일])
 
-#
-# dp[i+t-1] == 해당 상담의 종료일
-#
+# dp[x] == x일 까지 얻을 수 있는 이익
+
 
 n = int(input())
-dp = [0] * (n+1)
+t, p = [0 for _ in range(n + 1)], [0 for _ in range(n + 1)]
+for i in range(1, n + 1):
+  t[i], p[i] = map(int, input().split())
 
-for i in range(1, n+1):
-  t, p = map(int ,input().split())
-  dp[i] = max(dp[i - 1], dp[i])
-  # 종료 날짜보다 작
-  if i + t <= n + 1:
-    dp[i+t-1] = max(dp[i-1] + p, dp[i+t-1])
-print(dp)
-print(dp[-1])
+dp = [0 for _ in range(n + 1)]
 
-
+for i in range(1, n + 1):
+  dp[i] = max(dp[i], dp[i - 1])  # 이전까지의 최댓값
+  fin_date = i + t[i] - 1  # 당일 포함
+  if fin_date <= n:  # 최종일 안에 일이 끝나는 경우
+    # i일부터는 일을 해야하므로 i일에 얻을 수 있는 최댓값이 아닌 i-1일까지 얻을 수 있는 최댓값을 구한다
+    dp[fin_date] = max(dp[fin_date], dp[i - 1] + p[i])
+print(max(dp))
