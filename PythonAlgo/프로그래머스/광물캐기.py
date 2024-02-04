@@ -1,4 +1,4 @@
-# 시작시간 240204 2153
+# 시작시간 240204 21:53~ 23:21 마무리시간
 
 # 곡괭이 갯수 최대 15개
 # 
@@ -41,10 +41,19 @@ def solution(picks, minerals):
       pick_combination.append(tmp_pick_com)
     else:
       for i in range(3):
-        dfs(level+1, tmp_pick_com.append(i))
-        
-        dfs(level+1, tmp_pick_com.append(i))
-        
+        tmp_pick_com.append(i)
+        dfs(level+1, tmp_pick_com)
+        tmp_pick_com.pop()
+        dfs(level+1, tmp_pick_com)
+  dfs(0, [])
+  print(pick_combination)
   
   answer = 0
   return answer
+
+# 12
+print(solution([1, 3, 2], ["diamond", "diamond", "diamond", "iron", "iron", "diamond", "iron", "stone"])) # 12
+# 50
+# print(solution([0, 1, 1], ["diamond", "diamond", "diamond", "diamond", "diamond", "iron", "iron", "iron", "iron", "iron", "diamond"])) 
+
+
