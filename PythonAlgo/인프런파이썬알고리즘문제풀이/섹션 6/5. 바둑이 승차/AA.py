@@ -1,3 +1,41 @@
+############################
+# 시작시간 240210 22:56 마무리시간 23:28
+
+# 가장 무겁게 태우면서 몸무게 안 넘기기
+
+# 버리는 무게
+
+def dfs(level, take):
+  global max_take
+  poten_take = 0
+  for i in range(level,n):
+    poten_take += li[i]
+  if take + poten_take < max_take:
+    return
+  if take > c:
+    return
+  if level >= n:
+    total = 0
+    for i in range(n):
+      if checked[i] == 1:
+        total += li[i]
+    if total > max_take:
+      max_take = total
+  else:
+    checked[level] = 1
+    dfs(level+1, take + li[level])
+    checked[level] = 0
+    dfs(level+1, take)
+
+c, n = map(int, input().split())
+li = []
+for i in range(n):
+  li.append(int(input()))
+checked = [0] * (n+1)
+max_take = 0
+dfs(0,0)
+print(max_take)
+
 ##########################################
 # 시작시간 231222 2225 마무리시간 2303
 
@@ -6,38 +44,38 @@
 # -> NO한 애들의 합과 앞으로 남은 것들의 합이 지금까지 나온 값들의 최대보다 적으면 더 이상 볼 필요도 없다.
 # max_value > YES + 아직안본애들
 
-def DFS(node):
-  global max_value
-  if node >= n:
-    su = 0
-    for i in range(n):
-      if ch[i] == 1:
-        su += li[i]
-    if max_value < su <= c:
-      max_value = su
-  else:
-    su = 0
-    for i in range(node):
-      if ch[i] == 1:
-        su+=li[i]
-    for i in range(node,n):
-      su += li[i]
-    if su < max_value:
-      return
-    ch[node] = 1
-    DFS(node + 1)
-    ch[node] = 0
-    DFS(node + 1)
+# def DFS(node):
+#   global max_value
+#   if node >= n:
+#     su = 0
+#     for i in range(n):
+#       if ch[i] == 1:
+#         su += li[i]
+#     if max_value < su <= c:
+#       max_value = su
+#   else:
+#     su = 0
+#     for i in range(node):
+#       if ch[i] == 1:
+#         su+=li[i]
+#     for i in range(node,n):
+#       su += li[i]
+#     if su < max_value:
+#       return
+#     ch[node] = 1
+#     DFS(node + 1)
+#     ch[node] = 0
+#     DFS(node + 1)
 
-li = []
-c, n= map(int, input().split())
-ch = [0] * (n+1)
-for i in range(n):
-  li.append(int(input()))
-max_value = 0
-DFS(0)
+# li = []
+# c, n= map(int, input().split())
+# ch = [0] * (n+1)
+# for i in range(n):
+#   li.append(int(input()))
+# max_value = 0
+# DFS(0)
 
-print(max_value)
+# print(max_value)
 
 #######################################
 # # 시작시간  231006 16:22 마무리시간 16:40에 5 케이스만 스택 제한 걸린듯
