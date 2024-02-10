@@ -1,20 +1,41 @@
-#############################
+############################
+# 시작시간 240210 18:31 마무리시간 18:41
 
-def DFS(node):
-  if node > n:
-    for i in range(1, n + 1):
-      if check[i] == 1:
-        print(i, end=' ')
+def dfs(level):
+  if level >= n:
+    # print(checked)
+    for i in range(n):
+      if checked[i] == 1:
+        print(i+1, end=' ')
     print()
   else:
-    check[node] = 1
-    DFS(node + 1)
-    check[node] = 0
-    DFS(node + 1)
-  
+    checked[level] = 1
+    dfs(level+1)
+    checked[level] = 0
+    dfs(level+1)
+
 n = int(input())
-check = [0] * (n+1)
-DFS(1)
+checked = [0] * (n + 1)
+dfs(0)
+# print()
+
+#############################
+
+# def DFS(node):
+#   if node > n:
+#     for i in range(1, n + 1):
+#       if check[i] == 1:
+#         print(i, end=' ')
+#     print()
+#   else:
+#     check[node] = 1
+#     DFS(node + 1)
+#     check[node] = 0
+#     DFS(node + 1)
+  
+# n = int(input())
+# check = [0] * (n+1)
+# DFS(1)
 
 ##############################
 # 시작시간 231221 0000 마무리시간 0010
