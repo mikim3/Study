@@ -1,16 +1,28 @@
-#####################
-# 231220 복복습
-# 목적
-# 전위순회 후위순회 중위순회 해보기
-def DFS(node):
-  if node > 7:
+####################
+# 시작시간 240210  18:27  마무리시간 18:30
+
+def dfs(vector):
+  if vector > 7:
     return
   else:
-    DFS(node * 2)
-    DFS(node * 2 + 1)
-    print(node, end=' ')
+    print(vector, end=' ')
+    dfs(vector*2)
+    dfs(vector*2 + 1)
+dfs(1)
+print()
 
-DFS(1)
+# #####################
+# # 231220 복복습
+# # 목적
+# # 전위순회 후위순회 중위순회 해보기
+# def DFS(node):
+#   if node > 7:
+#     return
+#   else:
+#     DFS(node * 2)
+#     DFS(node * 2 + 1)
+#     print(node, end=' ')
+# DFS(1)
 
 ######################
 # 231219 복습

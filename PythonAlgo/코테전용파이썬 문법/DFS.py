@@ -14,4 +14,5 @@ graph = {
 }
 visited = []
 
-
+print(dfs('A'))
+print(visited)
