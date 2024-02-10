@@ -1,38 +1,64 @@
+############################
+# 시작시간 240210 19:02 마무리시간 19:13
+import sys
+
+def dfs(level,tm_sum):
+  if tm_sum * 2 > sum_li:
+    return
+  if level >= n:
+    if tm_sum * 2 == sum_li:
+      print("YES")
+      sys.exit(0) 
+  else:
+    checked[level] = 1
+    dfs(level+1, tm_sum + li[level])
+    checked[level] = 0
+    dfs(level+1, tm_sum)
+
+n = int(input())
+li = list(map(int,input().split()))
+li.sort(reverse=True)
+sum_li = sum(li)
+checked = [0] * (n+1)
+
+dfs(0, 0)
+print("NO")
+
 ##################################
 # 시작시간 231222 2157 마무리시간 2219
 
-import sys
+# import sys
 
-def DFS(index):
-  global flag
-  if index >= n:
-    sum1= 0
-    sum2= 0
-    for i in range(n):
-      if check[i]==1:
-        sum1 += li[i]
-      else:
-        sum2 += li[i]
-    if sum1 == sum2:
-      print("YES")
-      flag = 1
-      sys.exit(0)
-  else:
-    check[index] = 1
-    DFS(index + 1)
-    check[index] = 0
-    DFS(index + 1)
+# def DFS(index):
+#   global flag
+#   if index >= n:
+#     sum1= 0
+#     sum2= 0
+#     for i in range(n):
+#       if check[i]==1:
+#         sum1 += li[i]
+#       else:
+#         sum2 += li[i]
+#     if sum1 == sum2:
+#       print("YES")
+#       flag = 1
+#       sys.exit(0)
+#   else:
+#     check[index] = 1
+#     DFS(index + 1)
+#     check[index] = 0
+#     DFS(index + 1)
 
-n = int(input())
-li= list(map(int,input().split()))
-check = [0] * (n+1)
-flag = 0
-DFS(0)
+# n = int(input())
+# li= list(map(int,input().split()))
+# check = [0] * (n+1)
+# flag = 0
+# DFS(0)
 
-if flag == 1:
-  print("YES")
-else:
-  print("NO")
+# if flag == 1:
+#   print("YES")
+# else:
+#   print("NO")
 
 
 ###########################
