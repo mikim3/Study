@@ -1,25 +1,56 @@
 import sys
-##########################
-# 모법답안 라이브러리 사용하기
-# 코테에서 막을수도 있긴함
-# ~~조건만 만족하는 순열을 뽑으라고 하면 라이브러리로 안됨
-# 나는 걍 만들어 쓰는게 좋을듯
 
-import itertools as it
+##############################
+# 시작시간 240212 14:40 마무리시간
+# 선생님이 알려준 풀이는 내가 모르는 공식이 있다.
+# 못품
 
-n, f = map(int, input().split())
-b = [1] * n
-for i in range(1,n):
-  b[i] = b[i - 1] * (n - i)/i
-a = list(range(1, n + 1))
-for tmp in it.permutations(a):
-  sum = 0
-  for L,x in enumerate(tmp):
-    sum += (x * b[L])
-  if sum==f:
-    for x in tmp:
-      print(x, end=' ')
-    break
+# def dfs(level, total):
+#   if level == n and total == f:
+#     for x in point:
+#       print(x, end=' ')
+#     print()
+#     sys.exit()
+#   else:
+#     for i in range(1, n+1):
+#       if checked[i] == 0:
+#         checked[i] = 1
+#         point[level] = i
+#         dfs(level+1, total+(point[level] * multiple[level]))
+#         checked[i] = 0
+
+# n,f = map(int,input().split())
+
+# # 해당 칸에 숫자가 총합에 몇번 계산되나
+# point = [0] * n
+# multiple = [1] * n
+# checked = [0] *(n+1)
+# # 조합 공식 같은거임
+# for i in range(1,n):
+#   multiple[i] = multiple[i-1] * (n-i) // i
+# dfs(0,0)
+
+# ##########################
+# # 모법답안 라이브러리 사용하기
+# # 코테에서 막을수도 있긴함
+# # ~~조건만 만족하는 순열을 뽑으라고 하면 라이브러리로 안됨
+# # 나는 걍 만들어 쓰는게 좋을듯
+
+# import itertools as it
+
+# n, f = map(int, input().split())
+# b = [1] * n
+# for i in range(1,n):
+#   b[i] = b[i - 1] * (n - i)/i
+# a = list(range(1, n + 1))
+# for tmp in it.permutations(a):
+#   sum = 0
+#   for L,x in enumerate(tmp):
+#     sum += (x * b[L])
+#   if sum==f:
+#     for x in tmp:
+#       print(x, end=' ')
+#     break
 
 
 # ##########################
