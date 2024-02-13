@@ -1,43 +1,35 @@
 ##############################
-# 시작시간 240212 10:25 마무리시간
-
-# 현재 시간 인자에 넣기
-
-def dfs(level):
-  global all_time
-  global max_value
-  # if all_time > m:
-  #   return
-  if level >= n:
-    if all_time > m:
-      return
-    tmp = 0
-    for i in range(n):
-      if checked[i] == 1:
-        tmp+= li_input[i][0]
-    if tmp >= max_value:
-      max_value = tmp
-  else:
-    checked[level] = 1
-    all_time += li_input[level][1]
-    dfs(level+1)
-    checked[level] = 0
-    all_time -= li_input[level][1]
-      
-      
-# 점수, 걸리는 시간
-n, m = map(int ,input().split())
-
-li_input = []
-for i in range(n):
-  li_input.append(tuple(map(int, input().split())))
-# all_score = [0] * (n+1)
-all_time = 0
-checked = [0] * (n+1)
-max_value = 0
-print(li_input)
-dfs(0)
-print(max_value)
+# 시작시간 240213 14:36 마무리시간 14:52
+#
+# def dfs(level):
+#   global max_value
+#   tmp_time = 0
+#   for i in range(n):
+#     if checked[i] == 1:
+#       tmp_time += li_input[i][1]
+#   if tmp_time > m:
+#     return
+#   if level >= n:
+#     tmp = 0
+#     for i in range(n):
+#       if checked[i] == 1:
+#         tmp += li_input[i][0]
+#     if tmp > max_value:
+#       max_value = tmp
+#   else:
+#     checked[level] = 1
+#     dfs(level+1)
+#     checked[level] = 0
+#     dfs(level+1)
+# # 점수, 걸리는 시간
+# n, m = map(int ,input().split())
+# li_input = []
+# for i in range(n):
+#   li_input.append(tuple(map(int,input().split())))
+# checked = [0] * (n+1)
+# max_value = 0
+# dfs(0)
+# print(max_value)
 
 # ###############################
 # # 시작시간 20:58 마무리시간 21:22
