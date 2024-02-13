@@ -1,29 +1,53 @@
 import sys
 input = sys.stdin.readline
 
-#########################
-# 시작시간 240111 21:25 마무리시간 21:55
-# 10분만에 거의 다풀고 for i in range(li[level][1]+1):  +1 빼먹어서 20분 더 걸림
+# ##############################
+# # 시작시간 240213 1722 마무리시간 17:40
 
-def dfs(level, now_money):
-  global count
-  if now_money > T:
-    return
-  if level == k:
-    if now_money == T:
-      count += 1
-  else:
-    for i in range(li[level][1]+1):
-      dfs(level + 1, now_money + li[level][0] * i)
-T = int(input())
-k = int(input())
-li = []
-for i in range(k):
-  li.append(list(map(int,input().split())))
-print(li)
-count = 0
-dfs(0, 0)
-print(count)
+# def dfs(level, now_value):
+#   global count
+#   if now_value > t:
+#     return
+#   if level == k:
+#     if now_value == t:
+#       count += 1
+#   else:
+#     for i in range(0,li_input[level][1]+1):
+#       dfs(level+1, now_value + li_input[level][0] * i)
+
+# t = int(input())
+# k = int(input())
+# li_input = []
+# for i in range(k):
+#   # 동전의 금액, 개수
+#   li_input.append(list(map(int, input().split())))
+# count = 0
+# dfs(0,0)
+# print(count)
+
+# #########################
+# # 시작시간 240111 21:25 마무리시간 21:55
+# # 10분만에 거의 다풀고 for i in range(li[level][1]+1):  +1 빼먹어서 20분 더 걸림
+
+# def dfs(level, now_money):
+#   global count
+#   if now_money > T:
+#     return
+#   if level == k:
+#     if now_money == T:
+#       count += 1
+#   else:
+#     for i in range(li[level][1]+1):
+#       dfs(level + 1, now_money + li[level][0] * i)
+# T = int(input())
+# k = int(input())
+# li = []
+# for i in range(k):
+#   li.append(list(map(int,input().split())))
+# print(li)
+# count = 0
+# dfs(0, 0)
+# print(count)
 
 # #############################
 # # 모범답안
