@@ -1,38 +1,60 @@
-############################
-# 시작시간 240213 15:20 마무리시간 16:56
-# 그냥 다시 풀면 빨리 풀었을텐데 내가 틀린이유를 찾느라 1시간 넘게씀
+##########################
+# 시작시간  240215 15:49  마무리시간 16:04
 
-# 5일에 2일치하면 7일부터 일가능
-# 1일에 4일치하면 5일부터 일가능
-# 7일에 1일치하면 8일부터 일가능
-
-# t걸리는날짜 p 보수비용
-
-# 레벨,  일하는중(남은시간)
-def dfs(level):
+def dfs(level, now_score):
   global max_value
   if level > n:
     return
   if level == n:
-    tmp = 0
-    for i in range(n):
-      if checked[i] == 1:
-        tmp+= li_input[i][1]
-    if tmp > max_value:
-      max_value = tmp
+    if now_score > max_value:
+      max_value = now_score
   else:
-    checked[level] = 1
-    dfs(level + li_input[level][0])
-    checked[level] = 0
-    dfs(level+1)
+    dfs(level+li_input[level][0], now_score + li_input[level][1])
+    dfs(level+1, now_score)
+
 n = int(input())
 li_input = []
 for i in range(n):
-  li_input.append(tuple(map(int, input().split())))
-checked = [0] * (n)
+  li_input.append(list(map(int, input().split())))
 max_value = 0
-dfs(0)
+dfs(0,0)
 print(max_value)
+
+# ############################
+# # 시작시간 240213 15:20 마무리시간 16:56
+# # 그냥 다시 풀면 빨리 풀었을텐데 내가 틀린이유를 찾느라 1시간 넘게씀
+
+# # 5일에 2일치하면 7일부터 일가능
+# # 1일에 4일치하면 5일부터 일가능
+# # 7일에 1일치하면 8일부터 일가능
+
+# # t걸리는날짜 p 보수비용
+
+# # 레벨,  일하는중(남은시간)
+# def dfs(level):
+#   global max_value
+#   if level > n:
+#     return
+#   if level == n:
+#     tmp = 0
+#     for i in range(n):
+#       if checked[i] == 1:
+#         tmp+= li_input[i][1]
+#     if tmp > max_value:
+#       max_value = tmp
+#   else:
+#     checked[level] = 1
+#     dfs(level + li_input[level][0])
+#     checked[level] = 0
+#     dfs(level+1)
+# n = int(input())
+# li_input = []
+# for i in range(n):
+#   li_input.append(tuple(map(int, input().split())))
+# checked = [0] * (n)
+# max_value = 0
+# dfs(0)
+# print(max_value)
 
 ##########################
 # 시작시간 16:45 마무리시간 17:40
