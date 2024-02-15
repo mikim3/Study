@@ -1,26 +1,58 @@
-###############################
-# 시작 시간 240111 22:00  마무리 시간 22:32
-# 문제가 너무 기억남
+from typing import List
 
-def dfs(level, position):
-  if level == li_len:
-    for i in range(position):
-      print(chr(result[i]+ord('A')-1),end=' ')
+###############################
+# 시작시간 16:13 마무리시간 16:52
+# 문제가 일부 기억 났지만 나만의 방법으로 품
+
+def dfs(level, tmp_li : List):
+  global count
+  if level == n:
+    for i in range(len(tmp_li)):
+      print(chr(tmp_li[i]+ord('A')-1), end='')
     print()
+    count += 1
   else:
+    # A~Z
     for i in range(1,27):
-      if li[level] == i:
-        result[position] = i
-        dfs(level + 1, position + 1)
-      elif li[level] == i // 10 and li[level + 1] == (i % 10):
-        result[position] = i
-        dfs(level + 2, position + 1)
+      if i < 10 and li[level] == i:
+        tmp_li.append(i)
+        tmp_tmp_li = tmp_li.copy()
+        dfs(level + 1, tmp_tmp_li)
+      elif i >= 10 and level + 1 < n and i // 10 == li[level] and i % 10 == li[level+1]:
+        tmp_li.pop()
+        tmp_li.append(i)
+        tmp_tmp_li = tmp_li.copy()
+        dfs(level + 2, tmp_tmp_li)
 
 li = list(map(int, input()))
-li_len = len(li)
-result = [0] * li_len
-print(li)
-dfs(0,0)
+n = len(li)
+count = 0
+dfs(0,[])
+print(count)
+
+# ###############################
+# # 시작 시간 240111 22:00  마무리 시간 22:32
+# # 문제가 너무 기억남
+
+# def dfs(level, position):
+#   if level == li_len:
+#     for i in range(position):
+#       print(chr(result[i]+ord('A')-1),end=' ')
+#     print()
+#   else:
+#     for i in range(1,27):
+#       if li[level] == i:
+#         result[position] = i
+#         dfs(level + 1, position + 1)
+#       elif li[level] == i // 10 and li[level + 1] == (i % 10):
+#         result[position] = i
+#         dfs(level + 2, position + 1)
+
+# li = list(map(int, input()))
+# li_len = len(li)
+# result = [0] * li_len
+# print(li)
+# dfs(0,0)
 
 
 # ###########################
