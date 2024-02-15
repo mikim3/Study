@@ -1,26 +1,56 @@
-##################################
-# 시작시간 240112 0125 마무리시간 0137
-
-#
 from collections import deque
 
-def bfs(checked):
-  checked[s] = 0
-  queue = deque()
-  queue.append(s)
-  while queue:
-    now = queue.popleft()
-    if now == e:
-      break
-    for next in (now + 1, now - 1, now + 5):
-      if checked[next] == 0:
-        queue.append(next)
-        checked[next] = checked[now] + 1
+########################
+# 시작시간 240215 19:54 마무리시간
 
-checked = [0] * 20000
-s, e = map(int,input().split())
-bfs(checked)
-print(checked[e])
+
+def bfs():
+
+  queue = deque()
+  queue.append()
+
+  while queue:
+
+    now = queue.pop()
+
+    for i in range():
+
+
+# s에서 e 로 가기
+s, e = map(int,input())
+checked = [0] * (e+1)
+
+
+
+
+
+
+
+
+
+# ##################################
+# # 시작시간 240112 0125 마무리시간 0137
+
+# #
+# from collections import deque
+
+# def bfs(checked):
+#   checked[s] = 0
+#   queue = deque()
+#   queue.append(s)
+#   while queue:
+#     now = queue.popleft()
+#     if now == e:
+#       break
+#     for next in (now + 1, now - 1, now + 5):
+#       if checked[next] == 0:
+#         queue.append(next)
+#         checked[next] = checked[now] + 1
+
+# checked = [0] * 20000
+# s, e = map(int,input().split())
+# bfs(checked)
+# print(checked[e])
 
 # ##################################
 # # 시작시간 231217 19:50 마무리시간 20:10
