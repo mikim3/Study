@@ -1,38 +1,66 @@
 import sys
 input = sys.stdin.readline
-############################
-# 시작시간 240112 13:46 마무리시간 13:57
 from collections import deque
+#############################
+# 시작시간 240215 2105 마무리시간 21:18
 
 dx = [-1,0,1,0]
 dy = [0,1,0,-1]
 
+def bfs(start):
+  global count
+  li[start[0]][start[1]] = 1
+  queue = deque()
+  queue.append(start)
+  while queue:
+    now = queue.popleft()
+    if li[6][6] != 0:
+      break
+    for i in range(4):
+      x = now[0] + dx[i]
+      y = now[1] + dy[i]
+      if 0 <= x < 7 and 0 <= y < 7 and li[x][y] == 0:
+        li[x][y] = li[now[0]][now[1]] + 1
+        queue.append([x,y])
+  print(li[6][6] - 1)
 li = []
 for i in range(7):
   li.append(list(map(int,input().split())))
-print(li)
+count = 0
+bfs([0,0])
 
-def dfs(li):
-  queue = deque()
-  queue.append((0,0))
-  while queue:
-    now = queue.popleft()
-    if now[0] == 6 and now[1] == 6:
-      return
-    for i in range(4):
-      next_x = now[0] + dx[i]
-      next_y = now[1] + dy[i]
-      if next_x < 0 or next_x >= 7 or next_y < 0 or next_y >= 7:
-        continue
-      if li[next_x][next_y] == 0:
-        queue.append((next_x, next_y))
-        li[next_x][next_y] = li[now[0]][now[1]] + 1
+############################
+# 시작시간 240112 13:46 마무리시간 13:57
 
-dfs(li)
-if li[6][6] == 0:
-  print(-1)
-else:
-  print(li[6][6])
+# dx = [-1,0,1,0]
+# dy = [0,1,0,-1]
+
+# li = []
+# for i in range(7):
+#   li.append(list(map(int,input().split())))
+# print(li)
+
+# def dfs(li):
+#   queue = deque()
+#   queue.append((0,0))
+#   while queue:
+#     now = queue.popleft()
+#     if now[0] == 6 and now[1] == 6:
+#       return
+#     for i in range(4):
+#       next_x = now[0] + dx[i]
+#       next_y = now[1] + dy[i]
+#       if next_x < 0 or next_x >= 7 or next_y < 0 or next_y >= 7:
+#         continue
+#       if li[next_x][next_y] == 0:
+#         queue.append((next_x, next_y))
+#         li[next_x][next_y] = li[now[0]][now[1]] + 1
+
+# dfs(li)
+# if li[6][6] == 0:
+#   print(-1)
+# else:
+#   print(li[6][6])
 
 # ##########################
 # # 시작시간  231219 13:54    마무리시간 16:34
