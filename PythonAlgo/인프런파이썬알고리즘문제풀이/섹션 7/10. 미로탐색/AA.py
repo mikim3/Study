@@ -1,3 +1,25 @@
+###############################
+# 시작시간 240215 21:20 마무리시간
+
+def dfs(level):
+  if :
+  else:
+
+
+li = []
+for i in range(7):
+  li.append(list(map(int, input().split())))
+checked = [list()]
+
+
+
+
+
+
+
+
+
+
 # ########################
 # # 모범담안
 
