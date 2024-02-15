@@ -1,32 +1,28 @@
 from collections import deque
 
-########################
-# 시작시간 240215 19:54 마무리시간
+# ########################
+# # 시작시간 240215 20:00 마무리시간 20:37
+# # 답봄
 
+# def bfs(start):
+#   result[start] = 0
+#   queue = deque()
+#   queue.append(start)
+#   while queue:
+#     now = queue.popleft()
+#     if now == e:
+#       break
+#     for next in (now-1, now+1, now+5):
+#       if result[next] == 999999:
+#         result[next] = result[now] + 1
+#         queue.append(next)
 
-def bfs():
-
-  queue = deque()
-  queue.append()
-
-  while queue:
-
-    now = queue.pop()
-
-    for i in range():
-
-
-# s에서 e 로 가기
-s, e = map(int,input())
-checked = [0] * (e+1)
-
-
-
-
-
-
-
-
+# # s에서 e 로 가기
+# s, e = map(int,input().split())
+# # checked = [0] * (max(e,s) + 100)
+# result = [999999] * (max(e,s) + 100000)
+# bfs(s)
+# print(result[e])
 
 # ##################################
 # # 시작시간 240112 0125 마무리시간 0137
