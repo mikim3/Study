@@ -1,24 +1,30 @@
 ###############################
-# 시작시간 240215 21:20 마무리시간
+# 시작시간 240219 10:37 마무리시간 10:55
 
-def dfs(level):
-  if :
+dx = [-1,0,1,0]
+dy = [0,1,0,-1]
+
+def dfs(x,y):
+  global count
+  if x == 6 and y == 6:
+    count += 1
   else:
-
+    for i in range(4):
+      next_x = x + dx[i]
+      next_y = y + dy[i]
+      if 0 <= next_x < 7 and 0 <= next_y < 7 and li[next_x][next_y] == 0 and checked[next_x][next_y] == 0:
+        checked[next_x][next_y] = 1
+        dfs(next_x,next_y)
+        checked[next_x][next_y] = 0
 
 li = []
 for i in range(7):
-  li.append(list(map(int, input().split())))
-checked = [list()]
-
-
-
-
-
-
-
-
-
+  li.append(list(map(int,input().split())))
+checked = [[0]*(7) for _ in range(7)]
+count = 0
+checked[0][0] = 1
+dfs(0,0)
+print(count)
 
 # ########################
 # # 모범담안
