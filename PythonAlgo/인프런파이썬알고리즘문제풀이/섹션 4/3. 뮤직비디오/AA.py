@@ -1,3 +1,44 @@
+###############################
+# 시작시간 240222 0010 마무리시간
+
+# 9 3
+# 1 2 3 4 5 6 7 8 9
+
+n, m = map(int, input().split())
+li = list(map(int, input().split()))
+
+
+# 길이가 mid res
+lt = max(li)
+rt = sum(li)
+
+while lt <= rt:
+  mid = (lt + rt) // 2
+  
+  count = 0
+  su = 0
+  for i in range(len(li)):
+    if su + li[i] > mid:
+      su = li[i]
+      count += 1
+    else:
+      su += li[i]
+  if count >= m:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # 시작시간 :  11:35   종료시간 : 12:40 
 # n, m = map(int, input().split())
 
