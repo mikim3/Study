@@ -1,15 +1,30 @@
-####################
-# 시작시간 240210  18:27  마무리시간 18:30
+################
+# 시작시간 240318 2249 마무리시간
+# if 문을 잘못생각함
 
 def dfs(vector):
   if vector > 7:
     return
   else:
+    dfs(2 * vector)
+    dfs(2 * vector + 1)
     print(vector, end=' ')
-    dfs(vector*2)
-    dfs(vector*2 + 1)
+
 dfs(1)
-print()
+
+
+####################
+# # 시작시간 240210  18:27  마무리시간 18:30
+
+# def dfs(vector):
+#   if vector > 7:
+#     return
+#   else:
+#     print(vector, end=' ')
+#     dfs(vector*2)
+#     dfs(vector*2 + 1)
+# dfs(1)
+# print()
 
 # #####################
 # # 231220 복복습
