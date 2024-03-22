@@ -25,12 +25,12 @@ for time in times:
   dic_default[time[0]].append((time[2],time[1]))
 print(dic_default)
 
-# value 만 반환
-for i in dic_default.values():
-  print('values ==',i)
 # (key, value) 형태
 for i in dic_default.items():
   print('items == ', i)
+# value 만 반환
+for i in dic_default.values():
+  print('values ==',i)
 for i in dic_default.keys():
   print('keys == ', i)
 # print(dic_default.clear())
