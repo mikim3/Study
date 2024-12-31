@@ -22,10 +22,20 @@ for i in range(n):
   matrix2.append(list(map(int, input().split())))
 print(matrix2)
 
+
+#
+# 10 13 10 12 15
+# 12 39 30 23 11
+# 11 25 50 53 15
+# 19 27 29 37 27
+# 19 13 30 13 19
+
+n = int(input())
 matrix3 = [list(map(int, input().split())) for _ in range(n)]
 print(matrix3)
 
 #########################
 # 0으로 채운 2차원 배열
 matrix_pill_zero = [[0] * n for _ in range(n)]
+print([0] * n)
 print(matrix_pill_zero)
