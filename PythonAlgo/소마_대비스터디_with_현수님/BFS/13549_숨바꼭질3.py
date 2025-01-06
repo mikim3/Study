@@ -1,5 +1,5 @@
 # 시작시간 1933 마무리시간 2050
-#
+# 비슷한 유형에 답을 보고 다시와서 풀음
 
 from collections import deque
 # 시작 n
