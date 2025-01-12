@@ -1,10 +1,13 @@
+# graph를 bfs로 탐색하는 코드를 짜시오
+
 from collections import deque
 
 # 가까운 노드 먼저 접근
 
 # 노드A 접근
 def bfs(graph, start_vector):
-  visited = [start_vector]
+  visited = []
+  visited.append(start_vector)
   # 사전세팅으로 시작노드를 queue에 넣음
   queue = deque()
   queue.append(start_vector)
@@ -20,7 +23,7 @@ def bfs(graph, start_vector):
         visited.append(next_v)
         # 이후를 위해 큐에 쌓아 놓기
         queue.append(next_v)
-      print(visited)
+    print(visited)
   return visited
 
 graph = {
@@ -32,4 +35,4 @@ graph = {
 }
 
 bfs(graph, 'A')
-# print(bfs(graph, 'A'))
+# print(bfs(graph, 'A'))   # ['A', 'B', 'D', 'E', 'C'] 출력
