@@ -1,11 +1,12 @@
 
+# 서로 다른 두개의 리스트를 탐색하는 두 개의 포인터로 탐색하는 문제
+# ▣ 입력예제
 # 3
-# 135
+# 1 3 5
 # 5
-# 23679
-
-# 250113 또풀기
-# 이번에는 투포인터로 풀기
+# 2 3 6 7 9
+# ▣ 출력예제
+# 1 2 3 3 5 6 7 9
 
 n = int(input())
 li1 = list(map(int, input().split()))
@@ -32,38 +33,3 @@ if p2 < m:
 print(res)
 for i in range(len(res)):
     print(res[i])
-
-
-# 0503  19:50 시작 19:54 매무리
-
-# n = int(input())
-# li_n = list(map(int,input().split()))
-
-# m = int(input())
-# li_m = list(map(int,input().split()))
-
-# li = li_m + li_n
-
-# li.sort()
-# for i in range(len(li)):
-#     print(li[i],end=' ')
-
-
-# # 12 39
-# # 4분걸림
-
-# n = int(input())
-
-# li1 = list(map(int,input().split()))
-
-
-# m = int(input())
-
-# li2 = list(map(int,input().split()))
-
-# li3 = li1 + li2
-# li3.sort()
-
-# for i in range(n+m):
-#     print(li3[i],end=' ')
-
