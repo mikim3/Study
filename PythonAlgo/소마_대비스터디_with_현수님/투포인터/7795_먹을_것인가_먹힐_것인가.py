@@ -1,6 +1,5 @@
 # 시작시간 1655 마무리시간 1715
 
-
 t = int(input())
 for i in range(t):
   n, m = map(int, input().split())
