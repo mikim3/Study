@@ -19,6 +19,7 @@ li = list(map(int, input().split()))
 p1 = 0 # 앞에있는 포인터
 p2 = n -1 # 뒤쪽 포인터
 
+# 겁나 큰 값으로 초기화
 min_v = 10000000222
 while p1 < p2:
   hap = li[p1] + li[p2]
