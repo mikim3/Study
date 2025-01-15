@@ -43,29 +43,23 @@ while True:
   L, R, C = map(int, input().strip().split())
   if L == 0 and R == 0 and C == 0:
     break
-  dz = [0, 1, -1] # 층수 변화 0도 넣어야 되나????
   dx = [-1, 0, 1, 0, R+1, -(R+1)] # 행 위아래
   dy = [0, 1, 0, -1, 0, 0] # 열 좌우
-  # 3차원 공간에 체크 만들기 0 이면 안 간 곳 값은 몇번 시도로 갔는지를 나타냄
   checked = [[0] * C for _ in range(L * (R+1))]
   count_floor = 0 # 현재 층
   li_building = [] # 빌딩 리스트
   while count_floor < L:
-    # 빈 값은 층을 구분하는 경계가됨
     for i in range(R):
       li_building.append(list(input().strip()))
     list(input().strip())
     li_building.append([0] * C) # 층 사이 빈공간 채우기
     count_floor += 1
-    # list(input().strip()) # 빈줄 흘리기
-  # print(li_building)
   for i in range(L * (R+1)):
     for j in range(C):
       if li_building[i][j] == 'S':
         if bfs(li_building, (i,j)) == False:
           print("Trapped!")
         break
-  # TODO : start 0,0으로 일단 박음 귀찮다.
 
 
 # # 시작시간 1543 마무리시간
@@ -143,7 +137,7 @@ while True:
 #   # print('li_building',li_building[2][3][4])
 
 
-#   # TODO : start 0,0,0 으로 일단 박음 귀찮다.
+#   # TODO : start 0,0,0 으로 일단 박음 귀찮다.  입력값에 맞게 고쳐야함
 #   if bfs(li_building, (0,0,0)) == False:
 #     print("Trapped!")
 

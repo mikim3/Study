@@ -20,7 +20,6 @@ def dfs(level):
     sum_value -= li[level]
     dfs(level+1)
 
-
 n, s = map(int, input().split())
 li = list(map(int, input().split()))
 
