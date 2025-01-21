@@ -31,7 +31,7 @@ graph = {
     8: []
 }
 
-dijkstra(graph, 1, 8)
+print(dijkstra(graph, 1, 8))
 
 
 
