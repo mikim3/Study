@@ -38,7 +38,7 @@ li = []
 for i in range(n):
   li.append(list(map(int, input().split())))
 
-time = 0  # 현재 지난시간  1시작인가??
+time = 0
 while True:
   flag = 1
   for i in range(n):
