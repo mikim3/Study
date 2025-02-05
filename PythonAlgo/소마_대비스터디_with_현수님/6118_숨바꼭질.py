@@ -15,7 +15,7 @@ def bfs(start):
         checked[neighbor] = checked[now] + 1
         queue.append(neighbor)
   max_distance = max(checked[1:])
-  
+
 n, m = map(int,input().strip().split())
 graph = [[] for _ in range(n+1)]
 
@@ -24,7 +24,7 @@ for i in range(m):
   graph[a].append(b)
   graph[b].append(a)
 # 각 헛간까지 거리
-checked = [-1] * (n + 1) 
+checked = [-1] * (n + 1)
 checked[1] = 0
 max_distance = 0
 bfs(1)
@@ -39,4 +39,3 @@ for i in range(1,n+1):
     max_index = i
     break
 print(max_index, max_distance, maxs)
-        
