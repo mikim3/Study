@@ -8,3 +8,6 @@ counter = Counter(some_list)
 print(counter)
 print(counter['apple'])
 print(counter['appleegg'])
+
+print(counter.most_common())
+print(counter.get('apple'))
