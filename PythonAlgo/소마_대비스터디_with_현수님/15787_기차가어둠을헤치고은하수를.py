@@ -1,7 +1,8 @@
-# 시작시간 2124 마무리시간
+# 시작시간 1430 마무리시간 1512
 import sys
 from collections import deque
 input = sys.stdin.readline
+
 
 """
 1   i번쨰 기차에 x번째 좌석에 사람을 태워라
@@ -32,19 +33,19 @@ input = sys.stdin.readline
 n, m = map(int, input().strip().split())
 memo = {}
 # train = deque(deque(0) * 20 for _ in range(n))
-for i in range()
-
-
-print(train)
+# 리스트안에 deque가  있는 형태
+train = []
+for i in range(n):
+  train.append(deque([0] * 20)) # 이게 됨???
 for _ in range(m):
   command = list(map(int,input().strip().split()))
-  i = command[1]
+  i = command[1] - 1
   if command[0] == 1:
     x = command[2]
-    train[i][x] = 1 
+    train[i][x-1] = 1 
   if command[0] == 2:
     x = command[2]
-    train[i][x] = 0 
+    train[i][x-1] = 0 
   if command[0] == 3:
     train[i].appendleft(0)
     train[i].pop()
@@ -52,7 +53,11 @@ for _ in range(m):
     train[i].popleft()
     train[i].append(0)
 count = 0
+# print(train)
 for i in range(n):
-  if train[i] not in memo:
-    memo[train[i]]= 1
+  now_train = tuple(train[i]) # 
+  if now_train not in memo:
+    memo[now_train]= 1
     count += 1
+    # print("count ==", count,"memo ==", memo)
+print(count)
