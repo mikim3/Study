@@ -3,8 +3,6 @@
 # === heappop을 하면 알아서 제일 비용이 작은 이동경로를 첫번쨰로 간다. **********
 
 import heapq
-from collections import defaultdict
-
 
 def dijkstra(graph, start, final):
   costs = {}  # 몇번노드가 몇 비용이 들었는지 넣을 딕셔너리
