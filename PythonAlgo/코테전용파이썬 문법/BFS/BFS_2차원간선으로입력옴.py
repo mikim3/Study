@@ -12,7 +12,6 @@ def solution(edges):
     graph[li[1]].append(li[0])
   print(graph)
   
-  
 # 간선리스트
 edges1 = [[1,3],[2,3],[3,4],[4,5],[4,6],[4,7],[7,8],[7,9]]
 edges2 = [[1,2],[2,3],[3,4]]
