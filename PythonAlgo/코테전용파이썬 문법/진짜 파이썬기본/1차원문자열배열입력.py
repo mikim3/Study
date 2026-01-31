@@ -12,7 +12,6 @@ board	               result
 
 """
 board1 = ["O.X", ".O.", "..X"]
-# board2 = [[row] for row in board1]
 board2 = [[row] for row in board1]
 print(board2) # [['O.X'], ['.O.'], ['..X']]
 board2 = [list(row) for row in board1]
