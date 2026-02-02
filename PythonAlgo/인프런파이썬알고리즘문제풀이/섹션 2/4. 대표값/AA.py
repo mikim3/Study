@@ -1,24 +1,57 @@
-# 시작 1628  마무리 1641
+# 시작 1722 마무리
+# 답봄 당연히 알아서 풀었어야 됐을텐데 까비
+
+# n명의 학생중 평균에 가장 가까운 학생 구하기
+# 여러개면 점수 높은순 또 여러개면 번호 빠른순
+
+# 평균을 구한다.
+# 
 
 n = int(input())
 li = list(map(int,input().split()))
-li_sum = sum(li)
-mean_val = round(li_sum / n)
-min_val = 99999999999
-ret_index = 0 # 결과 인덱스
-ret_val = 0
-for i in range(n):
-    if (abs(li[i] - mean_val) < min_val):
-        min_val = abs(li[i] - mean_val)
-        ret_index = i
-        ret_val = li[i]
-    elif (abs(li[i] - mean_val) == min_val):
-        if (ret_val < li[i]):
-            min_val = abs(li[i] - mean_val)
-            ret_index = i
-            ret_val = li[i]
 
-print(mean_val, ret_index + 1)
+# print(round(sum(li)/n,0)) # 74.0
+av = round(sum(li)/n,0)
+
+check_v = 0 # 가장 가까운 값 저장
+check_i = 0
+min_v = 999999999 # 최소랑 가장 가까운
+
+for i in range(n):
+    if abs(li[i]-av) < min_v: # 가장 가깝다면
+        check_v = li[i]
+        check_i = i
+        min_v = abs(li[i]-av)
+    elif abs(li[i]-av) == min_v: # 가장 가까운데 공동이면
+        # 값이커야됨
+        if li[i] > check_v:
+            check_v = li[i]
+            check_i = i
+print(int(av), check_i+1)
+
+
+
+# 시작 1628  마무리 1641
+
+# n = int(input())
+# li = list(map(int,input().split()))
+# li_sum = sum(li)
+# mean_val = round(li_sum / n)
+# min_val = 99999999999
+# ret_index = 0 # 결과 인덱스
+# ret_val = 0
+# for i in range(n):
+#     if (abs(li[i] - mean_val) < min_val):
+#         min_val = abs(li[i] - mean_val)
+#         ret_index = i
+#         ret_val = li[i]
+#     elif (abs(li[i] - mean_val) == min_val):
+#         if (ret_val < li[i]):
+#             min_val = abs(li[i] - mean_val)
+#             ret_index = i
+#             ret_val = li[i]
+
+# print(mean_val, ret_index + 1)
 
 # 19:50  시작
 # 20:35  마무리
