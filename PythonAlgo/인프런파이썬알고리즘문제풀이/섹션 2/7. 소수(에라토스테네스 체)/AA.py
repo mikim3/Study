@@ -8,34 +8,35 @@
 #    그렇기에 배수들은 소수가 아니라고 체크
 # 4. 다시 2,3을 반복
 
-# n = int(input())
+n = int(input())
 
 # ret_val = 0 # 소수의 갯수
 # li = [0 for i in range(n + 1)]
 # for i in range(2, len(li)):# 2부터 소수판별
-#     if (li[i] == 0):
-#         li[i] = 1
-#         ret_val += 1
-#         for j in range(i,len(li),i):
-#             li[j] = 1
+#     if (li[i] == 0): # 만약 지금까지 약수로 존재하는 수가 없었다면
+#         ret_val += 1 # 소수발견 count+1
+#         for j in range(i,len(li),i): 
+#             li[j] = 1 # 그 소수에 배수들 체크
 # # n == 4일때  0,1,2,3,4 의 배열을 가짐 즉 n + 1의 배열이 있는거임 len(li)는 n+1임
 # print(ret_val)
+
+# n = int(input())
 
 ###########################
 # # 그냥 구현 20분 걸림
 
-n = int(input())
+# n = int(input())
 
-ch = [0]*(n+1)
-cnt = 0
+# ch = [0]*(n+1)
+# cnt = 0
 
-for i in range(2,n+1):
-    if ch[i] == 0:
-        cnt += 1
-        for j in range(i, n+1, i):
-            ch[j] = 1
+# for i in range(2,n+1):
+#     if ch[i] == 0:
+#         cnt += 1
+#         for j in range(i, n+1, i):
+#             ch[j] = 1
 
-print(cnt)
+# print(cnt)
 
 ###################
 # 그냥 구현한거
