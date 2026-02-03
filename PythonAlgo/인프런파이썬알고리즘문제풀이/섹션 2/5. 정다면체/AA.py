@@ -1,19 +1,49 @@
+# 시작 260203 1901 마무리 1910
+
+# 서로 다른 두수를 합쳐 나온 값 중에 가장 자주나온 값
+n, m = map(int,input().split())
+
+li = [0] * (n+m+1)
+
+for i in range(1,n+1):
+    for j in range(1,m+1):
+        li[i+j] += 1
+
+max_v = max(li)
+li_ret =[]
+for i in range(n+m+1):
+    if li[i] == max_v:
+        li_ret.append(i)
+
+for i in range(len(li_ret)):
+    print(f"{li_ret[i]}", end=" ")
+
+
+
+
+
+
+
+
+
+
+
 # 1652  시작  1710 마무리
 
-# 리스트 0으로 초기화 하는법 서칭함
+# # 리스트 0으로 초기화 하는법 서칭함
+# # li = [0 for i in range(n + m + 1)]
+# n, m = map(int, input().split())
+
 # li = [0 for i in range(n + m + 1)]
-n, m = map(int, input().split())
 
-li = [0 for i in range(n + m + 1)]
+# for i in range(1,n + 1):
+#     for j in range(1,m + 1):
+#         li[i + j] += 1 
+# max_value = max(li)
 
-for i in range(1,n + 1):
-    for j in range(1,m + 1):
-        li[i + j] += 1 
-max_value = max(li)
-
-for i in range(len(li)):
-    if (li[i] == max_value):
-        print(i, end=' ')
+# for i in range(len(li)):
+#     if (li[i] == max_value):
+#         print(i, end=' ')
 
 
 # collections.defaultdict(int)는 서칭해서 기억해냄 

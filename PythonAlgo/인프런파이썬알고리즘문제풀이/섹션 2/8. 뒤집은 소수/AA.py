@@ -1,3 +1,38 @@
+# 시작 260203 1940  마무리 1949
+
+# 수 뒤집고 뒤집은게 소수면 출력
+
+def reverse(x:int):
+    ret = 0
+    x_st = str(x)
+    x_st_r= x_st[::-1]
+    ret = int(x_st_r)
+    return ret
+
+def isPrime(x: int):
+    for i in range(2,x-1):
+        if x % i == 0:
+            return 0
+    return 1
+
+n = int(input())
+li = list(map(int,input().split()))
+for i in range(len(li)):
+    if isPrime(reverse(li[i])) == 1:
+        print(f"{reverse(li[i])}",end=" ")
+
+
+
+
+
+
+
+
+
+
+
+
+
 # 시작 20:16  끝 20:33
 # 문자열 뒤집기 서칭함
 
