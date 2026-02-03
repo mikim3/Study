@@ -1,17 +1,31 @@
-# 0503  19:35시작 19:50 마무리
-li = []
+# 시작 260203 2108 마무리 
 
-for i in range(21):
-    li.append(i)
+li = [x for x in range(1,21)]
 
 for i in range(10):
     a,b = map(int,input().split())
-    li_tmp_reverse = li[b:a-1:-1]
-    for i in range(a,b+1):
-        li[i] = li_tmp_reverse[i - a]
+    li1 = li[:a-1]
+    li2 = li[a-1:b]
+    li3 = li[b:]
+    li2 = li2[::-1]
+    li = li1+li2+li3
+for i in range(len(li)):
+    print(li[i],end=" ")
 
-for i in range(1,21):
-    print(li[i],end=' ')
+# 0503  19:35시작 19:50 마무리
+# li = []
+
+# for i in range(21):
+#     li.append(i)
+
+# for i in range(10):
+#     a,b = map(int,input().split())
+#     li_tmp_reverse = li[b:a-1:-1]
+#     for i in range(a,b+1):
+#         li[i] = li_tmp_reverse[i - a]
+
+# for i in range(1,21):
+#     print(li[i],end=' ')
 
 
 # 11 47
