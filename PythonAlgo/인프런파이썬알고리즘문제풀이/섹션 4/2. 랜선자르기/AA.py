@@ -1,28 +1,67 @@
-####################################
-# 시작시간 240221 2309 마무리시간 2335
+#######
+# 260212 시작 0132  마무리
 
-k, n = map(int ,input().split())
+# k개 랜선으로 N개 이상 랜선 만들어야함
+
+k, n = map(int,input().split())
+
+# 
 li = []
 for i in range(k):
   li.append(int(input()))
-
+  
+# 잘린 갯수가 너무 적으면 너무 큰거고 갯수가 너무 많으면 너무 작은거 
+max_len = 0
 lt = 0
 rt = max(li)
-
+mid = (rt+lt)//2
 while lt <= rt:
-  # mid로 잘라보기
-  mid = (lt + rt) // 2
-  total = 0
-  # mid 크기로 잘라보기
+  count = 0
+  # print("be",lt,rt)
   for i in range(k):
-    total += li[i] // mid
-  # 잘게 나누어짐
-  if total >= n:
-    res = mid
-    lt = mid + 1
-  elif total < n:
+    count += li[i]//mid 
+  if count >= n:
+    if mid > max_len:
+      max_len = mid 
+    lt = mid+1
+  else:
     rt = mid - 1
-print(res)
+  mid = (rt+lt)//2
+  # print("af",lt,rt)
+print(max_len)
+
+
+
+
+
+
+
+
+####################################
+# 시작시간 240221 2309 마무리시간 2335
+
+# k, n = map(int ,input().split())
+# li = []
+# for i in range(k):
+#   li.append(int(input()))
+
+# lt = 0
+# rt = max(li)
+
+# while lt <= rt:
+#   # mid로 잘라보기
+#   mid = (lt + rt) // 2
+#   total = 0
+#   # mid 크기로 잘라보기
+#   for i in range(k):
+#     total += li[i] // mid
+#   # 잘게 나누어짐
+#   if total >= n:
+#     res = mid
+#     lt = mid + 1
+#   elif total < n:
+#     rt = mid - 1
+# print(res)
 
 
 ################################

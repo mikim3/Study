@@ -1,46 +1,82 @@
+# 0206 시작 2200 마무리 2206
+
+n = int(input())
+li = []
+
+for i in range(n):
+    li.append(list(map(int,input().split())))
+
+su_m = 0
+
+for i in range(n):
+    su_now = 0
+    for j in range(n):
+        su_now += li[i][j]        
+    if su_m < su_now:
+        su_m = su_now
+for i in range(n):
+    su_now = 0
+    for j in range(n):
+        su_now += li[j][i]        
+    if su_m < su_now:
+        su_m = su_now
+su_now = 0
+for i in range(n):
+    su_now += li[i][i]        
+    if su_m < su_now:
+        su_m = su_now
+
+su_now = 0
+for i in range(n):
+    su_now += li[i][n-i-1]    
+    if su_m < su_now:
+        su_m = su_now
+print(su_m)
+
+
 # 0503    20:02 시작 20:35 마무리
 
 # 테스트 케이스 다 통과 했지만 대각선 방향이 모두 계산된건지 의문이 있음
 
 # 입력값으로 2차원 배열 받는법 서칭으로 알아냄
 # 더하는 경우의 수중에 가장 큰 수를 찾는다.
-n = int(input())
-li = []
+# n = int(input())
+# li = []
 
-# 값 입력
-for i in range(n):
-    li.append(list(map(int, input().split())))
+# # 값 입력
+# for i in range(n):
+#     li.append(list(map(int, input().split())))
 
-sum_val = 0
-max_val = 0
+# sum_val = 0
+# max_val = 0
 
-# 행계산
-for i in range(n):
-    if (max_val < sum(li[i])):
-        max_val = sum(li[i])
+# # 행계산
+# for i in range(n):
+#     if (max_val < sum(li[i])):
+#         max_val = sum(li[i])
 
-# 열계산
-for i in range(n):
-    for j in range(n):
-        sum_val += li[j][i]
-    if (max_val < sum_val):
-        max_val = sum_val
-    sum_val = 0
+# # 열계산
+# for i in range(n):
+#     for j in range(n):
+#         sum_val += li[j][i]
+#     if (max_val < sum_val):
+#         max_val = sum_val
+#     sum_val = 0
 
-for i in range(n):
-    sum_val += li[i][i] 
-if (max_val < sum_val):
-    max_val = sum_val
-sum_val = 0
+# for i in range(n):
+#     sum_val += li[i][i] 
+# if (max_val < sum_val):
+#     max_val = sum_val
+# sum_val = 0
 
-for i in range(n):
-    sum_val += li[i][n-i- 1]
-    # print(li[i][n - i - 1])
-if (max_val < sum_val):
-    max_val = sum_val
-sum_val = 0
+# for i in range(n):
+#     sum_val += li[i][n-i- 1]
+#     # print(li[i][n - i - 1])
+# if (max_val < sum_val):
+#     max_val = sum_val
+# sum_val = 0
 
-print(max_val)
+# print(max_val)
 
 
 

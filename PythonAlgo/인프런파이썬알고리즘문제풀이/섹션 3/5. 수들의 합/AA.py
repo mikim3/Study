@@ -1,28 +1,25 @@
-# 19:57 시작시간 20:02에 포기 어처피 문제뜻 정확히 모름 수열을 잘 알아보자
+# 260208 시작 1636 마무리 1748
 
-# 합이 m이 되는 경우의 수
-
-# 합하면 
-
-
-n, m = map(int,input().split())
+n,m = map(int,input().split())
 li = list(map(int,input().split()))
 
-
-for i in range(len(li)):
-    for j in range()
-
-
-
-
-
-
-
-
-
-
-
-
+p1 = 0 # 이게 지나가면 뻄
+p2 = 0 # 이게 지나가면 더함
+su = 0
+count = 0
+while True:
+    if su <= m:
+        if p2 >= n:
+            break
+        su += li[p2]
+        p2+=1
+    elif su > m:
+        su -= li[p1]
+        p1 += 1
+    if su == m:
+        count += 1
+    # print(count,p1,p2,su)
+print(count)
 
 # # 22 38  23 16 분까지 풀어도 시간초과나옴
 

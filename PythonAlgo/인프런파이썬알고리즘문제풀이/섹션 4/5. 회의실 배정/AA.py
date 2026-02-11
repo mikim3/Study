@@ -25,8 +25,6 @@ for start, end in li:
 print(count)
 
 
-
-
 # 시작시간 :     종료시간 :  
 
 # n = int(input())

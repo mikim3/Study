@@ -1,25 +1,45 @@
+# 260211 시작 1946 마무리 2000
+#
+
+n, m = map(int,input().split())
+li = list(map(int,input().split()))
+li.sort()
+lt = 0
+rt = n-1 # 고민되네
+mid = (rt+lt)//2
+ret = 0
+while lt <= rt:# gomin
+    mid = (rt+lt)//2
+    if li[mid] == m:
+        ret = mid
+        break
+    elif li[mid] > m:
+        rt = mid - 1
+    elif li[mid] < m:
+        lt = mid + 1
+print(ret+1)
+
+
+
 #########################
 # 시작시간 240221 2256  마무리시간 2304
 
-# 8 32
-# 23 87 65 12 57 32 99 81
+# n, m = map(int, input().split())
+# li = list(map(int, input().split()))
 
-n, m = map(int, input().split())
-li = list(map(int, input().split()))
+# li.sort()
+# lt = 0
+# rt = len(li) - 1
 
-li.sort()
-lt = 0
-rt = len(li) - 1
-
-while lt <= rt:
-  mid = (lt + rt) // 2
-  if li[mid] == m:
-    print(mid+1)
-    break
-  elif li[mid] > m:
-    rt = mid - 1
-  else:
-    lt = mid + 1
+# while lt <= rt:
+#   mid = (lt + rt) // 2
+#   if li[mid] == m:
+#     print(mid+1)
+#     break
+#   elif li[mid] > m:
+#     rt = mid - 1
+#   else:
+#     lt = mid + 1
 
 # 약 10분 소요
 
