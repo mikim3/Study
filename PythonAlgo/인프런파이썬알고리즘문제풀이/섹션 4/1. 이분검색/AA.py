@@ -1,23 +1,23 @@
 # 260211 시작 1946 마무리 2000
 #
 
-n, m = map(int,input().split())
-li = list(map(int,input().split()))
-li.sort()
-lt = 0
-rt = n-1 # 고민되네
-mid = (rt+lt)//2
-ret = 0
-while lt <= rt:# gomin
-    mid = (rt+lt)//2
-    if li[mid] == m:
-        ret = mid
-        break
-    elif li[mid] > m:
-        rt = mid - 1
-    elif li[mid] < m:
-        lt = mid + 1
-print(ret+1)
+# n, m = map(int,input().split())
+# li = list(map(int,input().split()))
+# li.sort()
+# lt = 0
+# rt = n-1 # 고민되네
+# mid = (rt+lt)//2
+# ret = 0
+# while lt <= rt:# gomin
+#     mid = (rt+lt)//2
+#     if li[mid] == m:
+#         ret = mid
+#         break
+#     elif li[mid] > m:
+#         rt = mid - 1
+#     elif li[mid] < m:
+#         lt = mid + 1
+# print(ret+1)
 
 
 

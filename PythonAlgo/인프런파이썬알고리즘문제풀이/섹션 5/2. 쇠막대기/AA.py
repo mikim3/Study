@@ -1,3 +1,23 @@
+# 260215 시작 2217 마무리 2251
+# 레이저가 발사되는 그림과 끝부분을 보고 직관적으로 조건을 찾아내면 좋은 문제
+
+li = list(input())
+stack = []
+
+count = 0
+for i in range(len(li)):
+    if li[i] == '(':
+        stack.append('(')
+    if li[i] == ')':
+        if li[i-1] == '(': # 레이저 발사
+            stack.pop()
+            if stack:
+                count += len(stack)
+        else: # 발사는 아니고
+            count += 1
+            stack.pop()
+print(count)
+
 ##########################
 # 시작시간    마무리시간
 # 답봄 아이디어가 절대 안 떠오름

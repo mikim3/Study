@@ -1,5 +1,36 @@
-# import sys
-# sys.stdin = open("/goinfre/mikim3/Study/PythonAlgo/인프런파이썬알고리즘문제풀이/섹션 4/3. 뮤직비디오/input.txt", "r")
+# 260212 시작 1101  마무리
+# 답봄 
+
+# n, m = map(int,input().split())
+# li = list(map(int,input().split()))
+# lt = max(li)
+# rt = sum(li)
+# mid = (lt+rt)//2
+# min_v = 9999999
+# # mid 로 나누었을떄 
+# while lt <= rt:
+#     # print("bef", lt, rt, mid, min_v)
+#     count = 1 # 나눠진 갯수
+#     now_f = 0 # 현재 나눠진거
+#     for i in range(n): # 
+#         now_f+=li[i]
+#         if now_f > mid: # 비디오 하나가 다차면
+#             count += 1
+#             now_f = li[i]
+#     if count == m:
+#         if min_v > mid:    
+#             min_v = mid
+#         rt = mid - 1
+#     elif count > m: # 갯수가 m보다 많으면 == 크기를 너무 작게 했으면 == 다음에는 더 커져야되면
+#         lt = mid + 1
+#     elif count < m:
+#         if min_v > mid:    
+#             min_v = mid
+#         rt = mid - 1
+#     mid = (lt+rt)//2 # 현재 비디오 크기
+#     # print("aft", lt, rt,mid,min_v)
+
+# print(min_v)
 
 ###############################
 # 시작시간 240222 2044 마무리시간 2105

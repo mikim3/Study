@@ -1,3 +1,24 @@
+# 260215 시작 1901 마무리 1930
+
+# n,m = map(int, input().split())
+# stack = []
+# n_st = str(n)
+# jari = len(n_st)
+# now_num = ""
+# count_x = m # 제거 횟수
+# for i in range(jari):
+#   while stack and stack[-1] < int(n_st[i]) and count_x > 0:
+#     stack.pop()
+#     count_x -= 1
+#   stack.append(int(n_st[i]))
+# while stack and count_x > 0:
+#   stack.pop()
+#   count_x -= 1
+
+# for i in range(len(stack)):
+#   print(stack[i],end='')
+
+
 #############################
 # 다시품 시작시간 230921 22:01     마무리시간 23:01
 # 이 번에는 밑에 주석을 보고 풀어버림
@@ -34,18 +55,18 @@
 #####################
 # 선생님 답안
 
-num, m = map(int, input().split())
-num = list(map(int, str(num)))
-stack = []
+# num, m = map(int, input().split())
+# num = list(map(int, str(num)))
+# stack = []
 
-for x in num:
-  while stack and m > 0 and stack[-1] < x:
-    stack.pop()
-    m -= 1
-  stack.append(x)
+# for x in num:
+#   while stack and m > 0 and stack[-1] < x:
+#     stack.pop()
+#     m -= 1
+#   stack.append(x)
 
-if m != 0:
-  stack = stack[:-m]
+# if m != 0:
+#   stack = stack[:-m]
 
-res = ''.join(map(str, stack))
-print(res)
+# res = ''.join(map(str, stack))
+# print(res)
