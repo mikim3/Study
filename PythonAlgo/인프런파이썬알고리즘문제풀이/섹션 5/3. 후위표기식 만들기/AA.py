@@ -1,3 +1,44 @@
+# 260216 시작 1500  마무리 1642
+# 시간 개 많이씀
+# 후위표기식
+# 후위표기식은  연산자가 왔을때 바로 계산함
+# 
+# 3+5*2
+
+li = input()
+stack = []
+li_res = []
+for i in range(len(li)):
+    if li[i].isdigit():
+        li_res.append(li[i])
+    elif li[i] == '(': # ) 가 나오면 (가 나올때까지  append
+        stack.append(li[i])
+    elif li[i] == ')': # (가 나올때까지 pop
+        while stack and stack[-1] !='(':
+            li_res.append(stack.pop())        
+        if stack[-1] == '(':
+            stack.pop()
+    elif li[i] == '+' or li[i] == '-':
+        if stack:
+            while stack and stack[-1] == '/' or stack[-1] == '*' or stack[-1] == '-' or stack[-1] == '+':
+                li_res.append(stack.pop())
+                if not stack:
+                    break
+        stack.append(li[i])
+    elif li[i] == '/' or li[i] == '*':
+        if stack:
+            while stack and stack[-1] == '/'or stack[-1] == '*':
+                li_res.append(stack.pop())
+                if not stack:
+                    break
+        stack.append(li[i])
+    # print(stack, li_res)
+while stack:
+    li_res.append(stack.pop())
+for i in range(len(li_res)):
+    print(li_res[i],end='')
+
+
 ##############################
 # 시작시간 0925 18:24 마무리시간 18:40
 

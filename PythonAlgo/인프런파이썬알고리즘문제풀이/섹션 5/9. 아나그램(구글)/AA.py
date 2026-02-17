@@ -1,21 +1,44 @@
+# 260217 시작 0055  마무리
+from collections import deque
+
+se1 = input()
+se2 = deque(input())
+flag = "YES"
+for i in range(len(se1)):
+    se2_count = len(se2)
+    while True:
+        if se2_count == 0: # 이미 다봄
+            flag = "NO"            
+            break
+        
+        tmp = se2.popleft()
+        if se1[i] == tmp:
+            break
+        se2.append(tmp)
+        se2_count -= 1
+print(flag)
+
+
+
+
 ############################
 # 230930 인프런 개선된 답안
 
-a = input()
-b = input()
-sH = dict()
+# a = input()
+# b = input()
+# sH = dict()
 
-for x in a:
-  sH[x] = sH.get(x, 0) + 1
-for x in b:
-  sH[x] = sH.get(x, 0) - 1
-print(sH)
-for x in a: # 키 값들만 i 에 대응
-  if sH.get(x) != 0:
-    print("NO")
-    break
-else:
-  print("YES")
+# for x in a:
+#   sH[x] = sH.get(x, 0) + 1
+# for x in b:
+#   sH[x] = sH.get(x, 0) - 1
+# print(sH)
+# for x in a: # 키 값들만 i 에 대응
+#   if sH.get(x) != 0:
+#     print("NO")
+#     break
+# else:
+#   print("YES")
 
 ###########################
 # 인프런 기본 답안

@@ -1,24 +1,54 @@
+# 260216 시작 1721 마무리
+# 자기보다 높은 위험도 환자 없을떄만 진료 받음
+from collections import deque
+
+n,m = map(int,input().split())
+li = list(map(int,input().split()))
+count = 0 # 진료받은 수
+dq= deque()
+for index,value in enumerate(li):
+  dq.append((index,value))
+
+while dq:
+  now_i,now_v = dq.popleft()
+  flag = 0 # 아직 가장 높음
+  for i in range(len(dq)):
+    if dq[i][1] > now_v:
+      flag = 1 # 가장 높지 않음
+      break
+  if flag == 0:
+    count += 1
+  if flag == 0 and now_i == m:
+    break
+  if flag == 1:
+    dq.append((now_i,now_v))
+  # print(dq,count)
+print(count)
+
+
+
+
 ###########################
 # 인프런 답안
 # 리스트에 저장한는 것들에 인덱스도 같이 저장하는 방법을 배움
 # any함수도 배움 ( 한가지라도 조건이 성립하면 true반환하는 함수 )
 
-from collections import deque
+# from collections import deque
 
-n, m = map(int, input().split())
-que = [(pos, val) for pos, val in enumerate(list(map(int, input().split())))]
-que = deque(que)
+# n, m = map(int, input().split())
+# que = [(pos, val) for pos, val in enumerate(list(map(int, input().split())))]
+# que = deque(que)
 
-count = 0
-while True:
-  cur = que.popleft()
-  if any(cur[1] < x[1] for x in que):
-    que.append(cur)
-  else:
-    count += 1
-    if cur[0] == m:
-      print(count)
-      break
+# count = 0
+# while True:
+#   cur = que.popleft()
+#   if any(cur[1] < x[1] for x in que):
+#     que.append(cur)
+#   else:
+#     count += 1
+#     if cur[0] == m:
+#       print(count)
+#       break
 
 
 ##########################
