@@ -1,3 +1,32 @@
+# 260218 시작 1507 마무리 
+# 답봄
+# def dfs(level,su, su_t):
+#   global max_w
+#   # (total-su_t) == 앞으로 나올 가능성 있는 무게들
+#   if su + (total-su_t) < max_w:
+#     return
+#   if su > c:
+#     return
+#   if level == n:
+#     if su <= c:
+#       if max_w < su:
+#         max_w = su
+#   else:
+#     su += li[level]
+#     dfs(level+1,su,su_t+li[level])
+#     su -= li[level]
+#     dfs(level+1,su,su_t+li[level])
+
+# c,n = map(int,input().split())
+# ch = [0] * n
+# li = []
+# max_w = 0
+# for i in range(n):
+#   li.append(int(input()))
+# total = sum(li)
+# dfs(0,0,0)
+# print(max_w)
+
 ############################
 # 시작시간 240210 22:56 마무리시간 23:28
 
@@ -5,36 +34,36 @@
 
 # 버리는 무게
 
-def dfs(level, take):
-  global max_take
-  poten_take = 0
-  for i in range(level,n):
-    poten_take += li[i]
-  if take + poten_take < max_take:
-    return
-  if take > c:
-    return
-  if level >= n:
-    total = 0
-    for i in range(n):
-      if checked[i] == 1:
-        total += li[i]
-    if total > max_take:
-      max_take = total
-  else:
-    checked[level] = 1
-    dfs(level+1, take + li[level])
-    checked[level] = 0
-    dfs(level+1, take)
+# def dfs(level, take):
+#   global max_take
+#   poten_take = 0
+#   for i in range(level,n):
+#     poten_take += li[i]
+#   if take + poten_take < max_take:
+#     return
+#   if take > c:
+#     return
+#   if level >= n:
+#     total = 0
+#     for i in range(n):
+#       if checked[i] == 1:
+#         total += li[i]
+#     if total > max_take:
+#       max_take = total
+#   else:
+#     checked[level] = 1
+#     dfs(level+1, take + li[level])
+#     checked[level] = 0
+#     dfs(level+1, take)
 
-c, n = map(int, input().split())
-li = []
-for i in range(n):
-  li.append(int(input()))
-checked = [0] * (n+1)
-max_take = 0
-dfs(0,0)
-print(max_take)
+# c, n = map(int, input().split())
+# li = []
+# for i in range(n):
+#   li.append(int(input()))
+# checked = [0] * (n+1)
+# max_take = 0
+# dfs(0,0)
+# print(max_take)
 
 ##########################################
 # 시작시간 231222 2225 마무리시간 2303

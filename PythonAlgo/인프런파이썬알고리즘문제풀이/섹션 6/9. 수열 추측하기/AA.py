@@ -1,4 +1,45 @@
+# 260219 시작 2238 마무리 2329
+# 선생님의 풀이는 너무 수학적 지식이 갖춰져 있어야 생각가능한 풀이임
 import sys
+# 각 순열이 있고 그 순열에 따라 다른 맨 밑에 값이 나온다.
+# 모든 순열을 구하는 과정에서 맨 밑에 값 구해야 할듯???
+
+def pascal(li_v):
+    if len(li_v) == 1:
+        return li_v
+    else:
+        li_v_next = []
+        for i in range(len(li_v)-1):
+            li_v_next.append(li_v[i]+li_v[i+1])
+        return pascal(li_v_next)
+
+def dfs(level):
+    if n == level:
+        # for i in range(n):
+        if pascal(res)[0] == f:
+            for i in range(n):
+                print(res[i],end=' ')
+            sys.exit()
+    else:
+        for i in range(1,n+1):
+            if ch[i] == 0:
+                ch[i] = 1
+                res[level] = i
+                dfs(level+1)    
+                ch[i] = 0
+n, f = map(int,input().split())
+ch = [0] * (n+1) # 순열에 어떤 숫자들이 이미 사용됐나
+res = [0] * (n) # 완성되는 순열
+li = []
+dfs(0)
+# print(li)
+
+
+# for i in range(len(li)): # li 순회하면서 맨밑수 구하기
+#     if pascal(li[i])[0] == f:
+#         for j in range(len(li[i])):
+#             print(li[i][j], end=' ')
+#         break
 
 ##############################
 # 시작시간 240212 14:40 마무리시간

@@ -1,20 +1,31 @@
+# 260217 시작 1601  마무리 1604
+
+def recur(n):
+  if n == 0:
+    return 
+  else:
+    recur(n//2)
+    print(n % 2,end='')
+n = int(input())
+recur(n)
+
 ########################
 # 시작시간 231001  1544 마무리 시간
 # 답봄
 
-def recur(n):
-  if n == 0:
-    return
-  else:
-    recur(n // 2)
-    print(n % 2, end='' )
+# def recur(n):
+#   if n == 0:
+#     return
+#   else:
+#     recur(n // 2)
+#     print(n % 2, end='' )
 
-n = int(input())
-recur(n)
+# n = int(input())
+# recur(n)
 
 
 ##########################
-# 시작시간  0525 19:20   마무리시간
+# 시작시간  240525 19:20   마무리시간
 
 # def recur(x):
 #     if x == 0:

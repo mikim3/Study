@@ -1,20 +1,40 @@
+# 260217 시작 1833  마무리
+# 순서 떄매 그냥 답봄
+# def dfs(level):
+#   global n
+#   if level > n:
+#     for i in range(1,n+1):
+#       if li[i] == 1:
+#         print(i,end=' ')
+#     print()
+#     return 
+#   else:
+#     li[level] = 1
+#     dfs(level+1)
+#     li[level] = 0
+#     dfs(level+1)
+
+# n = int(input())
+# li = [0] * (n+1) 
+# dfs(1)
+
 ############################
 # 시작시간 2134 마무리시간 2144
-def dfs(level):
-  if level >= n:
-    for i in range(n):
-      if checked[i] == 1:
-        print(i + 1,end=' ')
-    print()
-  else:
-    checked[level] = 1
-    dfs(level+1)
-    checked[level] = 0
-    dfs(level+1)
+# def dfs(level):
+#   if level >= n:
+#     for i in range(n):
+#       if checked[i] == 1:
+#         print(i + 1,end=' ')
+#     print()
+#   else:
+#     checked[level] = 1
+#     dfs(level+1)
+#     checked[level] = 0
+#     dfs(level+1)
 
-n = int(input())
-checked = [0] * (n)
-dfs(0)
+# n = int(input())
+# checked = [0] * (n)
+# dfs(0)
 
 # ############################
 # # 시작시간 240210 18:31 마무리시간 18:41

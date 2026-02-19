@@ -6,7 +6,6 @@ def dfs(vector):
     print(vector, end=' ')
     dfs(vector * 2)
     dfs(vector * 2+1)
-
 dfs(1)
 
 # ################

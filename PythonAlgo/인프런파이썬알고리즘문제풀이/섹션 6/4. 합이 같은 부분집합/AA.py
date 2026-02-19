@@ -1,32 +1,61 @@
+# 260218 시작 1336 마무리 1350
+# import sys
+
+# def dfs(level):
+#   if level > n:
+#     su = 0
+#     for i in range(1,n+1):
+#       if ch[i]==1:
+#         su += li[i-1]
+#       else:
+#         su -= li[i-1]
+#     if su == 0:
+#       print("YES")
+#       sys.exit()
+#       return "YES"
+#   else:
+#     ch[level] = 1
+#     dfs(level+1)
+#     ch[level] = 0
+#     dfs(level+1)
+#   return "NO"
+
+# n = int(input())
+# li = list(map(int,input().split()))
+# ch = [0] * (n+1)
+
+# print(dfs(1))
+
+
 ##################
 # 시작시간 2145 마무리시간 2152
-import sys
+# import sys
 
-def dfs(level):
-  if level >= n:
-    half = 0
-    for i in range(n):
-      if checked[i] == 0:
-        half += li[i]
-    su = 0
-    for i in range(n):
-      if checked[i] == 1:
-        su += li[i]
-    if su == half:
-      print("YES")
-      sys.exit()
-  else:
-    checked[level] = 1
-    dfs(level+1)
-    checked[level] = 0
-    dfs(level+1)
+# def dfs(level):
+#   if level >= n:
+#     half = 0
+#     for i in range(n):
+#       if checked[i] == 0:
+#         half += li[i]
+#     su = 0
+#     for i in range(n):
+#       if checked[i] == 1:
+#         su += li[i]
+#     if su == half:
+#       print("YES")
+#       sys.exit()
+#   else:
+#     checked[level] = 1
+#     dfs(level+1)
+#     checked[level] = 0
+#     dfs(level+1)
   
-n = int(input())
-li = list(map(int,input().split()))
-checked = [0] * (n)
+# n = int(input())
+# li = list(map(int,input().split()))
+# checked = [0] * (n)
 
-dfs(0)
-print("NO")
+# dfs(0)
+# print("NO")
 
 
 

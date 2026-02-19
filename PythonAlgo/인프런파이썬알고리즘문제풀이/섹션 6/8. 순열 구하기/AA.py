@@ -1,3 +1,28 @@
+# 260219 시작 2212 마무리 
+# 답봄
+
+# def dfs(level):
+#     global count
+#     if level == m:
+#         for i in range(m):
+#             print(res[i], end=' ')
+#         print()
+#         count += 1
+#     else:
+#         for i in range(1,n+1): # 현재 레벨에 i 값 사용
+#             if ch[i] == 0:
+#                 ch[i] = 1
+#                 res[level] = i
+#                 dfs(level+1)
+#                 ch[i] = 0
+
+# n,m = map(int,input().split())
+# ch = [0] * (n+1) # 특정 값을 사용했는지 표시
+# res = [0] * (m) # 특정 레벨에 특정 값이 뭔지 표시
+# count = 0
+# dfs(0)
+# print(count)
+
 ###########################
 # 시작시간 240212 0809 마무리시간 0850
 # 어쩌다 풀기는 했는데 이해가 덜 되었음

@@ -1,25 +1,48 @@
+# 260219 시작 2343 마무리
+# 강의 들음
+
+def dfs(level, start):
+  global count 
+  if level == m:
+    for i in range(m):
+      print(res[i],end=' ')
+    print()
+    count += 1
+  else:
+    for i in range(start, n+1):
+      res[level] = i
+      dfs(level+1,i+1)
+    
+n, m = map(int,input().split())
+count = 0
+ch = [0] * (n+1)
+res = [0] * (m)
+# 1,2,3,4 중 2개를 골라서 나올 수 있는 조합
+dfs(0,1)
+print(count)
+
 ############
 # 시작시간 0014 마무리시간 0029
 # 답봄
 
-def dfs(level, start):
-  global count
-  if level >= m:
-    for i in range(m):
-      print(result[i], end=' ')
-    print()
-    count += 1
-  else:
-    for i in  range(start, n+1):
-      result[level] = i
-      dfs(level+1, i + 1)
-      result[level] = 0
+# def dfs(level, start):
+#   global count
+#   if level >= m:
+#     for i in range(m):
+#       print(result[i], end=' ')
+#     print()
+#     count += 1
+#   else:
+#     for i in  range(start, n+1):
+#       result[level] = i
+#       dfs(level+1, i + 1)
+#       result[level] = 0
 
-n, m = map(int,input().split())
-result = [0] * (n+1)
-count = 0
-dfs(0,1)
-print(count)
+# n, m = map(int,input().split())
+# result = [0] * (n+1)
+# count = 0
+# dfs(0,1)
+# print(count)
 
 # ###########################
 # # 시작시간 240212 1643 마무리시간 17:05

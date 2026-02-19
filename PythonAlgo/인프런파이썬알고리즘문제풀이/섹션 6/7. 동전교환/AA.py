@@ -1,16 +1,42 @@
+# 260219 시작시간 1200 마무리 1219
+# 시간제한 이렇게 뚫는게 맞나 의심됨?
+
+def dfs(level, total):
+  global min_v
+  if level > min_v:
+    return
+  if total > m:
+    return
+  if total == m:
+    if level < min_v:
+      min_v = level
+  else:
+    for i in range(len(li)):
+      dfs(level+1, total+li[i])
+
+n = int(input())
+li = list(map(int,input().split()))
+m = int(input())
+min_v = 9999999
+li.sort(reverse=True)
+dfs(0,0)
+print(min_v)
+
+
+
 ###########################
 # 시작시간 240212 0758 마무리시간 0807
 
-n = int(input())
-coin_types = list(map(int,input().split()))
-m = int(input())
-dp= [float('inf')] * (m+1)
-dp[0] = 0
+# n = int(input())
+# coin_types = list(map(int,input().split()))
+# m = int(input())
+# dp= [float('inf')] * (m+1)
+# dp[0] = 0
 
-for coin in coin_types:
-  for i in range(coin, m+1):
-    dp[i] = min(dp[i - coin]+1, dp[i])
-print(dp[m])
+# for coin in coin_types:
+#   for i in range(coin, m+1):
+#     dp[i] = min(dp[i - coin]+1, dp[i])
+# print(dp[m])
 
 # #######################
 # # 시작시간 240211 15:25 마무리시간
