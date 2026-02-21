@@ -1,3 +1,48 @@
+# 260221 시작 1819 마무리  1844
+
+# 가장 낮은곳에서 높은곳
+def dfs(x,y):
+  global count
+  if x == end_v[0] and y == end_v[1]:
+    count += 1
+  else:
+    for i in range(4):
+      next_x = x + dx[i]
+      next_y = y + dy[i]
+      if next_x < 0 or next_x >= n or next_y < 0 or next_y >= n:
+        continue
+      if li[x][y] < li[next_x][next_y] and ch[next_x][next_y] == 0:
+        ch[next_x][next_y] = 1
+        dfs(next_x,next_y)
+        ch[next_x][next_y] = 0
+        # dfs(next_x,next_y)
+
+dx = [-1,0,1,0]
+dy = [0,1,0,-1]
+n = int(input())
+li = []
+for i in range(n):
+  li.append(list(map(int,input().split())))
+ch = [[0] * n for _ in range(n)]
+ma = 0
+mi = 99999999
+end_v = [0,0]
+start_v = [0,0]
+for i in range(n):
+  for j in range(n):
+    if ma < li[i][j]:
+      end_v = [i,j]
+      ma = li[i][j]
+    if mi > li[i][j]:
+      start_v = [i,j]
+      mi = li[i][j]
+count = 0
+ch[start_v[0]][start_v[1]] = 1
+dfs(start_v[0],start_v[1])
+
+print(count)
+
+
 ###############################
 # 시작시간 240219 13:15 마무리시간 13:35
 

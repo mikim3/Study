@@ -1,34 +1,70 @@
 from collections import deque
 import sys
 input = sys.stdin.readline
+# 260221 시작 1215 마무리
+# 답봄
+
+# dx = [-1,0,1,0]
+# dy = [0,1,0,-1]
+# n = int(input())
+# li = []
+# for i in range(n):
+#   li.append(list(map(int,input().split())))
+
+# ch = [[0] * n for _ in range(n)]
+# ch[n//2][n//2] = 1
+# level = 0
+# dq = deque()
+# dq.append((n//2,n//2))
+# su = li[n//2][n//2]
+# while True:
+#   if level == n // 2:
+#     break
+#   size = len(dq)
+#   for i in range(size):
+#     tmp = dq.popleft()
+#     for j in range(4):
+#       x = tmp[0] + dx[j]
+#       y = tmp[1] + dy[j]
+#       if ch[x][y] == 0:
+#         su += li[x][y]
+#         ch[x][y] = 1
+#         dq.append((x,y))
+#   # print(level, size)
+#   # for x in ch:
+#   #   print(x)
+#   level += 1
+
+# print(su)
+
 #################################
 # 시작시간 240215 20:38  마무리시간 21:02
 
-dx = [-1,0,1,0]
-dy = [0,1,0,-1]
+# dx = [-1,0,1,0]
+# dy = [0,1,0,-1]
 
-def bfs(start):
-  global total
-  queue = deque()
-  queue.append(start)
-  while queue:
-    now = queue.popleft()
-    for i in range(4):
-      next_x = now[0] + dx[i]
-      next_y = now[1] + dy[i]
-      if 0 <= next_x < n and  0 <= next_y < n and checked[next_x][next_y] == 0 and checked[now[0]][now[1]] < n//2:
-        checked[next_x][next_y] = checked[now[0]][now[1]] + 1
-        total += li[next_x][next_y]
-        queue.append([next_x, next_y])
+# def bfs(start):
+#   global total
+#   queue = deque()
+#   queue.append(start)
+#   while queue:
+#     now = queue.popleft()
+#     for i in range(4):
+#       next_x = now[0] + dx[i]
+#       next_y = now[1] + dy[i]
+#       if 0 <= next_x < n and  0 <= next_y < n and checked[next_x][next_y] == 0 and checked[now[0]][now[1]] < n//2:
+#         checked[next_x][next_y] = checked[now[0]][now[1]] + 1
+#         total += li[next_x][next_y]
+#         queue.append([next_x, next_y])
 
-n = int(input())
-li = []
-for i in range(n):
-  li.append(list(map(int,input().split())))
-total = 0
-checked = [[0] * n for _ in range(n)]
-bfs([n//2,n//2].copy())
-print(total)
+# n = int(input())
+# li = []
+# for i in range(n):
+#   li.append(list(map(int,input().split())))
+# total = 0
+# checked = [[0] * n for _ in range(n)]
+# bfs([n//2,n//2].copy())
+# print(total)
 
 ###############################
 # 시작시간 231219 1516 마무리 시간 15:52

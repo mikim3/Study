@@ -1,3 +1,16 @@
+# 260220 시작 2219 마무리 2222
+
+n, m = map(int,input().split())
+li = [[0] * (n+1) for _ in range(n+1) ]
+for i in range(m):
+  a,b,c = map(int,input().split())
+  li[a][b] = c
+
+for i in range(1,n+1):
+  for j in range(1,n+1):
+    print(li[i][j],end=' ')
+  print()
+
 # 평가 코드는 없긴함
 # 무방향 그래프, 방향 그래프 둘다 표현해보기
 #
@@ -45,29 +58,14 @@
 6 4 5
 '''
 
-n, m = map(int, input().split())
-graph = [[0] * (n + 1) for _ in range(n + 1)]
+# n, m = map(int, input().split())
+# graph = [[0] * (n + 1) for _ in range(n + 1)]
 
-for i in range(m):
-  a, b, c = map(int, input().split())
-  graph[a][b] = c
+# for i in range(m):
+#   a, b, c = map(int, input().split())
+#   graph[a][b] = c
 
-for i in range(1, n + 1):
-  for j in range(1, n + 1):
-    print(graph[i][j], end=' ')
-  print()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# for i in range(1, n + 1):
+#   for j in range(1, n + 1):
+#     print(graph[i][j], end=' ')
+#   print()

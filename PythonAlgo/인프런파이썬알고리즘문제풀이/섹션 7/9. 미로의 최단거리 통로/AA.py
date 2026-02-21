@@ -1,33 +1,67 @@
 import sys
 input = sys.stdin.readline
 from collections import deque
-#############################
-# 시작시간 240215 2105 마무리시간 21:18
-
-dx = [-1,0,1,0]
-dy = [0,1,0,-1]
+# 260221 시작 1702 마무리 1723
+# 유형떄매 답봄
 
 def bfs(start):
-  global count
+  dq = deque()
+  dq.append(start)
   li[start[0]][start[1]] = 1
-  queue = deque()
-  queue.append(start)
-  while queue:
-    now = queue.popleft()
-    if li[6][6] != 0:
-      break
+  while dq:
+    now = dq.popleft()
     for i in range(4):
       x = now[0] + dx[i]
       y = now[1] + dy[i]
-      if 0 <= x < 7 and 0 <= y < 7 and li[x][y] == 0:
-        li[x][y] = li[now[0]][now[1]] + 1
-        queue.append([x,y])
-  print(li[6][6] - 1)
+      if x < 0 or x >= 7 or y < 0 or y >= 7 or li[x][y] >= 1:
+        continue
+      dq.append((x,y))
+      li[x][y] = li[now[0]][now[1]] + 1
+
+dx = [-1,0,1,0]
+dy = [0,1,0,-1]
 li = []
 for i in range(7):
   li.append(list(map(int,input().split())))
-count = 0
-bfs([0,0])
+bfs((0,0))
+if li[6][6] != 0:
+  print(li[6][6]-1)
+else:
+  print(-1)
+
+
+
+
+
+
+
+#############################
+# 시작시간 240215 2105 마무리시간 21:18
+
+# dx = [-1,0,1,0]
+# dy = [0,1,0,-1]
+
+# def bfs(start):
+#   global count
+#   li[start[0]][start[1]] = 1
+#   queue = deque()
+#   queue.append(start)
+#   while queue:
+#     now = queue.popleft()
+#     if li[6][6] != 0:
+#       break
+#     for i in range(4):
+#       x = now[0] + dx[i]
+#       y = now[1] + dy[i]
+#       if 0 <= x < 7 and 0 <= y < 7 and li[x][y] == 0:
+#         li[x][y] = li[now[0]][now[1]] + 1
+#         queue.append([x,y])
+#   print(li[6][6] - 1)
+# li = []
+# for i in range(7):
+#   li.append(list(map(int,input().split())))
+# count = 0
+# bfs([0,0])
 
 ############################
 # 시작시간 240112 13:46 마무리시간 13:57

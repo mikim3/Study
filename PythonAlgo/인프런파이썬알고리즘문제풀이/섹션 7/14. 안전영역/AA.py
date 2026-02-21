@@ -1,51 +1,101 @@
 from collections import deque
+# 260221 시작 2001 마무리 2039
+# 이상한 실수함
+
+# def bfs(s_x,s_y):
+#   # print('ch==',ch)
+#   # print()
+#   dq = deque()
+#   dq.append((s_x,s_y))
+#   ch[s_x][s_y] = 1
+#   while dq:
+#     now_x,now_y = dq.popleft()
+#     for i in range(4):
+#       n_x = now_x + dx[i]
+#       n_y = now_y + dy[i]
+#       if n_x < 0 or n_x >= n or n_y < 0 or n_y >= n:
+#         continue
+#       if ch[n_x][n_y] == 0 and li[n_x][n_y] > h:
+#         ch[n_x][n_y] = 1
+#         dq.append((n_x,n_y))
+
+# dx = [-1,0,1,0]
+# dy = [0,1,0,-1]
+# n = int(input())
+# li = [] 
+# for i in range(n):
+#   li.append(list(map(int,input().split())))
+# ma = 0
+# for i in range(n):
+#   if max(li[i]) > ma:
+#     ma = max(li[i])
+
+# li_h = []
+# for h in range(1, ma-1):
+#   count = 0
+#   ch = [[0] * n for _ in range(n)] # 물에 안 잠기면 1 이 되게끔 할꺼임
+#   # print('re ch==',ch)
+#   for i in range(n):
+#     for j in range(n):
+#       if ch[i][j] == 0 and li[i][j] > h: # 물에 안 잠기는 높이면 
+#         bfs(i,j)
+#         count += 1
+#         # print('count + i,j',i,j)
+#   # print(h,count)
+#   # print('ch==')
+#   # for i in range(n):
+#   #   print(ch[i])
+#   # print()
+#   li_h.append(count)
+# # print(li_h)
+# print(max(li_h))
 
 ##########################
 # 시작시간 240219 2018 마무리시간 2044
 
-dx = [-1,0,1,0]
-dy = [0,1,0,-1]
+# dx = [-1,0,1,0]
+# dy = [0,1,0,-1]
 
-def bfs(x, y, h):
-  checked[x][y] = 1
-  queue = deque()
-  queue.append((x,y))
-  while queue:
-    now = queue.popleft()
-    for i in range(4):
-      next_x = now[0] + dx[i]
-      next_y = now[1] + dy[i]
-      if 0 <= next_x < n and 0 <= next_y < n and li[next_x][next_y] >= h and checked[next_x][next_y] == 0:
-        checked[next_x][next_y] = 1
-        queue.append((next_x, next_y))
+# def bfs(x, y, h):
+#   checked[x][y] = 1
+#   queue = deque()
+#   queue.append((x,y))
+#   while queue:
+#     now = queue.popleft()
+#     for i in range(4):
+#       next_x = now[0] + dx[i]
+#       next_y = now[1] + dy[i]
+#       if 0 <= next_x < n and 0 <= next_y < n and li[next_x][next_y] >= h and checked[next_x][next_y] == 0:
+#         checked[next_x][next_y] = 1
+#         queue.append((next_x, next_y))
 
-n = int(input())
-li = []
-for i in range(n):
-  li.append(list(map(int,input().split())))
+# n = int(input())
+# li = []
+# for i in range(n):
+#   li.append(list(map(int,input().split())))
 
-max_h = 0
-min_h = 999
+# max_h = 0
+# min_h = 999
 
-for i in range(n):
-  for j in range(n):
-    if li[i][j] > max_h:
-      max_h = li[i][j]
-    if li[i][j] < min_h:
-      min_h = li[i][j]
+# for i in range(n):
+#   for j in range(n):
+#     if li[i][j] > max_h:
+#       max_h = li[i][j]
+#     if li[i][j] < min_h:
+#       min_h = li[i][j]
 
-max_result = 0
-for h in range(min_h, max_h + 1):
-  tmp_result = 0
-  checked = [[0] * n for _ in range(n)]
-  for i in range(n):
-    for j in range(n):
-      if checked[i][j] == 0 and li[i][j] >= h:
-        bfs(i, j, h)
-        tmp_result += 1
-  if tmp_result > max_result:
-    max_result = tmp_result    
-print(max_result)
+# max_result = 0
+# for h in range(min_h, max_h + 1):
+#   tmp_result = 0
+#   checked = [[0] * n for _ in range(n)]
+#   for i in range(n):
+#     for j in range(n):
+#       if checked[i][j] == 0 and li[i][j] >= h:
+#         bfs(i, j, h)
+#         tmp_result += 1
+#   if tmp_result > max_result:
+#     max_result = tmp_result    
+# print(max_result)
 
 # # 240115 deepcopy함수 없애고 다시품
 

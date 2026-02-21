@@ -1,5 +1,22 @@
 from collections import deque
 
+def bfs(start):
+    result[start] = 1
+    queue = deque()
+    queue.append(start)
+    while queue:
+        now = queue.popleft()
+        if now == e:
+            break
+        for next in (now-1, now+1, now+5):
+            if result[next] == 0:
+                result[next] = result[now]+1
+                queue.append(next)
+s,e = map(int,input().split())
+result = [0] * (max(e,s)*6)
+bfs(s)
+print(result[e]-1)
+
 # ########################
 # # 시작시간 240215 20:00 마무리시간 20:37
 # # 답봄

@@ -1,41 +1,79 @@
 from typing import List
+# 260221 시작 0945 마무리 1115
+# 너무 오래걸렸음, 아스키 숫자 문자로 바꾸는 명령어 까먹음
+
+def dfs(level, jari): #
+  global count 
+  if level == len(li):
+    before = 0 # 이전에 자릿수
+    for i in range(len(li)):
+      if before == 1 and ch[i] == 0:
+        return
+      if ch[i] > 0 and ch[i] < 10:
+        before = 1
+      elif ch[i] >= 10:
+        before = 2
+    for i in range(len(li)):
+      if ch[i] > 0 and ch[i] < 27:
+        print(chr(ord('A') - 1 + ch[i]), end='')
+    print()
+
+    count += 1
+  else:
+    if jari > level:
+      dfs(level+1,level+1)
+    else:
+      for i in range(1,27):
+        if int(li[level]) == i:
+          ch[level] = i
+          dfs(level+1,jari+1)
+          ch[level] = 0
+        # print()
+        if level <=  len(li) - 2 and int(li[level]) * 10 + int(li[level+1]) == i:
+          # print("int(li[level]) * 10 + int(li[level+1])",int(li[level]) * 10 + int(li[level+1]))
+          ch[level] = i
+          dfs(level+1,jari+2)
+          ch[level] = 0
+
+li = input()
+ch = [0] * len(li) # 
+count = 0
+dfs(0,0)
+print(count)
+
+
 
 #########################
 # 시작시간
 # 유형공부를 위해 다시품
 
 # level : DFS 깊이   position : 문자열에 위치(code의 위치랑 다름)
-def dfs(level, position):
-  global count
-  # 레벨까지 가서 문자열 완성
-  if level == n:
-    count += 1
-    for j in range(position):
-      print(chr(result[j]+ ord('A') - 1), end='')
-    print()
-  else:  # 가지 뻗는 코드
-    for i in range(1, 27):
-      if code[level] == i:
-        result[position] = i
-        # 일의자리 숫자
-        dfs(level + 1, position + 1)
-      elif i >= 10 and code[level] == i // 10 and code[level + 1] == i % 10:
-        result[position] = i
-        # 십의자리숫자여서 code기준 두자리를 사용했음
-        dfs(level+2, position+1)
+# def dfs(level, position):
+#   global count
+#   # 레벨까지 가서 문자열 완성
+#   if level == n:
+#     count += 1
+#     for j in range(position):
+#       print(chr(result[j]+ ord('A') - 1), end='')
+#     print()
+#   else:  # 가지 뻗는 코드
+#     for i in range(1, 27):
+#       if code[level] == i:
+#         result[position] = i
+#         # 일의자리 숫자
+#         dfs(level + 1, position + 1)
+#       elif i >= 10 and code[level] == i // 10 and code[level + 1] == i % 10:
+#         result[position] = i
+#         # 십의자리숫자여서 code기준 두자리를 사용했음
+#         dfs(level+2, position+1)
 
-code = list(map(int, input()))
-n = len(code)
-code.insert(n, -1) # 인덱스 아웃 에러 안내는 테크닉
-result = [0] * (n + 3)
-count = 0
-dfs(0, 0)
-print(count)
-
-
-
-
-
+# code = list(map(int, input()))
+# n = len(code)
+# code.insert(n, -1) # 인덱스 아웃 에러 안내는 테크닉
+# result = [0] * (n + 3)
+# count = 0
+# dfs(0, 0)
+# print(count)
 
 # ###############################
 # # 시작시간 16:13 마무리시간 16:52

@@ -1,38 +1,70 @@
 from collections import deque
+# 260221 시작 1943  마무리 1955
+
+# def bfs(s_x,s_y):
+#   dq = deque()
+#   dq.append((s_x,s_y))
+#   ch[s_x][s_y] = 1
+#   while dq:
+#     now_x,now_y= dq.popleft()
+#     for i in range(8):
+#       n_x = now_x + dx[i]
+#       n_y = now_y + dy[i]
+#       if n_x < 0 or n_x >= n or n_y < 0 or n_y >= n: 
+#         continue
+#       if ch[n_x][n_y] == 0 and li[n_x][n_y] == 1:
+#         ch[n_x][n_y] = 1
+#         dq.append((n_x,n_y))
+        
+
+# dx = [-1,-1,0,1,1,1,0,-1]
+# dy = [0,1,1,1,0,-1,-1,-1]
+# n = int(input())
+# ch = [[0] * (n) for _ in range(n)]
+# li = []
+# for i in range(n):
+#   li.append(list(map(int,input().split())))
+# count = 0
+# for i in range(n):
+#   for j in range(n):
+#     if ch[i][j] == 0 and li[i][j] == 1:
+#       bfs(i,j)
+#       count += 1
+# print(count)
 
 ###############################
 # 시작시간 240219 1921 마무리시간 1932
 
-def bfs(start):
-  li[start[0]][start[1]] = 2
-  queue = deque()
-  queue.append(start)
-  while queue:
-    now = queue.popleft()
-    for i in range(8):
-      next_x = now[0] + dx[i]
-      next_y = now[1] + dy[i]
-      if 0 <= next_x < n and 0 <= next_y < n and li[next_x][next_y] == 1:
-        li[next_x][next_y] = 2
-        queue.append([next_x, next_y])
+# def bfs(start):
+#   li[start[0]][start[1]] = 2
+#   queue = deque()
+#   queue.append(start)
+#   while queue:
+#     now = queue.popleft()
+#     for i in range(8):
+#       next_x = now[0] + dx[i]
+#       next_y = now[1] + dy[i]
+#       if 0 <= next_x < n and 0 <= next_y < n and li[next_x][next_y] == 1:
+#         li[next_x][next_y] = 2
+#         queue.append([next_x, next_y])
 
-dx = [-1,-1,0,1,1,1,0,-1]
-dy = [0,1,1,1,0,-1,-1,-1]
+# dx = [-1,-1,0,1,1,1,0,-1]
+# dy = [0,1,1,1,0,-1,-1,-1]
 
-n = int(input())
-li = []
-for i in range(n):
-  li.append(list(map(int, input().split())))
-checked = [[0] * n for _ in range(n)]
-count = 0
+# n = int(input())
+# li = []
+# for i in range(n):
+#   li.append(list(map(int, input().split())))
+# checked = [[0] * n for _ in range(n)]
+# count = 0
 
-for i in range(n):
-  for j in range(n):
-    if li[i][j] == 1:
-      bfs([i,j])
-      count += 1
+# for i in range(n):
+#   for j in range(n):
+#     if li[i][j] == 1:
+#       bfs([i,j])
+#       count += 1
 
-print(count)
+# print(count)
 
 # ##########################
 # # 시작시간  240115 15:35    마무리시간 15:49

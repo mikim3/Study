@@ -1,6 +1,27 @@
 import sys
 input = sys.stdin.readline
 
+# 260220 시작 2347  마무리
+def dfs(level,m):
+    global count
+    if m > t:
+        return
+    if level == k:
+        if m == t:
+            count += 1
+    else:
+        for i in range(li[level][1]+1):
+            dfs(level+1,m + li[level][0] * i)
+t = int(input())
+k = int(input())
+li = []
+for i in range(k):
+    li.append(tuple(map(int,input().split())))
+# ch = [0] * (k) # [2,0,0] 5원짜리 2개쓴거
+count = 0
+dfs(0,0)
+print(count)
+
 # ##############################
 # # 시작시간 240213 1722 마무리시간 17:40
 

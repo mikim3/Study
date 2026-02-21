@@ -1,3 +1,27 @@
+# 260220 시작 1148 마무리  1205
+
+# def dfs(level,start):
+#     global count 
+#     if level == k:
+#         # print(res)
+#         su = 0
+#         for i in range(k):
+#             su += res[i]
+#         if su % m == 0:
+#             count += 1
+#     else:
+#         for i in range(start, n):
+#             res[level] = li[i]
+#             dfs(level+1, i+1)
+
+# n, k = map(int,input().split())
+# li = list(map(int,input().split()))
+# m = int(input())
+# res = [0] * (k)
+# count = 0
+# dfs(0,0)
+# print(count)
+
 ##########################
 # 시작시간 240212 1708 마무리시간 1723
 # 오타때문에 10분날림

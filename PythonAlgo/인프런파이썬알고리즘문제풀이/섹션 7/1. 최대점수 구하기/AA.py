@@ -1,3 +1,27 @@
+# 260220 시작 2234 마무리 2246
+
+# 푼다 풀지 않는다.
+def dfs(level,t, score):
+    global max_v
+    if level == n:
+        if max_v < score:
+            max_v = score
+    else:
+        n_s=li[level][0]
+        n_t=li[level][1]
+        if t + n_t <= m:
+            dfs(level+1,t+n_t,score+n_s)
+        dfs(level+1,t,score)
+    
+n, m = map(int,input().split())
+li = []
+for i in range(n):
+    a,b = map(int,input().split())
+    li.append((a,b))
+max_v = 0
+dfs(0,0,0)
+print(max_v)
+
 ##############################
 # 시작시간 240213 14:36 마무리시간 14:52
 #

@@ -1,24 +1,46 @@
+# 262020 시작 2247  마무리 2303
+
+# 끝이 8일일지 7일일지 모름
+
+# def dfs(level,p,now_work): # 1일부터 시작
+#     global max_p
+#     if level == n:
+#         if now_work <= 0 and max_p < p:
+#             max_p = p
+#     else:
+#         if now_work <= 0:
+#             dfs(level+1,p+li[level][1], li[level][0]-1)
+#         dfs(level+1,p,now_work-1)# 쉼
+
+# n = int(input())
+# li = []
+# for i in range(n):
+#     li.append(tuple(map(int,input().split())))
+# max_p = 0
+# dfs(0,0,0)
+# print(max_p)
+
 ##########################
 # 시작시간  240215 15:49  마무리시간 16:04
 
-def dfs(level, now_score):
-  global max_value
-  if level > n:
-    return
-  if level == n:
-    if now_score > max_value:
-      max_value = now_score
-  else:
-    dfs(level+li_input[level][0], now_score + li_input[level][1])
-    dfs(level+1, now_score)
+# def dfs(level, now_score):
+#   global max_value
+#   if level > n:
+#     return
+#   if level == n:
+#     if now_score > max_value:
+#       max_value = now_score
+#   else:
+#     dfs(level+li_input[level][0], now_score + li_input[level][1])
+#     dfs(level+1, now_score)
 
-n = int(input())
-li_input = []
-for i in range(n):
-  li_input.append(list(map(int, input().split())))
-max_value = 0
-dfs(0,0)
-print(max_value)
+# n = int(input())
+# li_input = []
+# for i in range(n):
+#   li_input.append(list(map(int, input().split())))
+# max_value = 0
+# dfs(0,0)
+# print(max_value)
 
 # ############################
 # # 시작시간 240213 15:20 마무리시간 16:56

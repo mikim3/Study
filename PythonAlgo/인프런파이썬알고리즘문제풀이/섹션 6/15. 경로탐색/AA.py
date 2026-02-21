@@ -1,34 +1,58 @@
+# 260220 시작 2222  마무리 2233
+
+# def dfs(v): # 현재 좌표
+#   global count
+#   if v == n:
+#     count += 1
+#   else:
+#     for i in range(1,n+1):
+#       if li[v][i] == 1 and ch[i] == 0:
+#         ch[i]=1
+#         dfs(i)
+#         ch[i]=0
+
+# n, m = map(int,input().split())
+# li = [[0] * (n+1) for _ in range(n+1)]
+# for i in range(m):
+#   a,b = map(int,input().split())
+#   li[a][b] = 1
+# ch = [0] * (n+1) # 이미 들른 노드 표시
+# count = 0
+# ch[1] = 1
+# dfs(1)
+# print(count)
+
 ##########################
 # 모범답안
-def DFS(now):
-  global count
-  if now==n:
-    for i in result:
-      print(i, end=' ')
-    print()
-    count+=1
-  else:
-    for i in range(1, n + 1):
-      if graph[now][i] == 1 and check[i] == 0:
-        check[i] = 1
-        result.append(i)
-        DFS(i)
-        check[i] = 0
-        result.pop()
+# def DFS(now):
+#   global count
+#   if now==n:
+#     for i in result:
+#       print(i, end=' ')
+#     print()
+#     count+=1
+#   else:
+#     for i in range(1, n + 1):
+#       if graph[now][i] == 1 and check[i] == 0:
+#         check[i] = 1
+#         result.append(i)
+#         DFS(i)
+#         check[i] = 0
+#         result.pop()
     
-n, m = map(int,input().split())
-graph = [[0] * (n + 1) for _ in range(n + 1)]
-count = 0
-result = []
-result.append(1)
-check= [0] * (n+1)
-check[1] = 1
-for i in range(m):
-  a,b = map(int,input().split())
-  graph[a][b] = 1
+# n, m = map(int,input().split())
+# graph = [[0] * (n + 1) for _ in range(n + 1)]
+# count = 0
+# result = []
+# result.append(1)
+# check= [0] * (n+1)
+# check[1] = 1
+# for i in range(m):
+#   a,b = map(int,input().split())
+#   graph[a][b] = 1
 
-DFS(1)
-print(count)
+# DFS(1)
+# print(count)
 
 # ######################
 # # 시작시간 231229 22:50 마무리시간 23:20

@@ -1,32 +1,56 @@
+# 260220 시작 2305 마무리 2320
+
+def dfs(level):
+  if level == n:
+    if sum(res) > 0:
+      li_s.append(sum(res))
+  else:
+    res[level]=li[level]
+    dfs(level+1)  
+    res[level]=-li[level]
+    dfs(level + 1)
+    res[level]= 0
+    dfs(level+1)  
+  
+
+n = int(input())
+li = list(map(int,input().split()))
+s = sum(li)
+li_s = []
+res = [0] * (n)
+dfs(0)
+li_s_set=set(li_s)
+# print(li_s)
+
+print(s-len(li_s_set))
 ##########################
 # 시직시간 240213 16:58  마무리시간 17:09
 
-def dfs(level):
-  if level == k:
-    tmp = 0
-    for i in range(k):
-      if checked[i] == 2:
-        tmp += li[i]
-      elif checked[i] == 1:
-        tmp -= li[i]
-    if tmp > 0:
-      set_value.add(tmp)
-  else:
-    checked[level] = 2
-    dfs(level+1)
-    checked[level] = 1
-    dfs(level+1)
-    checked[level] = 0
-    dfs(level+1)
+# def dfs(level):
+#   if level == k:
+#     tmp = 0
+#     for i in range(k):
+#       if checked[i] == 2:
+#         tmp += li[i]
+#       elif checked[i] == 1:
+#         tmp -= li[i]
+#     if tmp > 0:
+#       set_value.add(tmp)
+#   else:
+#     checked[level] = 2
+#     dfs(level+1)
+#     checked[level] = 1
+#     dfs(level+1)
+#     checked[level] = 0
+#     dfs(level+1)
 
-k = int(input())
-li = list(map(int, input().split()))
-checked = [0] * (k+1)
-set_value= set()
-dfs(0)
-print(set_value)
-print(sum(li)- len(set_value))
-
+# k = int(input())
+# li = list(map(int, input().split()))
+# checked = [0] * (k+1)
+# set_value= set()
+# dfs(0)
+# print(set_value)
+# print(sum(li)- len(set_value))
 
 ##########################
 # 시작시간  18:57   마무리시간 19:28
